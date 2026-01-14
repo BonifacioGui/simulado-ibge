@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Ética - IBGE (Padrão FGV)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --bg-body: #111827;       /* gray-900 */
+            --bg-card: #1f2937;       /* gray-800 */
+            --bg-hover: #374151;      /* gray-700 */
+            --text-main: #f3f4f6;     /* gray-100 */
+            --text-muted: #9ca3af;    /* gray-400 */
+            --accent: #eab308;        /* yellow-500 */
+            --accent-dark: #a16207;   /* yellow-700 */
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-body); color: var(--text-main); }
+        
+        /* Animações */
+        .fade-in { animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .correct-anim { animation: pulseGreen 0.5s; }
+        .wrong-anim { animation: shakeRed 0.4s; }
+        @keyframes pulseGreen { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+        @keyframes shakeRed { 0% { transform: translateX(0); } 25% { transform: translateX(-5px); } 50% { transform: translateX(5px); } 75% { transform: translateX(-5px); } 100% { transform: translateX(0); } }
+
+        /* Scrollbar escura */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1f2937; }
+        ::-webkit-scrollbar-thumb { background: #4b5563; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6b7280; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-yellow-500 selection:text-black">
+
+    <header class="bg-gray-800 border-b-4 border-yellow-600 shadow-xl sticky top-0 z-20">
+        <div class="max-w-4xl mx-auto p-5 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <a href="simulado_tematico_apm.html" class="mb-2 inline-flex items-center text-xs bg-gray-700 hover:bg-gray-600 text-yellow-400 border border-yellow-600 py-1 px-3 rounded transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i> Voltar ao Geral
+                </a>
+                <h1 class="text-xl md:text-2xl font-bold flex items-center gap-3 text-white">
+                    <i class="fas fa-balance-scale text-yellow-500"></i> Código de Ética IBGE
+                </h1>
+                <p class="text-xs text-gray-400 mt-1">Nível Difícil • Com Fundamentação Legal</p>
+            </div>
+            
+            <div class="bg-gray-900 px-4 py-2 rounded-lg border border-gray-700 shadow-inner">
+                <span id="score-display" class="font-bold text-xl tracking-widest font-mono text-yellow-500">0/0</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow p-4 md:p-8">
+        <div class="max-w-4xl mx-auto">
+            
+            <div class="flex items-center gap-3 mb-8">
+                <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden shadow-inner">
+                    <div id="progress-bar" class="bg-yellow-500 h-3 rounded-full transition-all duration-700 ease-out shadow-[0_0_10px_rgba(234,179,8,0.5)]" style="width: 0%"></div>
+                </div>
+                <span id="q-counter" class="text-xs font-bold text-gray-400 whitespace-nowrap bg-gray-800 px-3 py-1 rounded-full shadow-sm border border-gray-700">Q1</span>
+            </div>
+
+            <div id="quiz-container" class="bg-gray-800 rounded-2xl shadow-2xl overflow-hidden fade-in relative border border-gray-700">
+                
+                <div class="p-6 md:p-10 border-b border-gray-700 bg-gray-800">
+                    <div class="flex justify-between items-start mb-4">
+                        <span id="topic-tag" class="inline-block bg-yellow-900/30 text-yellow-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide border border-yellow-700/50">
+                            Tópico
+                        </span>
+                    </div>
+                    <h2 id="question-text" class="text-lg md:text-xl font-semibold text-gray-100 leading-relaxed">
+                        Carregando...
+                    </h2>
+                </div>
+
+                <div id="options-container" class="p-6 md:p-10 space-y-4">
+                    <!-- Opções injetadas via JS -->
+                </div>
+
+                <div id="feedback-area" class="hidden p-6 md:p-10 bg-gray-900 border-t border-gray-700">
+                    <div class="flex gap-5">
+                        <div id="feedback-icon" class="text-3xl pt-1 shrink-0"></div>
+                        <div class="flex-1">
+                            <h3 id="feedback-title" class="font-bold text-xl mb-3"></h3>
+                            <div id="feedback-text" class="text-gray-300 text-base leading-relaxed space-y-3"></div>
+                            
+                            <div class="mt-6 bg-gray-800 p-4 rounded-lg border-l-4 border-yellow-500 text-sm text-gray-300 shadow-lg">
+                                <strong class="text-yellow-400 block mb-1 text-xs uppercase tracking-wider"><i class="fas fa-lightbulb mr-1"></i> Fundamentação:</strong>
+                                <span id="feedback-tip" class="italic text-gray-400"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="next-btn" onclick="nextQuestion()" class="mt-8 w-full bg-yellow-600 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-6 rounded-xl transition-all shadow-lg hover:shadow-yellow-500/20 flex justify-center items-center gap-2 transform hover:-translate-y-0.5">
+                        Próxima Questão <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="results-card" class="hidden bg-gray-800 rounded-2xl shadow-2xl p-10 text-center fade-in mt-4 max-w-2xl mx-auto border border-gray-700">
+                <div class="w-24 h-24 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6 text-yellow-500 text-4xl shadow-inner animate-bounce">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h2 class="text-3xl font-bold mb-2 text-white">Resultado Final</h2>
+                <p class="text-gray-400 mb-8">Desafio de Ética IBGE</p>
+                
+                <div class="text-6xl font-black text-yellow-500 mb-8 drop-shadow-md" id="final-score">0%</div>
+                
+                <div id="final-msg" class="text-left text-sm text-gray-300 bg-gray-900 p-6 rounded-xl mb-10 border border-gray-700 leading-relaxed"></div>
+
+                <button onclick="resetQuiz()" class="bg-yellow-600 hover:bg-yellow-500 text-gray-900 font-bold py-4 px-8 rounded-xl transition-colors shadow-lg w-full">
+                    <i class="fas fa-redo mr-2"></i> Reiniciar Ética
+                </button>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-4 mt-6 text-right">
+                <button onclick="resetQuiz()" class="text-xs text-gray-600 hover:text-red-400 transition-colors underline cursor-pointer">
+                    <i class="fas fa-trash"></i> Apagar Progresso Salvo
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // --- BANCO DE QUESTÕES (Nível Hard - FGV) ---
+        const questoesEtica = [
+            // CAPÍTULO I - REGRAS DEONTOLÓGICAS (Casos Práticos)
+            { 
+                topic: "Cap. I - Primados Maiores", 
+                text: "João, servidor do IBGE, é conhecido por sua competência técnica, mas frequentemente se envolve em escândalos em sua vida privada, sendo visto embriagado publicamente. Segundo o Código de Ética, tal conduta:", 
+                options: ["É irrelevante, pois a vida privada é inviolável.", "É passível de demissão sumária.", "Reflete no exercício da função, pois a dignidade e o decoro devem ser preservados dentro e fora do cargo.", "Deve ser tratada apenas pela justiça comum, sem impacto funcional.", "Só seria relevante se ocorresse dentro da agência."], 
+                correct: 2, 
+                explanation: "O Código é explícito ao dizer que a conduta ética se estende para fora do cargo. O servidor público personifica o Estado 24 horas por dia.", 
+                tip: "Regra Deontológica I: '...seja no exercício do cargo ou função, ou fora dele...'." 
+            },
+            { 
+                topic: "Cap. I - Moralidade", 
+                text: "Um gestor do IBGE realiza uma contratação que segue estritamente a lei, mas o faz para beneficiar a empresa de um amigo íntimo, prejudicando a eficiência do serviço. De acordo com o Código de Ética, esse ato:", 
+                options: ["É ético, pois cumpriu o princípio da legalidade.", "Fere a moralidade, pois esta exige o equilíbrio entre legalidade e finalidade (bem comum).", "É apenas uma infração administrativa leve.", "Não pode ser punido, pois não houve crime.", "Demonstra zelo com as amizades, o que é valorizado."], 
+                correct: 1, 
+                explanation: "Moralidade Administrativa não é apenas 'bem e mal', e não basta ser legal. Tem que ser honesto e visar o bem comum. Legalidade sem finalidade pública é imoral.", 
+                tip: "Regra Deontológica III: 'A moralidade... não se limita à distinção entre o bem e o mal...'." 
+            },
+            { 
+                topic: "Cap. I - Verdade", 
+                text: "Diante de um erro grave nas estatísticas de um município, o chefe ordena ao Agente que 'suavize' os números para não gerar pânico na população e proteger a imagem do órgão. O Agente deve:", 
+                options: ["Obedecer, pois a imagem do Estado é prioritária.", "Alterar os dados levemente para equilibrar a situação.", "Não omitir ou falsear a verdade, ainda que contrária aos interesses da própria Administração.", "Solicitar a ordem por escrito para se eximir de culpa.", "Divulgar os dados na imprensa antes de falar com o chefe."], 
+                correct: 2, 
+                explanation: "A verdade é valor absoluto. O servidor não pode mentir nem para 'proteger' o Estado ou a pessoa interessada.", 
+                tip: "Regra Deontológica VIII: 'O servidor não pode omitir ou falsear a verdade...'." 
+            },
+            { 
+                topic: "Cap. I - Publicidade", 
+                text: "Mário, servidor do IBGE, atrasou propositalmente a publicação de um edital de concurso para que seu sobrinho tivesse mais tempo de estudar. Esse ato de reter a publicidade:", 
+                options: ["É permitido, pois visa ajudar um cidadão.", "Constitui apenas uma falha administrativa.", "Enseja comprometimento ético, pois a publicidade é requisito de eficácia e moralidade.", "É um ato de discricionariedade do servidor.", "Só seria grave se envolvesse dinheiro."], 
+                correct: 2, 
+                explanation: "Omissão de publicidade para favorecimento pessoal fere a moralidade e a eficácia. A regra é a transparência.", 
+                tip: "Regra Deontológica VI: 'A publicidade de qualquer ato administrativo constitui requisito de eficácia e moralidade...'." 
+            },
+            { 
+                topic: "Cap. I - Cortesia e Filas", 
+                text: "Em uma agência do IBGE, o atendente deixa cidadãos esperando em fila longa enquanto conversa amenidades ao telefone. Segundo o Código, essa atitude:", 
+                options: ["É aceitável se o servidor estiver em seu momento de descanso.", "Caracteriza apenas má gestão de tempo.", "Causa dano moral ao cidadão e caracteriza atitude contra a ética e desumanidade.", "É irrelevante se o serviço for concluído até o fim do dia.", "Deve ser resolvida contratando mais funcionários."], 
+                correct: 2, 
+                explanation: "Deixar o cidadão esperando por descaso não é apenas ineficiência, é considerado Dano Moral e atitude desumana.", 
+                tip: "Regra Deontológica X: 'Deixar qualquer pessoa à espera... caracteriza atitude contra a ética ou ato de desumanidade...'." 
+            },
+
+            // CAPÍTULO II - DEVERES (Situações)
+            { 
+                topic: "Cap. II - Ordens Superiores", 
+                text: "Um Recenseador recebe de seu supervisor a ordem para pular domicílios em áreas de difícil acesso e preencher os dados com valores fictícios para cumprir a meta. O Recenseador deve:", 
+                options: ["Cumprir, pois deve obediência hierárquica.", "Cumprir, mas registrar em ata que não concorda.", "Recusar-se a cumprir, pois é uma ordem manifestamente ilegal, e denunciar (representar).", "Negociar uma meta menor.", "Pedir demissão imediatamente."], 
+                correct: 2, 
+                explanation: "O dever de obediência cessa quando a ordem é ilegal. Fraudar dados é crime e infração ética grave.", 
+                tip: "Inciso XIV, alínea 'h' (implícito) e Dever de Legalidade: Ordens ilegais não se cumprem." 
+            },
+            { 
+                topic: "Cap. II - Sigilo", 
+                text: "Durante um jantar, um amigo pergunta a um servidor do IBGE sobre o faturamento de uma empresa específica que ele visitou. O servidor:", 
+                options: ["Pode revelar, desde que peça segredo ao amigo.", "Pode dar uma estimativa aproximada.", "Deve guardar sigilo absoluto sobre as informações funcionais e dados individualizados.", "Pode revelar se a empresa já tiver falido.", "Deve cobrar pela informação."], 
+                correct: 2, 
+                explanation: "O sigilo estatístico protege dados individualizados. Revelar isso é falta grave.", 
+                tip: "Inciso XIV, alínea 'q' (adaptada): Manter sigilo sobre dados da repartição." 
+            },
+            { 
+                topic: "Cap. II - Assiduidade", 
+                text: "Pedro falta frequentemente ao serviço sem justificativa, alegando que 'o trabalho não foge'. O Código de Ética considera que essa conduta:", 
+                options: ["Afeta apenas o salário de Pedro.", "É um direito de greve velada.", "Contribui para a desmoralização do serviço público e reflete negativamente no sistema.", "Não tem relevância ética, apenas administrativa.", "É permitida se ele compensar depois."], 
+                correct: 2, 
+                explanation: "A ausência habitual injustificada desmoraliza a equipe e o serviço público perante a sociedade.", 
+                tip: "Regra Deontológica XII: 'Toda ausência injustificada... é fator de desmoralização...'." 
+            },
+            { 
+                topic: "Cap. II - Patrimônio", 
+                text: "Um servidor utiliza a impressora e o papel do IBGE para imprimir convites de aniversário de sua filha, alegando que 'é pouco material'. Essa conduta:", 
+                options: ["É aceitável, dado o baixo valor.", "Fere o dever de zelar pelo patrimônio público e evitar desperdícios.", "É permitida se o chefe autorizar.", "Demonstra proatividade.", "Só é vedada se for para venda."], 
+                correct: 1, 
+                explanation: "Uso de material público para fins particulares é desvio de finalidade e desrespeito ao patrimônio custeado pelos tributos.", 
+                tip: "Inciso XIV, alínea 'u': 'Zelar... pela conservação do patrimônio público...'." 
+            },
+            { 
+                topic: "Cap. II - Apresentação", 
+                text: "Um Agente Censitário vai a campo realizar entrevistas vestindo roupas de banho (sunga e chinelo), alegando calor excessivo. O Código de Ética determina que:", 
+                options: ["O servidor tem liberdade de expressão no vestir.", "O importante é a coleta dos dados, não a roupa.", "O servidor deve apresentar-se com vestimentas adequadas ao exercício da função.", "Ele deve usar terno e gravata.", "Ele deve comprar uniforme com o próprio dinheiro."], 
+                correct: 2, 
+                explanation: "A vestimenta deve ser adequada à função. Não precisa ser luxuosa, mas deve passar respeito e profissionalismo.", 
+                tip: "Inciso XIV, alínea 'n': 'Apresentar-se ao trabalho com vestimentas adequadas...'." 
+            },
+
+            // CAPÍTULO III - VEDAÇÕES (O que é proibido)
+            { 
+                topic: "Cap. III - Uso do Cargo", 
+                text: "Ana, servidora do IBGE, utiliza seu crachá funcional para tentar entrar gratuitamente em um show, alegando estar em 'fiscalização', o que não era verdade. Ana cometeu a vedação de:", 
+                options: ["Prejudicar a reputação de colegas.", "Usar o cargo para obter favorecimento ou vantagem indevida.", "Alterar documentos oficiais.", "Embriaguez habitual.", "Conivência com erro."], 
+                correct: 1, 
+                explanation: "A famosa 'carteirada'. É vedado usar o cargo para obter vantagens pessoais.", 
+                tip: "Inciso XV, alínea 'a': 'O uso do cargo ou função... para obter qualquer favor...'." 
+            },
+            { 
+                topic: "Cap. III - Embriaguez", 
+                text: "Ricardo é um excelente servidor, mas tem o hábito de se embriagar todos os fins de semana em bares próximos ao trabalho, onde é conhecido como funcionário do IBGE, causando escândalos. Segundo o Código:", 
+                options: ["O IBGE não interfere na vida privada.", "A embriaguez só é punível se for durante o expediente.", "É vedado apresentar-se embriagado no serviço ou fora dele habitualmente.", "Ele deve ser transferido de cidade.", "É um problema de saúde pública, não ético."], 
+                correct: 2, 
+                explanation: "A embriaguez habitual, mesmo fora do serviço, fere a imagem da instituição e é vedada.", 
+                tip: "Inciso XV, alínea 'n': 'Apresentar-se embriagado no serviço ou fora dele habitualmente'." 
+            },
+            { 
+                topic: "Cap. III - Conivência", 
+                text: "Carla percebeu que seu colega de mesa estava fraudando o ponto eletrônico, mas decidiu não denunciar para não ser vista como 'dedo-duro'. Ao omitir-se, Carla:", 
+                options: ["Agiu com solidariedade e coleguismo.", "Exerceu seu direito ao silêncio.", "Incidiu na vedação de ser conivente com erro ou infração ao código de ética.", "Protegeu o clima organizacional.", "Não cometeu infração, pois não foi ela quem fraudou."], 
+                correct: 2, 
+                explanation: "A ética proíbe a conivência. O servidor ético não acoberta erros de terceiros.", 
+                tip: "Inciso XV, alínea 'c': 'Ser conivente com erro ou infração...'." 
+            },
+            { 
+                topic: "Cap. III - Solidariedade", 
+                text: "O IBGE recebeu um pedido de colaboração de uma ONG conhecida por práticas fraudulentas e desonestas. O servidor responsável deve:", 
+                options: ["Atender prontamente, pois o IBGE é público.", "Dar o seu concurso (ajuda) a qualquer instituição, independente da fama.", "Negar colaboração, pois é vedado dar concurso a instituição que atente contra a moral e honestidade.", "Cobrar uma taxa extra.", "Pedir propina."], 
+                correct: 2, 
+                explanation: "É vedado colaborar com quem não tem ética.", 
+                tip: "Inciso XV, alínea 'p': 'Dar o seu concurso a qualquer instituição que atente contra a moral...'." 
+            },
+            { 
+                topic: "Cap. III - Alteração de Dados (Específica IBGE)", 
+                text: "Para 'melhorar' os indicadores de escolaridade de um bairro, o Recenseador altera as respostas dos moradores nos questionários já coletados. Essa conduta:", 
+                options: ["É aceitável para valorizar a região.", "Constitui infração grave e vedada: alterar ou deturpar o teor de documentos (dados).", "É um ajuste estatístico padrão.", "Pode ser feita com autorização do prefeito.", "É irrelevante estatisticamente."], 
+                correct: 1, 
+                explanation: "Essa é uma vedação específica e gravíssima do IBGE. A integridade do dado é sagrada.", 
+                tip: "Vedações Específicas do IBGE: 'Alterar ou deturpar o teor de documentos...'." 
+            },
+            { 
+                topic: "Cap. III - Desvio de Servidor", 
+                text: "O Chefe de Setor pede que o APM vá buscar seu filho na escola usando o carro oficial durante o expediente. O APM se recusa. O Chefe cometeu a vedação de:", 
+                options: ["Retirar bens do órgão.", "Desviar servidor público para atendimento a interesse particular.", "Iludir a boa-fé.", "Deixar de utilizar avanços técnicos.", "Pleitear para outrem."], 
+                correct: 1, 
+                explanation: "Servidor público trabalha para o público, não para os interesses privados da chefia.", 
+                tip: "Inciso XV, alínea 'j': 'Desviar servidor público para atendimento a interesse particular'." 
+            },
+
+            // CAPÍTULO IV - COMISSÃO DE ÉTICA (Punições e Procedimentos)
+            { 
+                topic: "Cap. IV - Penalidade", 
+                text: "A Comissão de Ética do IBGE apurou uma infração ética cometida por um servidor efetivo. Após o devido processo, qual é a ÚNICA penalidade que esta Comissão pode aplicar?", 
+                options: ["Demissão.", "Suspensão de até 90 dias.", "Multa.", "Censura.", "Advertência Verbal."], 
+                correct: 3, 
+                explanation: "Cuidado! A Comissão de Ética NÃO demite nem suspende (isso é Processo Administrativo Disciplinar - PAD). A Comissão de Ética só aplica CENSURA.", 
+                tip: "Inciso XVIII: 'A pena aplicável... é a de censura'." 
+            },
+            { 
+                topic: "Cap. IV - Abrangência", 
+                text: "Um estagiário do IBGE, que não recebe remuneração (voluntário), cometeu uma infração ética grave. Ele pode ser julgado pela Comissão de Ética?", 
+                options: ["Não, pois não é servidor concursado.", "Não, pois não recebe salário.", "Sim, pois para fins éticos, todo aquele que presta serviços ao Estado, mesmo sem retribuição, é servidor.", "Sim, mas a pena será convertida em multa.", "Depende da idade dele."], 
+                correct: 2, 
+                explanation: "O conceito de servidor para a ética é o mais amplo possível. Entrou para trabalhar (ganhando ou não), responde ao Código.", 
+                tip: "Inciso XIX: '...ainda que sem retribuição financeira...'." 
+            },
+            { 
+                topic: "Cap. IV - Publicidade da Pena", 
+                text: "Para que a pena de Censura aplicada pela Comissão de Ética tenha validade e eficácia, é requisito indispensável:", 
+                options: ["A publicação em jornal de grande circulação.", "A aprovação do Presidente da República.", "A assinatura do parecer por todos os integrantes da Comissão e a ciência do faltoso.", "O pagamento de fiança.", "A confissão do servidor."], 
+                correct: 2, 
+                explanation: "O processo deve ser formalizado com o parecer assinado e o servidor punido deve ser notificado (ciência).", 
+                tip: "Inciso XVIII: '...parecer, assinado por todos... com ciência do faltoso'." 
+            },
+            { 
+                topic: "Cap. IV - Função", 
+                text: "Além de aplicar a penalidade de censura, a Comissão de Ética do IBGE possui uma função pedagógica importante, que é:", 
+                options: ["Demitir servidores ineficientes.", "Aumentar a produtividade da coleta.", "Orientar e aconselhar sobre a ética profissional no tratamento com as pessoas e o patrimônio público.", "Investigar crimes de corrupção.", "Elaborar as provas do concurso."], 
+                correct: 2, 
+                explanation: "A Comissão não serve só para punir, mas principalmente para orientar e evitar que a falha ocorra.", 
+                tip: "Inciso XVI: '...encarregada de orientar e aconselhar...'." 
+            },
+
+            // QUESTÕES EXTRAS - CONCEITOS E CASOS MISTOS
+            { 
+                topic: "Geral - Escolha de Destino", 
+                text: "Lucas, servidor do IBGE, precisa decidir entre duas opções de transporte para uma equipe: a Opção A é mais barata e legal. A Opção B é mais cara, também legal, mas pertence a um parente dele. Ao escolher a Opção A, Lucas atendeu ao princípio de que:", 
+                options: ["O legal é sempre o mais barato.", "O servidor deve decidir apenas entre o legal e o ilegal.", "O servidor deve decidir entre o honesto e o desonesto, além do conveniente e oportuno.", "Parentes nunca podem prestar serviço.", "O conforto da equipe é prioridade."], 
+                correct: 2, 
+                explanation: "A escolha ética envolve o binômio Legalidade + Honestidade/Conveniência. Escolher o mais caro só para ajudar parente seria desonesto.", 
+                tip: "Regra Deontológica II: '...não terá que decidir somente entre o legal e o ilegal...'." 
+            },
+            { 
+                topic: "Geral - Equilíbrio", 
+                text: "Segundo o Código, para que o ato administrativo seja considerado moralmente válido, não basta que ele seja legal (cumpra a lei fria). É necessário que haja:", 
+                options: ["Aprovação popular.", "Equilíbrio entre a legalidade e a finalidade (bem comum).", "Baixo custo.", "Rapidez na execução.", "Sigilo total."], 
+                correct: 1, 
+                explanation: "O 'Traço de Moralidade' se consolida quando a lei é usada para atingir o bem comum, e não interesses escusos.", 
+                tip: "Regra Deontológica III: '...equilíbrio entre a legalidade e a finalidade...'." 
+            },
+            { 
+                topic: "Deveres - Respeito", 
+                text: "Durante uma reunião tensa, um servidor discorda do chefe e começa a gritar e insultá-lo. O Código de Ética prevê que o servidor deve tratar os colegas e superiores com:", 
+                options: ["Submissão total.", "Urbanidade (educação), disponibilidade e atenção, sem prejuízo de representar contra atos indevidos.", "Indiferença.", "Agressividade se tiver razão.", "Silêncio."], 
+                correct: 1, 
+                explanation: "Pode discordar? Sim. Pode denunciar? Sim. Pode ser mal-educado? Não. Urbanidade é dever.", 
+                tip: "Inciso XIV, alínea 'i' e 'j': 'Tratar cuidadosamente...'" 
+            },
+            { 
+                topic: "Vedações - Erros", 
+                text: "Um servidor cometeu um erro de cálculo que gerou prejuízo. Com medo de represálias, ele alterou os registros para esconder o erro. Essa conduta de alterar documentos é:", 
+                options: ["Uma medida de proteção pessoal.", "Permitida se o prejuízo for pequeno.", "Vedada e considerada infração grave.", "Aceitável se ele repuser o dinheiro.", "Recomendada pelos sindicatos."], 
+                correct: 2, 
+                explanation: "Alterar documentos para esconder erros é fraude. Vedação expressa.", 
+                tip: "Inciso XV (Vedações específicas): 'Alterar ou deturpar o teor de documentos...'." 
+            },
+            { 
+                topic: "Vedações - Tecnologia", 
+                text: "É vedado ao servidor deixar de utilizar os avanços técnicos e científicos ao seu alcance para:", 
+                options: ["Uso pessoal.", "Jogos.", "O atendimento do seu mister (trabalho).", "Venda de produtos.", "Hackear sistemas."], 
+                correct: 2, 
+                explanation: "Se existe uma ferramenta nova que melhora o trabalho (seu mister), você é obrigado eticamente a usá-la. Ficar no método arcaico por teimosia é antiético.", 
+                tip: "Inciso XV, alínea 'o': 'Deixar de utilizar os avanços técnicos...'." 
+            },
+            { 
+                topic: "Deveres - Higiene e Colaboração", 
+                text: "Um servidor deixa restos de comida e sujeira em sua mesa de trabalho, atraindo insetos e incomodando os colegas. Segundo os deveres éticos, ele falhou em:", 
+                options: ["Ser assíduo.", "Manter limpo e em perfeita ordem o local de trabalho.", "Guardar sigilo.", "Respeitar a hierarquia.", "Usar crachá."], 
+                correct: 1, 
+                explanation: "A organização e limpeza do ambiente de trabalho são deveres explícitos no Código.", 
+                tip: "Inciso XIV, alínea 'r': 'Manter limpo e em perfeita ordem o local de trabalho...'." 
+            },
+            { 
+                topic: "Geral - Remuneração", 
+                text: "O Código de Ética lembra que o salário do servidor é pago pelos tributos da sociedade. Isso implica que:", 
+                options: ["O servidor pode trabalhar menos se o imposto baixar.", "O trabalho deve ser entendido como uma obrigação penosa.", "O servidor deve prestar contas e oferecer um serviço de qualidade como contrapartida moral.", "O cidadão pode mandar no servidor individualmente.", "O servidor não precisa pagar impostos."], 
+                correct: 2, 
+                explanation: "Se o povo paga, o povo merece retorno de qualidade. É o fundamento moral da remuneração.", 
+                tip: "Regra Deontológica IV: 'A remuneração... é custeada pelos tributos...'." 
+            },
+            { 
+                topic: "Comissão - Promoção", 
+                text: "A Comissão de Ética pode fornecer os registros funcionais (censuras ou elogios éticos) para:", 
+                options: ["A imprensa divulgar.", "O banco analisar crédito.", "Instruir e fundamentar promoções e procedimentos da carreira.", "Os familiares do servidor.", "Empresas de marketing."], 
+                correct: 2, 
+                explanation: "Se você é ético, ganha pontos para ser promovido. Se foi censurado, perde pontos. A Comissão fornece esses dados para o RH.", 
+                tip: "Inciso XVII: '...para o efeito de instruir e fundamentar promoções...'." 
+            },
+            { 
+                topic: "Vedações - Procrastinação", 
+                text: "Deixar para fazer amanhã o que se pode fazer hoje, acumulando pilhas de processos e prejudicando o direito do cidadão à rapidez, fere o dever de:", 
+                options: ["Ser criativo.", "Exercer com estrita moderação as prerrogativas.", "Ser assíduo e frequente.", "Exercer suas atribuições com rapidez, perfeição e rendimento, sem procrastinação.", "Apresentar-se bem vestido."], 
+                correct: 3, 
+                explanation: "Procrastinar (enrolar) causa dano moral ao cidadão e dano financeiro ao Estado.", 
+                tip: "Inciso XIV, alínea 'a': 'Desempenhar, a tempo, as atribuições...'" 
+            },
+            { 
+                topic: "Vedações - Embriaguez", 
+                text: "A vedação à embriaguez no Código de Ética abrange:", 
+                options: ["Apenas o horário de expediente.", "Apenas dentro das dependências do órgão.", "Apresentar-se embriagado no serviço ou fora dele habitualmente.", "Apenas se o servidor for motorista.", "Apenas bebidas destiladas."], 
+                correct: 2, 
+                explanation: "A regra pega pesado: não pode chegar bêbado no serviço E TAMBÉM não pode ser um bêbado habitual na rua, pois isso queima o filme da instituição.", 
+                tip: "Inciso XV, alínea 'n'." 
+            }
+        ];
+
+        // --- LÓGICA DO QUIZ ---
+        let currentQ = 0;
+        let score = 0;
+        let answered = false;
+        
+        // CHAVE NOVA PARA LIMPAR O CACHE DE QUESTÕES ANTIGAS
+        const STORAGE_KEY = 'quiz_etica_fgv_v3'; 
+
+        function initQuiz() {
+            const savedState = localStorage.getItem(STORAGE_KEY);
+            if (savedState) {
+                const data = JSON.parse(savedState);
+                // Verifica se o tamanho do array salvo é compatível (para evitar bugs de versões antigas)
+                if(data.questions && data.questions.length === questoesEtica.length) {
+                    questions = data.questions;
+                    currentQ = data.currentQ;
+                    score = data.score;
+                } else {
+                    startNewGame();
+                }
+                
+                if (currentQ >= questions.length) { resetQuiz(); return; }
+            } else {
+                startNewGame();
+            }
+            renderQuestion();
+            updateScoreDisplay();
+        }
+
+        function startNewGame() {
+            questions = [...questoesEtica]; 
+            shuffleArray(questions);
+            currentQ = 0;
+            score = 0;
+            saveState();
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function saveState() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify({ questions, currentQ, score }));
+        }
+
+        function resetQuiz() {
+            localStorage.removeItem(STORAGE_KEY);
+            location.reload();
+        }
+
+        function renderQuestion() {
+            answered = false;
+            if (currentQ >= questions.length) { showFinalResult(); return; }
+            
+            const q = questions[currentQ];
+            document.getElementById('q-counter').textContent = `Q${currentQ + 1} / ${questions.length}`;
+            document.getElementById('progress-bar').style.width = `${((currentQ) / questions.length) * 100}%`;
+            document.getElementById('topic-tag').textContent = q.topic;
+            document.getElementById('question-text').textContent = q.text;
+            
+            const optsContainer = document.getElementById('options-container');
+            optsContainer.innerHTML = '';
+            document.getElementById('feedback-area').classList.add('hidden');
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl border-2 border-transparent bg-gray-700 hover:bg-gray-600 border-gray-600 shadow-sm transition-all flex items-center group relative overflow-hidden transform hover:-translate-y-0.5";
+                btn.onclick = () => check(idx, btn);
+                btn.innerHTML = `
+                    <div class="z-10 flex items-center w-full">
+                        <span class="w-10 h-10 rounded-full bg-gray-800 text-yellow-500 font-bold flex items-center justify-center mr-4 text-base group-hover:bg-yellow-500 group-hover:text-gray-900 transition-all duration-300 shadow-sm border border-gray-600">${String.fromCharCode(65+idx)}</span>
+                        <span class="text-gray-200 font-medium text-lg group-hover:text-white transition-colors">${opt}</span>
+                    </div>
+                `;
+                optsContainer.appendChild(btn);
+            });
+        }
+
+        function check(idx, btn) {
+            if (answered) return;
+            answered = true;
+
+            const q = questions[currentQ];
+            const isCorrect = (idx === q.correct);
+            const allBtns = document.getElementById('options-container').querySelectorAll('button');
+            
+            allBtns.forEach(b => {
+                b.disabled = true;
+                b.classList.add('opacity-50', 'cursor-not-allowed');
+                b.classList.remove('hover:bg-gray-600', 'hover:-translate-y-0.5');
+            });
+
+            if (isCorrect) {
+                score++;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed', 'bg-gray-700', 'border-gray-600');
+                btn.classList.add('bg-green-900', 'border-green-500', 'correct-anim', 'opacity-100');
+                btn.querySelector('span:first-child').classList.replace('bg-gray-800', 'bg-green-500');
+                btn.querySelector('span:first-child').classList.replace('text-yellow-500', 'text-white');
+                btn.querySelector('span:first-child').classList.remove('border-gray-600');
+                
+                document.getElementById('feedback-title').textContent = "Correto!";
+                document.getElementById('feedback-title').className = "text-green-400 font-bold text-xl mb-2";
+                document.getElementById('feedback-icon').innerHTML = '<i class="fas fa-check-circle text-green-500"></i>';
+            } else {
+                btn.classList.remove('opacity-50', 'cursor-not-allowed', 'bg-gray-700', 'border-gray-600');
+                btn.classList.add('bg-red-900', 'border-red-500', 'wrong-anim', 'opacity-100');
+                btn.querySelector('span:first-child').classList.replace('bg-gray-800', 'bg-red-500');
+                btn.querySelector('span:first-child').classList.replace('text-yellow-500', 'text-white');
+                
+                // Show correct
+                const correctBtn = allBtns[q.correct];
+                correctBtn.classList.remove('opacity-50', 'cursor-not-allowed', 'bg-gray-700', 'border-gray-600');
+                correctBtn.classList.add('bg-green-900', 'border-green-500', 'ring-2', 'ring-green-400', 'opacity-100');
+                correctBtn.querySelector('span:first-child').classList.replace('bg-gray-800', 'bg-green-500');
+                correctBtn.querySelector('span:first-child').classList.replace('text-yellow-500', 'text-white');
+
+                document.getElementById('feedback-title').textContent = "Incorreto";
+                document.getElementById('feedback-title').className = "text-red-400 font-bold text-xl mb-2";
+                document.getElementById('feedback-icon').innerHTML = '<i class="fas fa-times-circle text-red-500"></i>';
+            }
+            saveState();
+            updateScoreDisplay();
+            document.getElementById('feedback-text').innerHTML = q.explanation;
+            document.getElementById('feedback-tip').textContent = q.tip;
+            document.getElementById('feedback-area').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            if (currentQ < questions.length - 1) {
+                currentQ++;
+                saveState();
+                renderQuestion();
+            } else {
+                showFinalResult();
+            }
+        }
+
+        function updateScoreDisplay() {
+            document.getElementById('score-display').textContent = `${score}/${questions.length}`;
+        }
+
+        function showFinalResult() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('results-card').classList.remove('hidden');
+            localStorage.removeItem(STORAGE_KEY);
+            
+            const percent = Math.round((score / questions.length) * 100);
+            document.getElementById('final-score').textContent = `${percent}%`;
+            
+            const msgDiv = document.getElementById('final-msg');
+            if (percent >= 80) {
+                msgDiv.innerHTML = `<strong class="text-green-400 block text-lg mb-2">Aprovado!</strong> Você tem perfil ético para o IBGE.`;
+            } else {
+                msgDiv.innerHTML = `<strong class="text-red-400 block text-lg mb-2">Cuidado!</strong> Questões situacionais exigem atenção. Revise os conceitos.`;
+            }
+        }
+
+        initQuiz();
+    </script>
+</body>
+</html>
