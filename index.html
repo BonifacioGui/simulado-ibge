@@ -183,30 +183,168 @@
         // =========================================================
 
         const questions = [
-            // BLOCO 1: NÍVEL INTERMEDIÁRIO
-            { topic: "Cartografia: Fuso Horário + Viagem", text: "Um empresário sai de Fernando de Noronha (Fuso -2 GMT) às 08:00 (horário local) em voo de 4h para Manaus (Fuso -4 GMT). Hora da chegada em Manaus:", options: ["08:00", "10:00", "12:00", "06:00", "14:00"], correct: 1, explanation: "Noronha (-2) para Manaus (-4) = -2h de diferença. Sai 08:00 (Noronha) = 06:00 (Manaus). +4h viagem = <strong>10:00</strong>.", tip: "Ajuste o fuso ANTES de somar o tempo de voo." },
-            { topic: "Geografia Urbana: RIDE vs RM", text: "A RIDE (Região Integrada de Desenvolvimento) difere de uma Região Metropolitana comum por:", options: ["Ser privada.", "Não ter conurbação.", "Englobar municípios de mais de um estado, exigindo lei federal.", "Ser rural.", "Ser espontânea."], correct: 2, explanation: "RIDE envolve mais de uma UF (ex: DF + GO + MG). RM fica dentro de um só estado.", tip: "RIDE = Interestadual." },
-            { topic: "Demografia: Migrações Recentes", text: "Morar no interior e trabalhar na capital alguns dias da semana (home office híbrido) é uma forma de:", options: ["Êxodo Urbano", "Migração Sazonal", "Transumância", "Pendularidade de Longa Distância", "Nomadismo"], correct: 3, explanation: "É uma evolução da pendularidade diária, permitindo distâncias maiores.", tip: "Êxodo é sair de vez. Pendular é ir e voltar." },
-            { topic: "Geografia Agrária: Estrutura Fundiária", text: "Se 1% das propriedades ocupam 50% da área total, isso indica:", options: ["Produtividade", "Sustentabilidade", "Concentração Fundiária", "Agricultura Familiar", "Reforma Agrária"], correct: 2, explanation: "Muita terra na mão de poucos = Concentração Fundiária (Latifúndio).", tip: "Gini da terra alto." },
-            { topic: "Cartografia: Curvas de Nível", text: "Curvas de nível muito próximas umas das outras no mapa indicam:", options: ["Terreno plano.", "Subida íngreme/escarpa.", "Terreno suave.", "Rio largo.", "Praia."], correct: 1, explanation: "Curvas juntas = Altura muda rápido = Pirambeira.", tip: "Juntas = Parede. Afastadas = Plano." },
-            { topic: "Urbanização: Hierarquia", text: "Cidades como Ribeirão Preto (SP) e Londrina (PR), grandes e influentes mas não capitais, são classificadas como:", options: ["Centros Locais", "Metrópoles", "Capitais Regionais", "Vilas", "Centros de Zona"], correct: 2, explanation: "Comandam uma região sem serem metrópoles nacionais.", tip: "Abaixo da Metrópole vem a Capital Regional." },
-            { topic: "Geografia Econômica: Logística", text: "O principal gargalo logístico do 'Custo Brasil' é:", options: ["Excesso de trens.", "Dependência do transporte rodoviário (caminhão) para longas distâncias.", "Falta de portos.", "Uso de avião para soja.", "Falta de estradas no Sudeste."], correct: 1, explanation: "Caminhão é caro para longa distância. Brasil usa caminhão demais.", tip: "Rodoviarismo = Frete caro." },
-            { topic: "Meio Ambiente: Código Florestal", text: "Vegetação nativa preservada obrigatoriamente às margens de rios é:", options: ["Reserva Legal", "Área de Preservação Permanente (APP)", "Unidade de Conservação", "Terra Devoluta", "Latifúndio"], correct: 1, explanation: "Beira de rio, topo de morro = APP. Reserva Legal é % da fazenda, em qualquer lugar.", tip: "APP protege o recurso hídrico." },
-            { topic: "Demografia: Fecundidade", text: "Se a Taxa de Fecundidade ficar abaixo de 2,1 por muito tempo, a população:", options: ["Cresce para sempre.", "Envelhece e eventualmente diminui.", "Mortalidade zera.", "Mais crianças.", "Menos vida."], correct: 1, explanation: "2,1 é a reposição. Menos que isso, a próxima geração é menor que a atual.", tip: "Abaixo de 2,1 = Encolhimento futuro." },
-            { topic: "Geografia Regional: Nordeste", text: "Sub-região de transição entre Sertão e Amazônia (Mata dos Cocais):", options: ["Zona da Mata", "Agreste", "Meio-Norte", "Polígono", "Recôncavo"], correct: 2, explanation: "Maranhão e Piauí = Meio-Norte = Transição úmida.", tip: "Entre o seco e a floresta." },
-            
-            // BLOCO 2
-            { topic: "Física: Climatologia", text: "No inverno, o fenômeno da 'Friagem' atinge a Amazônia Ocidental (Rondônia/Acre), derrubando a temperatura bruscamente. Esse fenômeno é causado pela atuação da:", options: ["Massa Equatorial Continental (quente)", "Massa Tropical Atlântica (úmida)", "Massa Polar Atlântica (fria)", "Corrente de Humboldt", "El Niño"], correct: 2, explanation: "A Massa Polar Atlântica (mPa) entra pelo sul e consegue chegar até a Amazônia pelos corredores de planície, causando o choque térmico.", tip: "Friagem na Amazônia = Culpa da Massa Polar." },
-            { topic: "Cartografia: Anamorfose", text: "Um mapa onde os países aparecem 'deformados', com o Japão desenhado maior que o Brasil para representar seu PIB elevado, é um exemplo de:", options: ["Projeção de Mercator", "Projeção de Peters", "Mapa de Curvas de Nível", "Anamorfose Geográfica", "Cartograma Topográfico"], correct: 3, explanation: "Anamorfose distorce a forma para que o tamanho da área seja proporcional ao dado (PIB, População, etc), não à realidade física.", tip: "Mapa gordo/magro distorcido = Anamorfose." },
-            { topic: "Geografia Urbana: Segregação", text: "A construção de grandes condomínios fechados distantes do centro, que obrigam o poder público a levar infraestrutura exclusiva para lá, enquanto áreas vizinhas permanecem carentes, é um exemplo de:", options: ["Autossegregação ou Segregação Voluntária", "Favelização", "Cortiço", "Gentrificação Central", "Reforma Urbana"], correct: 0, explanation: "Ricos se isolando em 'bolhas' fechadas (muros) é autossegregação. A gentrificação geralmente expulsa pobres de áreas abertas que se valorizaram.", tip: "Condomínio Fechado = Autossegregação." },
-            { topic: "Indústria: Guerra Fiscal", text: "A chamada 'Guerra dos Lugares' ou 'Guerra Fiscal' no Brasil recente envolve:", options: ["Disputa armada por territórios.", "Municípios e Estados oferecendo isenção de impostos para atrair fábricas.", "Conflito entre agricultores e indígenas.", "Briga entre Metrópoles por verbas federais.", "Disputa por água no Nordeste."], correct: 1, explanation: "É a competição para ver quem dá mais desconto de imposto (ICMS/ISS) para uma fábrica se instalar lá. Gera desconcentração industrial.", tip: "Fábrica vai onde paga menos imposto." },
-            { topic: "Hidrografia: Bacias", text: "A maior bacia hidrográfica *totalmente* brasileira (que nasce e foz no Brasil), vital para a irrigação e energia no Nordeste e Sudeste, é a do:", options: ["Rio Amazonas", "Rio Paraná", "Rio São Francisco", "Rio Tocantins-Araguaia", "Rio Paraguai"], correct: 3, explanation: "Cuidado! O São Francisco é importante, mas a Bacia Tocantins-Araguaia é a maior *totalmente* brasileira em volume e área.", tip: "Amazonas e Paraná são internacionais. Tocantins-Araguaia é a gigante 100% BR." },
-            { topic: "População: IDH", text: "O Índice de Desenvolvimento Humano (IDH) é composto por três pilares básicos. São eles:", options: ["Segurança, Saúde e Renda", "Educação, Longevidade (Saúde) e Renda", "Educação, Meio Ambiente e Democracia", "PIB, Inflação e Desemprego", "Natalidade, Mortalidade e Migração"], correct: 1, explanation: "IDH = Vida Longa (Saúde) + Conhecimento (Educação) + Padrão de Vida (Renda per capita).", tip: "Saúde, Escola e Dinheiro." },
-            { topic: "Física: Relevo e Solo", text: "A 'Terra Roxa', solo extremamente fértil encontrado no interior de SP e PR, que impulsionou o café no passado, é resultado da decomposição de qual tipo de rocha?", options: ["Granito", "Calcário", "Basalto (Vulcânica)", "Arenito", "Mármore"], correct: 2, explanation: "Derrame vulcânico antigo -> Rocha Basalto -> Intemperismo -> Terra Roxa (Fértil).", tip: "Terra Roxa = Basalto (Vulcão)." },
-            { topic: "Cartografia: Símbolos", text: "Em um mapa, as convenções cartográficas utilizam cores padrão. A cor AZUL é reservada universalmente para representar:", options: ["Vegetação", "Áreas Urbanas", "Hidrografia (rios, lagos, mares)", "Rodovias", "Relevo (altitudes)"], correct: 2, explanation: "Regra básica universal: Água é sempre azul nos mapas.", tip: "Azul = Água. Verde = Baixa altitude/Vegetação. Marrom = Alta altitude." },
-            { topic: "Censo: Recenseador", text: "Durante a coleta, se o Recenseador encontra um domicílio onde os moradores estão ausentes após várias tentativas, ele deve:", options: ["Inventar os dados baseados no vizinho.", "Deixar um recado/notificação para agendar a entrevista ou permitir coleta por internet/telefone.", "Ignorar o domicílio.", "Perguntar ao porteiro todos os dados pessoais.", "Marcar como 'Vago'."], correct: 1, explanation: "O recenseador deve esgotar as tentativas e deixar folha de recado. Jamais inventar ou pegar dados sigilosos com terceiros (porteiro).", tip: "Nunca invente dados. O vizinho não responde pelo morador." },
-            { topic: "Geografia Agrária: Commodities", text: "Produtos primários (minérios, grãos) produzidos em larga escala, com padrão de qualidade global e preços definidos em bolsas de valores internacionais, são chamados de:", options: ["Manufaturados", "Commodities", "Bens de Capital", "Royalties", "Subsídios"], correct: 1, explanation: "Soja, Ferro, Petróleo = Commodities. O preço é decidido em Chicago ou Londres, não pelo fazendeiro.", tip: "Produto básico exportado = Commodity." }
-        ];
+        { 
+            topic: "Cartografia: Fuso Horário + Viagem", 
+            text: "Um empresário sai de Fernando de Noronha (Fuso -2 GMT) às 08:00 (horário local) em voo de 4h de duração para Manaus (Fuso -4 GMT). Qual será o horário local de chegada em Manaus?", 
+            options: ["08:00", "10:00", "12:00", "06:00", "14:00"], 
+            correct: 1, 
+            explanation: "1. Diferença de fuso: Noronha (-2) para Manaus (-4) = -2 horas. <br>2. Ajuste o relógio na saída: 08:00 em Noronha são 06:00 em Manaus. <br>3. Some a viagem: 06:00 + 4h de voo = <strong>10:00</strong>. ", 
+            tip: "Ajuste o fuso ANTES de somar o tempo de voo." 
+        },
+        { 
+            topic: "Geografia Urbana: RIDE vs RM", 
+            text: "A RIDE (Região Integrada de Desenvolvimento) difere juridicamente de uma Região Metropolitana (RM) comum por:", 
+            options: ["Ser gerida exclusivamente pela iniciativa privada.", "Não apresentar o fenômeno da conurbação.", "Englobar municípios de mais de uma Unidade da Federação, exigindo lei complementar federal.", "Ser destinada apenas a áreas rurais de preservação.", "Ser criada automaticamente quando a população atinge 1 milhão."], 
+            correct: 2, 
+            explanation: "RM é criada pelo Estado (municípios vizinhos do mesmo estado). RIDE envolve mais de um estado (ex: DF + GO + MG) e precisa do Governo Federal.", 
+            tip: "RIDE = Interestadual (Federal). RM = Estadual." 
+        },
+        { 
+            topic: "Demografia: Migrações Recentes", 
+            text: "O fenômeno de profissionais que residem em cidades do interior (com melhor qualidade de vida) e se deslocam para a capital apenas uma ou duas vezes na semana para reuniões presenciais é classificado como:", 
+            options: ["Êxodo Rural Reverso", "Migração Sazonal", "Transumância", "Pendularidade de Longa Distância (ou Expandida)", "Migração de Retorno"], 
+            correct: 3, 
+            explanation: "É uma evolução da pendularidade diária. Graças ao trabalho híbrido, a pessoa pode morar longe e 'pendular' com menos frequência, mas cobrindo distâncias maiores.", 
+            tip: "Vai e volta (mesmo que longe) = Pendular." 
+        },
+        { 
+            topic: "Geografia Agrária: Estrutura Fundiária", 
+            text: "Dados do Censo Agropecuário mostram que cerca de 1% das propriedades rurais ocupam quase 50% da área total agricultável do Brasil. Esse indicador demonstra:", 
+            options: ["Alta equidade na distribuição de terras.", "Predomínio absoluto da Agricultura Familiar.", "Elevada Concentração Fundiária.", "Sucesso da Reforma Agrária.", "Baixa produtividade dos latifúndios modernos."], 
+            correct: 2, 
+            explanation: "Muita terra na mão de poucos = Concentração Fundiária. O Índice de Gini da terra no Brasil é altíssimo. ", 
+            tip: "1% dono de 50% = Concentração." 
+        },
+        { 
+            topic: "Cartografia: Curvas de Nível", 
+            text: "Em uma carta topográfica, ao observar que as linhas das curvas de nível estão desenhadas muito próximas umas das outras, o leitor deve interpretar que o terreno:", 
+            options: ["É uma planície aluvial.", "Apresenta declividade acentuada (escarpa ou pirambeira).", "É um planalto tabular plano.", "Possui um rio largo e navegável.", "É uma depressão absoluta."], 
+            correct: 1, 
+            explanation: "Curvas juntas = A altura muda rápido em pouca distância = Parede/Morro íngreme. Curvas afastadas = Plano. ", 
+            tip: "Juntas = Parede. Afastadas = Plano." 
+        },
+        { 
+            topic: "Urbanização: Hierarquia", 
+            text: "Cidades como Ribeirão Preto (SP) e Londrina (PR), que possuem ampla oferta de serviços, universidades e hospitais, influenciando uma vasta região sem serem capitais estaduais, são classificadas pelo IBGE como:", 
+            options: ["Centros Locais", "Metrópoles Nacionais", "Capitais Regionais", "Vilas Urbanas", "Centros de Zona A"], 
+            correct: 2, 
+            explanation: "Elas comandam uma região e têm serviços de metrópole, mas não têm o porte ou influência nacional de uma Metrópole. São Capitais Regionais.", 
+            tip: "Abaixo da Metrópole vem a Capital Regional." 
+        },
+        { 
+            topic: "Geografia Econômica: Logística", 
+            text: "Um dos principais gargalos do chamado 'Custo Brasil' é o desequilíbrio da matriz de transportes, caracterizado pelo:", 
+            options: ["Excesso de hidrovias subutilizadas na Amazônia.", "Dependência excessiva do transporte rodoviário para cargas de longa distância e baixo valor agregado.", "Uso predominante de ferrovias para transporte de passageiros.", "Alto custo do transporte aéreo para commodities agrícolas.", "Falta de rodovias na região Sudeste."], 
+            correct: 1, 
+            explanation: "Caminhão é ótimo para 'porta a porta', mas péssimo e caro para levar soja do Mato Grosso até o porto de Santos. O Brasil usa caminhão demais.", 
+            tip: "Rodoviarismo = Frete caro." 
+        },
+        { 
+            topic: "Meio Ambiente: Código Florestal", 
+            text: "Segundo o Código Florestal, a faixa de vegetação nativa que deve ser obrigatoriamente preservada às margens de rios, lagos e topos de morro para proteger o solo e a água é classificada como:", 
+            options: ["Reserva Legal (RL)", "Área de Preservação Permanente (APP)", "Unidade de Uso Sustentável", "Terra Devoluta", "Parque Nacional"], 
+            correct: 1, 
+            explanation: "Beira de rio e topo de morro = APP (Preservação Permanente). Reserva Legal é uma porcentagem (ex: 20% ou 80%) da fazenda que deve ser mantida, mas pode ser em qualquer lugar do imóvel.", 
+            tip: "APP protege o recurso hídrico (Rio)." 
+        },
+        { 
+            topic: "Demografia: Fecundidade", 
+            text: "Se a Taxa de Fecundidade de um país permanecer abaixo de 2,1 filhos por mulher por um longo período, a consequência demográfica a médio/longo prazo será:", 
+            options: ["Explosão demográfica incontrolável.", "Envelhecimento da população e redução da População Economicamente Ativa (PEA).", "Redução imediata da expectativa de vida.", "Aumento da taxa de mortalidade infantil.", "Estabilização da pirâmide com base larga."], 
+            correct: 1, 
+            explanation: "2,1 é a taxa de reposição. Se nasce menos que isso, falta jovem para trabalhar e sobra idoso para aposentar no futuro.", 
+            tip: "Abaixo de 2,1 = Encolhimento futuro e Envelhecimento." 
+        },
+        { 
+            topic: "Geografia Regional: Nordeste", 
+            text: "O Nordeste possui quatro sub-regiões. A faixa de transição entre o Sertão semiárido e a Amazônia úmida, caracterizada pela presença da Mata dos Cocais (Babaçu e Carnaúba), é o:", 
+            options: ["Zona da Mata", "Agreste", "Meio-Norte", "Polígono das Secas", "Recôncavo Baiano"], 
+            correct: 2, 
+            explanation: "Maranhão e Piauí formam o Meio-Norte. É a transição do seco para a floresta. ", 
+            tip: "Entre o seco e a floresta = Meio-Norte." 
+        },
+        
+        { 
+            topic: "Física: Climatologia", 
+            text: "No inverno, o fenômeno da 'Friagem' atinge a Amazônia Ocidental (Rondônia/Acre/Sul do AM), derrubando a temperatura bruscamente. Esse fenômeno é causado pela atuação da:", 
+            options: ["Massa Equatorial Continental (mEc)", "Massa Tropical Atlântica (mTa)", "Massa Polar Atlântica (mPa)", "Corrente de Humboldt", "Oscilação Sul do El Niño"], 
+            correct: 2, 
+            explanation: "A Massa Polar Atlântica (mPa) entra pelo sul do Brasil e consegue chegar até a linha do Equador pelos corredores de planície (Pantanal), causando o choque térmico na selva quente. ", 
+            tip: "Friagem na Amazônia = Culpa da Massa Polar." 
+        },
+        { 
+            topic: "Cartografia: Anamorfose", 
+            text: "Um mapa onde os países aparecem 'deformados', com o Japão desenhado muito maior que o Brasil para representar seu PIB elevado (e não seu tamanho real), é um exemplo de:", 
+            options: ["Projeção de Mercator", "Projeção de Peters", "Curvas de Nível Hipsométricas", "Anamorfose Geográfica", "Cartograma Topográfico"], 
+            correct: 3, 
+            explanation: "Anamorfose distorce a forma para que o tamanho da área seja proporcional ao dado estatístico (PIB, População, etc), ignorando a realidade física territorial. ", 
+            tip: "Mapa gordo/magro distorcido = Anamorfose." 
+        },
+        { 
+            topic: "Geografia Urbana: Segregação", 
+            text: "A construção de grandes condomínios fechados (enclaves fortificados) distantes do centro, obrigando o Estado a levar infraestrutura exclusiva para lá, é um exemplo de:", 
+            options: ["Autossegregação (ou Segregação Voluntária)", "Favelização Periférica", "Cortiço Central", "Gentrificação de áreas degradadas", "Reforma Urbana Inclusiva"], 
+            correct: 0, 
+            explanation: "Ricos se isolando em 'bolhas' fechadas (muros) é autossegregação. Difere da gentrificação, que é a expulsão de pobres de bairros abertos que se valorizaram.", 
+            tip: "Condomínio Fechado = Autossegregação." 
+        },
+        { 
+            topic: "Indústria: Guerra Fiscal", 
+            text: "A chamada 'Guerra dos Lugares' ou 'Guerra Fiscal' no Brasil recente envolve:", 
+            options: ["Conflitos fronteiriços entre estados por limites territoriais.", "Municípios e Estados oferecendo isenção de impostos (ICMS/ISS) e terrenos para atrair fábricas.", "Disputa entre agricultores e indígenas por terras produtivas.", "Competição entre Metrópoles por verbas federais de saúde.", "Disputa pelo controle dos recursos hídricos no Nordeste."], 
+            correct: 1, 
+            explanation: "É a competição para ver quem dá mais desconto de imposto para uma fábrica se instalar lá. Gera desconcentração industrial (fábricas saindo de SP indo para o Nordeste/Centro-Oeste).", 
+            tip: "Fábrica vai onde paga menos imposto." 
+        },
+        { 
+            topic: "Hidrografia: Bacias", 
+            text: "A maior bacia hidrográfica *totalmente* brasileira (que nasce e foz no Brasil), vital para a irrigação e geração de energia (UHE Tucuruí), é a do:", 
+            options: ["Rio Amazonas", "Rio Paraná", "Rio São Francisco", "Rio Tocantins-Araguaia", "Rio Paraguai"], 
+            correct: 3, 
+            explanation: "Pegadinha clássica! O Amazonas é o maior, mas nasce no Peru. O Paraná nasce no Brasil, mas vai para a Argentina. O Tocantins-Araguaia é a gigante 100% nacional. ", 
+            tip: "Amazonas e Paraná são internacionais. Tocantins-Araguaia é a gigante 100% BR." 
+        },
+        { 
+            topic: "População: IDH", 
+            text: "O Índice de Desenvolvimento Humano (IDH), medido pela ONU, é um indicador composto por três pilares básicos:", 
+            options: ["Segurança Pública, Saúde e Renda", "Educação (Alfabetização/Escolaridade), Longevidade (Saúde) e Renda (PIB per capita)", "Educação, Meio Ambiente e Democracia", "PIB, Inflação e Desemprego", "Taxa de Natalidade, Mortalidade e Saldo Migratório"], 
+            correct: 1, 
+            explanation: "IDH = Vida Longa (Saúde) + Conhecimento (Educação) + Padrão de Vida (Renda). Segurança e Democracia NÃO entram na conta.", 
+            tip: "Saúde, Escola e Dinheiro." 
+        },
+        { 
+            topic: "Física: Relevo e Solo", 
+            text: "A 'Terra Roxa', solo avermelhado e extremamente fértil encontrado no interior de SP e PR, que impulsionou o ciclo do café, é resultado da decomposição de qual tipo de rocha?", 
+            options: ["Granito (Cristalina)", "Calcário (Sedimentar)", "Basalto (Vulcânica/Magmática)", "Arenito (Sedimentar)", "Mármore (Metamórfica)"], 
+            correct: 2, 
+            explanation: "Derrame vulcânico antigo na Bacia do Paraná -> Rocha Basalto -> Intemperismo -> Terra Roxa (Fértil). ", 
+            tip: "Terra Roxa = Basalto (Vulcão)." 
+        },
+        { 
+            topic: "Cartografia: Símbolos", 
+            text: "Em um mapa físico ou topográfico, as convenções cartográficas internacionais reservam a cor AZUL exclusivamente para representar:", 
+            options: ["Vegetação densa", "Áreas Urbanizadas e industriais", "Hidrografia (rios, lagos, mares, áreas alagadas)", "Rodovias pavimentadas", "Relevo de altas altitudes"], 
+            correct: 2, 
+            explanation: "Regra básica universal: Água é sempre azul nos mapas. Verde é vegetação/planície. Marrom é montanha.", 
+            tip: "Azul = Água." 
+        },
+        { 
+            topic: "Censo: Recenseador", 
+            text: "Durante a coleta, se o Recenseador encontra um domicílio onde os moradores estão ausentes após a primeira tentativa, ele deve:", 
+            options: ["Utilizar os dados do Censo anterior para preencher.", "Deixar uma 'Folha de Recado' para agendar a entrevista ou permitir a coleta por internet/telefone e retornar em outro horário.", "Ignorar o domicílio e passar para o próximo setor.", "Perguntar ao porteiro ou vizinho os dados pessoais dos moradores.", "Classificar imediatamente como 'Domicílio de Uso Ocasional'."], 
+            correct: 1, 
+            explanation: "O recenseador deve realizar novas tentativas em horários alternados e deixar folha de recado. Jamais inventar, copiar dados antigos ou pegar dados sigilosos com terceiros (porteiro).", 
+            tip: "Nunca invente dados. O vizinho não responde pelo morador." 
+        },
+        { 
+            topic: "Geografia Agrária: Commodities", 
+            text: "Produtos primários (minérios, grãos) produzidos em larga escala, com padrão de qualidade global e preços definidos em bolsas de valores internacionais (não pelo produtor), são chamados de:", 
+            options: ["Manufaturados", "Commodities", "Bens de Capital", "Royalties", "Subsídios Agrícolas"], 
+            correct: 1, 
+            explanation: "Soja, Ferro, Petróleo = Commodities. O preço é decidido nas bolsas de Chicago ou Londres, variando com o dólar.", 
+            tip: "Produto básico exportado = Commodity." 
+        }
+    ];
 
         const questoesLote1 = [
         { 
@@ -222,7 +360,7 @@
             text: "Em uma carta topográfica, você observa curvas de nível formando círculos concêntricos, onde os valores de altitude diminuem da periferia para o centro. Essa forma de relevo representa:", 
             options: ["Um morro ou colina", "Uma depressão ou cratera", "Uma planície aluvial", "Uma escarpa", "Um divisor de águas"], 
             correct: 1, 
-            explanation: "Se a altitude diminui indo para o meio, é um buraco (depressão). Se aumentasse, seria um morro.", 
+            explanation: "Se a altitude diminui indo para o meio, é um buraco (depressão). Se aumentasse (o centro fosse mais alto), seria um morro. ", 
             tip: "Círculos fechados = Cume ou Buraco. Olhe os números." 
         },
         { 
@@ -230,7 +368,7 @@
             text: "A Projeção de Peters é frequentemente contraposta à de Mercator por ter um viés 'terceiro-mundista'. Sua principal característica técnica é ser:", 
             options: ["Equidistante", "Conforme", "Equivalente", "Afilática", "Azimutal"], 
             correct: 2, 
-            explanation: "Peters mantém as ÁREAS (tamanhos) reais, realçando os países pobres do sul, mas distorce as formas (ficam esticados). Isso é ser <strong>Equivalente</strong>.", 
+            explanation: "Peters mantém as ÁREAS (tamanhos) reais, realçando os países pobres do sul, mas distorce as formas (ficam esticados). Isso é ser <strong>Equivalente</strong>. ", 
             tip: "Peters = Tamanho certo, Forma errada." 
         },
         { 
@@ -238,7 +376,7 @@
             text: "Um jogo de futebol começa às 21h em Londres (GMT 0). Que horas os torcedores no Rio Branco, Acre (GMT -5), devem ligar a TV para assistir ao início do jogo (considerando horário padrão)?", 
             options: ["16h", "17h", "18h", "02h do dia seguinte", "19h"], 
             correct: 0, 
-            explanation: "Londres (0) para Acre (-5) = 5 horas a menos. <br>21h - 5h = <strong>16h</strong>.", 
+            explanation: "Londres (0) para Acre (-5) = 5 horas a menos de diferença. <br>21h - 5h = <strong>16h</strong>. ", 
             tip: "Para Oeste, diminui a hora." 
         },
         { 
@@ -254,7 +392,7 @@
             text: "O Brasil não possui vulcões ativos ou grandes terremotos porque seu território está localizado:", 
             options: ["Na borda da Placa Sul-Americana", "No centro da Placa Sul-Americana (intraplaca)", "Sobre uma zona de subducção", "No Círculo de Fogo do Pacífico", "Em uma área de dobramentos modernos"], 
             correct: 1, 
-            explanation: "Estamos no meio da placa, longe das bordas onde ocorrem os choques (Andes) ou separações (Atlântico). Isso garante estabilidade tectônica.", 
+            explanation: "Estamos no meio da placa, longe das bordas onde ocorrem os choques (Andes) ou separações (Atlântico). Isso garante estabilidade tectônica. ", 
             tip: "Brasil = Centro da Placa = Estável." 
         },
         { 
@@ -270,7 +408,7 @@
             text: "O regime de alimentação dos rios brasileiros é, em sua esmagadora maioria:", 
             options: ["Nival (derretimento de neve)", "Pluvial (chuvas)", "Glacial (geleiras)", "Misto (neve + chuva)", "Subterrâneo exclusivo"], 
             correct: 1, 
-            explanation: "Nossos rios enchem quando chove. A exceção é o Rio Amazonas, que é misto (recebe neve dos Andes + chuva). O resto é Pluvial.", 
+            explanation: "Nossos rios enchem quando chove (Pluvial). A exceção é o Rio Amazonas, que é misto (recebe neve dos Andes + chuva).", 
             tip: "Brasil não tem neve suficiente para encher rio. É chuva (Pluvial)." 
         },
         { 
@@ -278,7 +416,7 @@
             text: "Formação vegetal complexa, halófila (adaptada ao sal) e com raízes pneumatóforas (respiratórias) que afloram do solo lamoso. É berçário de vida marinha:", 
             options: ["Restinga", "Manguezal", "Mata de Igapó", "Cerradão", "Caatinga"], 
             correct: 1, 
-            explanation: "Raízes para fora para respirar + Lama + Água salobra = Manguezal. Vital para reprodução de peixes.", 
+            explanation: "Raízes para fora para respirar + Lama + Água salobra = Manguezal. Vital para reprodução de peixes. ", 
             tip: "Lama + Raiz aérea = Mangue." 
         },
         { 
@@ -294,7 +432,7 @@
             text: "O Brasil vive o estágio da transição demográfica onde a Taxa de Natalidade cai rapidamente, aproximando-se da Taxa de Mortalidade (que já é baixa). Isso resulta em:", 
             options: ["Explosão demográfica", "Crescimento vegetativo lento ou estagnação", "Rejuvenescimento da população", "Aumento da mortalidade infantil", "Aumento da fecundidade"], 
             correct: 1, 
-            explanation: "Se nasce pouco e morre pouco, a população para de crescer rápido. O crescimento vegetativo despenca.", 
+            explanation: "Se nasce pouco e morre pouco, a população para de crescer rápido. O crescimento vegetativo despenca. ", 
             tip: "Menos filhos = Crescimento lento." 
         },
         { 
@@ -350,7 +488,7 @@
             text: "A formação de uma Megalópole ocorre quando:", 
             options: ["Uma cidade atinge 10 milhões de habitantes (Megacidade).", "Duas ou mais Metrópoles conurbam ou se integram funcionalmente.", "Ocorre a gentrificação dos centros históricos.", "A capital política é transferida para o interior.", "Há a formação de uma Região Integrada de Desenvolvimento (RIDE)."], 
             correct: 1, 
-            explanation: "Megalópole é a 'conurbação de metrópoles'. No Brasil, temos o eixo Rio-SP em formação.", 
+            explanation: "Megalópole é a 'conurbação de metrópoles'. No Brasil, temos o eixo Rio-SP em formação. ", 
             tip: "Metrópole + Metrópole = Megalópole." 
         },
         { 
@@ -366,7 +504,7 @@
             text: "A Macrocefalia Urbana, comum em países subdesenvolvidos, é:", 
             options: ["A formação de uma conurbação linear contínua.", "O crescimento desproporcional da metrópole principal em relação às cidades médias, gerando inchaço.", "O desenvolvimento equitativo das redes urbanas.", "A criação de regiões metropolitanas administrativas.", "A redução da taxa de urbanização nacional."], 
             correct: 1, 
-            explanation: "Uma 'cabeça grande' (Macrocefalia) num corpo pequeno. Uma cidade gigante (inchada) e o resto do país vazio.", 
+            explanation: "Uma 'cabeça grande' (Macrocefalia) num corpo pequeno. Uma cidade gigante (inchada) e o resto do país vazio. ", 
             tip: "Cabeça Grande = Cidade Inchada." 
         },
         { 
@@ -422,7 +560,7 @@
             text: "A Cabotagem é um modal de transporte que consiste em:", 
             options: ["Navegação entre portos do mesmo país pela costa marítima.", "Navegação em rios (fluvial).", "Transporte aéreo de cargas.", "Transporte por dutos.", "Transporte rodoviário em estradas de terra."], 
             correct: 0, 
-            explanation: "Navegar de Santos (SP) até Suape (PE) pelo mar é cabotagem. É barato e pouco usado no Brasil comparado ao caminhão.", 
+            explanation: "Navegar de Santos (SP) até Suape (PE) pelo mar é cabotagem. É barato e pouco usado no Brasil comparado ao caminhão. ", 
             tip: "Cabotagem = Costa." 
         },
         { 
@@ -449,17 +587,9 @@
             explanation: "Sem legenda, você não sabe o que o vermelho ou a bolinha significam.", 
             tip: "Legenda traduz o desenho." 
         }
-        ];
+    ];
 
         const questoesLote2 = [
-        { 
-            topic: "Cartografia: Coordenadas e Antípodas", 
-            text: "Se uma cidade está localizada nas coordenadas 20°S e 45°O, qual é a coordenada aproximada do seu ponto antípoda (o ponto diametralmente oposto na Terra)?", 
-            options: ["20°N e 135°L", "20°N e 45°L", "20°S e 135°L", "70°N e 135°L", "20°N e 135°O"], 
-            correct: 0, 
-            explanation: "Para achar o antípoda: inverta a latitude (20°S vira 20°N) e subtraia a longitude de 180°, invertendo o hemisfério (180 - 45 = 135, O vira L). Resultado: 20°N, 135°L.", 
-            tip: "Antípoda = Inverte Lat, Suplemento da Long (180-x)." 
-        },
         { 
             topic: "Cartografia: Projeções Cilíndricas", 
             text: "A Projeção Cilíndrica Equidistante é menos famosa que a de Mercator ou Peters, mas tem uma utilidade específica. Ela preserva:", 
@@ -539,14 +669,6 @@
             correct: 0, 
             explanation: "Razão de Sexo = (Homens / Mulheres) * 100. Se é menor que 100, tem menos homem que mulher. 95 significa 95 homens para cada 100 mulheres.", 
             tip: "< 100 = Mais Mulheres. > 100 = Mais Homens." 
-        },
-        { 
-            topic: "Demografia: Envelhecimento", 
-            text: "O aumento da proporção de idosos no Brasil traz como desafio imediato para as políticas públicas:", 
-            options: ["A construção massiva de creches", "A reforma da previdência e adaptação do sistema de saúde (geriatria)", "O aumento de vagas no ensino fundamental", "O incentivo à emigração de jovens", "O déficit na oferta de mão de obra economicamente ativa"], 
-            correct: 1, 
-            explanation: "Mais idosos = Mais gasto com aposentadoria e saúde crônica. É o custo do envelhecimento. (A opção de déficit de mão de obra é consequência futura, a previdência é o desafio *imediato* de caixa).", 
-            tip: "Idoso = Previdência + Saúde." 
         },
         { 
             topic: "Demografia: Migração Pendular", 
@@ -980,14 +1102,6 @@
             tip: "Lei municipal manda no Urbano/Rural." 
         },
         { 
-            topic: "Cartografia: Fuso Horário (LID)", 
-            text: "Um avião sai de Tóquio (135°L) às 10h da manhã de terça-feira rumo a São Francisco (120°O). Ao cruzar a Linha Internacional da Data (LID) no sentido Ásia -> América (Oeste para Leste), o que acontece com o calendário?", 
-            options: ["Aumenta um dia (vai para quarta-feira).", "Diminui um dia (volta para segunda-feira).", "Mantém o mesmo dia, alterando apenas a hora.", "Ocorre a perda de 24 horas líquidas.", "Aumenta 12 horas no relógio biológico."], 
-            correct: 1, 
-            explanation: "Ao cruzar a linha do Pacífico indo para a América (Leste), você 'ganha' um dia de volta. É como voltar no tempo. Sai terça do Japão, chega segunda nos EUA. ", 
-            tip: "Cruzar LID para a América = Volta 1 dia (ontem)." 
-        },
-        { 
             topic: "Cartografia: Escala de Área", 
             text: "Um município tem 400 km² de área. Em um mapa na escala 1:100.000, esse município ocupará uma área desenhada de:", 
             options: ["4 cm²", "40 cm²", "400 cm²", "0,4 cm²", "4.000 cm²"], 
@@ -1091,13 +1205,19 @@
             explanation: "Quando a 'janela' fecha, temos muitos idosos e poucos jovens trabalhando. A conta da aposentadoria para de fechar.", 
             tip: "Fim do Bônus = Crise da Previdência." 
         },
-        { 
+      { 
             topic: "População: IDH (Crítica)", 
-            text: "Uma crítica técnica comum ao uso do IDH como indicador único de desenvolvimento é que ele:", 
-            options: ["É um cálculo muito complexo e inacessível.", "Não considera a desigualdade interna e esconde a realidade dos extremos (é uma média).", "Só é calculado para países desenvolvidos.", "Ignora totalmente a escolaridade.", "Foca excessivamente na preservação ambiental."], 
+            text: "Embora amplamente utilizado, o IDH (Índice de Desenvolvimento Humano) recebe críticas técnicas quanto à sua metodologia. Uma das principais limitações do indicador é que ele:", 
+            options: [
+                "Avalia a qualidade do ensino através de testes de desempenho, ignorando a evasão escolar.", 
+                "Não reflete a desigualdade interna (concentração de renda), pois é uma média nacional que mascara disparidades regionais.", 
+                "Desconsidera a renda per capita, focando exclusivamente em indicadores de bem-estar social.", 
+                "Atribui peso preponderante à sustentabilidade ambiental em detrimento do crescimento econômico.", 
+                "Impede a comparação internacional, visto que cada país utiliza critérios próprios de cálculo."
+            ], 
             correct: 1, 
-            explanation: "O Brasil tem IDH 'Alto' (0,760), mas isso esconde que o Sul tem IDH de Europa e partes do Nordeste têm IDH muito baixo. A média mascara a desigualdade.", 
-            tip: "IDH é média, esconde desigualdade." 
+            explanation: "O IDH é uma média. Se o país tem bilionários e miseráveis, a média pode parecer boa, escondendo a realidade (o Brasil é um exemplo clássico). ", 
+            tip: "IDH é média, e toda média esconde os extremos (desigualdade)." 
         },
         { 
             topic: "Agrária: Estrutura Fundiária", 
@@ -1208,12 +1328,18 @@
         },
         { 
             topic: "Cartografia: GPS", 
-            text: "O APM usa o DMC (Dispositivo Móvel de Coleta) para pegar uma coordenada. O aparelho mostra 'Precisão: 20 metros'. Isso significa que:", 
-            options: ["A altitude do ponto é de 20 metros acima do mar.", "O ponto foi gravado com erro fatal e deve ser refeito.", "A posição real está dentro de um raio de incerteza de 20 metros onde o aparelho marca.", "O satélite está a apenas 20 metros de altura.", "O aparelho está sem bateria."], 
+            text: "Ao coletar uma coordenada, o GPS informa 'Precisão: 20 metros'. Isso significa que:", 
+            options: [
+                "A altitude do local é de 20 metros em relação ao nível do mar.", 
+                "O recenseador está a 20 metros de distância do limite do setor censitário.", 
+                "A localização real do domicílio está dentro de um raio de 20 metros a partir do ponto marcado.", 
+                "O aparelho detectou um deslocamento (movimento) de 20 metros nos últimos segundos.", 
+                "A distância até a antena de transmissão mais próxima é de 20 metros."
+            ], 
             correct: 2, 
-            explanation: "A precisão indica a margem de erro (diluição da precisão). O ponto real pode estar em qualquer lugar num círculo de 20m ao redor de você.", 
-            tip: "Precisão = Raio de incerteza." 
-        },
+            explanation: "Precisão no GPS é a margem de erro. O aparelho está dizendo: 'Marquei aqui, mas a verdade pode estar 20 metros pra lá ou pra cá'. ", 
+            tip: "Precisão = Margem de erro (Raio)." 
+},
         { 
             topic: "Cartografia: Divisão Política", 
             text: "Ao percorrer um setor, o APM descobre que uma casa está construída exatamente sobre a linha que divide dois municípios. Segundo a regra do IBGE, o morador deve ser recenseado:", 
@@ -1398,21 +1524,33 @@
             explanation: "Bairro Dormitório é clássico da pendularidade. A pessoa dorme num município e trabalha/estuda no outro, indo e voltando todo dia.", 
             tip: "Bairro vazio de dia = Pendular." 
         },
-        { 
-            topic: "Demografia: Envelhecimento", 
-            text: "Se o APM encontrar muitos idosos morando sozinhos em um setor, isso indica uma demanda local específica para políticas públicas de:", 
-            options: ["Construção de creches e escolas primárias", "Assistência Social e Saúde Geriátrica (Postos de Saúde)", "Quadras poliesportivas e pistas de skate", "Incentivo ao primeiro emprego", "Expansão de zonas industriais"], 
+            { 
+            topic: "Demografia e Políticas Públicas", 
+            text: "Os dados preliminares do Censo demográfico indicam uma rápida transição na estrutura etária de um município, com redução da base da pirâmide e alargamento significativo do topo (acima de 65 anos). Sob a ótica do planejamento de políticas públicas, esse cenário pressiona o orçamento municipal a realizar uma migração de investimentos prioritários de:", 
+            options: [
+                "Doenças crônico-degenerativas para doenças infectocontagiosas.",
+                "Ensino Infantil e Fundamental para o Sistema Previdenciário e Saúde de Alta Complexidade.",
+                "Mobilidade urbana e acessibilidade para construção de novos conjuntos habitacionais periféricos.",
+                "Programas de transferência de renda para incentivos fiscais industriais.",
+                "Segurança pública para programas de fomento ao primeiro emprego."
+            ], 
             correct: 1, 
-            explanation: "O Censo serve para planejar. Bairro com muitos idosos precisa de geriatra e acessibilidade, não de pediatra ou escola.", 
-            tip: "Muitos idosos = Saúde." 
+            explanation: "Esta é uma questão clássica de gestão: Se nascem menos crianças, gasta-se menos com escola/creche (Ensino Infantil). Se tem mais idosos, gasta-se mais com aposentadoria (Previdência) e tratamentos caros/longos (Alta Complexidade/Crônicos). A opção B descreve exatamente essa troca de chave orçamentária.", 
+            tip: "Mais velhos = Menos Escola, Mais Hospital/INSS." 
         },
-        { 
-            topic: "Demografia: Gênero", 
-            text: "Ao tabular os dados, nota-se que há mais mulheres que homens na faixa etária acima de 60 anos. O principal motivo demográfico para isso é:", 
-            options: ["Nascem muito mais mulheres que homens.", "A maior expectativa de vida das mulheres (homens têm maior mortalidade por violência e saúde).", "As mulheres migram mais para o exterior.", "Mudança biológica de sexo na terceira idade.", "Erro sistemático de contagem no Censo."], 
-            correct: 1, 
-            explanation: "Mulheres vivem, em média, 7 a 8 anos a mais que homens no Brasil. Por isso a 'viubvez' é feminina. ", 
-            tip: "Velhice é feminina." 
+       { 
+            topic: "Demografia: Estrutura Etária e Gênero", 
+            text: "A análise da pirâmide etária brasileira revela o fenômeno da 'feminização da velhice', onde o contingente feminino supera o masculino nas faixas acima de 60 anos. O fator demográfico determinante para esse desequilíbrio estrutural é:", 
+            options: [
+                "A razão de sexo ao nascer, que biologicamente apresenta uma prevalência natural de nascimentos femininos superior a 5%.", 
+                "O saldo migratório internacional, caracterizado pela emigração massiva e seletiva da população masculina jovem.", 
+                "A sobremortalidade masculina ao longo da vida, decorrente da maior exposição a causas externas (violência/acidentes) e menor busca por atenção primária à saúde.", 
+                "A queda acentuada da taxa de fecundidade, que estatisticamente reduz a probabilidade de concepção de fetos do sexo masculino.", 
+                "A predisposição genética exclusiva das mulheres a doenças infectocontagiosas, que paradoxalmente fortalece seu sistema imunológico na terceira idade."
+            ], 
+            correct: 2, 
+            explanation: "Não nascem mais mulheres (na verdade, nascem ligeiramente mais homens: aprox. 105 meninos para 100 meninas). O que ocorre é que os homens morrem muito mais cedo (violência na juventude + doenças crônicas na idade adulta), fazendo com que sobrem mais mulheres na velhice. ", 
+            tip: "Homem morre mais cedo (Sobremortalidade Masculina)." 
         },
         { 
             topic: "Demografia: Etnia", 
@@ -1486,13 +1624,19 @@
             explanation: "A Folha de Recado é a última tentativa amigável para que o morador entre em contato antes de o supervisor encerrar o caso.", 
             tip: "Deixe recado." 
         },
-        { 
+            { 
             topic: "Técnica: Censo Experimental", 
-            text: "Antes do Censo real, o IBGE realiza um 'Censo Experimental' (Ensaio) em uma cidade pequena. O objetivo é:", 
-            options: ["Apenas gastar o orçamento excedente.", "Testar equipamentos, questionários e logística para detectar e corrigir falhas antes da operação nacional.", "Treinar a equipe física sem usar os aparelhos reais.", "Realizar uma pesquisa de opinião política.", "Promover o turismo na cidade escolhida."], 
+            text: "O IBGE realiza o 'Censo Experimental' em municípios selecionados cerca de um ano antes da operação nacional. Do ponto de vista técnico e metodológico, a finalidade primordial dessa etapa é:", 
+            options: [
+                "Antecipar a divulgação dos resultados oficiais daqueles municípios, dispensando-os de nova coleta durante o Censo Nacional.", 
+                "Validar, em escala real, a cadeia completa da operação (equipamentos, sistemas, logística e questionários) para mitigar riscos e corrigir falhas processuais.", 
+                "Realizar o treinamento prático simultâneo de todos os recenseadores e supervisores que atuarão no território nacional.", 
+                "Testar exclusivamente a durabilidade da bateria dos Dispositivos Móveis de Coleta (DMC), sem aplicação dos questionários reais.", 
+                "Definir, através de consulta pública local, quais perguntas deverão ser incluídas ou excluídas do questionário definitivo."
+            ], 
             correct: 1, 
-            explanation: "É o 'Simulado Geral'. Se der erro no Experimental, dá tempo de arrumar antes de fazer no Brasil todo.", 
-            tip: "Ensaio = Teste de erros." 
+            explanation: "O Censo Experimental é um 'Ensaio Geral' de prova de conceito. Ele não serve para dispensar a cidade da coleta oficial (Opção A errada), não treina todo mundo do país (Opção C errada - seria impossível logisticamente) e testa TUDO, não só bateria (Opção D errada). O objetivo é errar pequeno agora para não errar grande depois.", 
+            tip: "Ensaio Geral = Validar processos e corrigir falhas." 
         },
         { 
             topic: "Geografia: Densidade", 
@@ -1504,7 +1648,7 @@
         },
         { 
             topic: "Cartografia: Escala", 
-            text: "Para desenhar um croqui detalhado de apenas uma rua e suas casas, qual escala oferece o MAIOR nível de detalhe (Zoom)?", 
+            text: "Para desenhar um croqui detalhado de apenas uma rua e suas casas, qual escala oferece o MAIOR nível de detalhe?", 
             options: ["1:1.000.000", "1:500.000", "1:100.000", "1:50.000", "1:5.000"], 
             correct: 4, 
             explanation: "Regra da Escala: Menor denominador = Maior Escala = Mais Detalhe (Zoom in). 1:5.000 é muito maior que 1:1.000.000.", 
