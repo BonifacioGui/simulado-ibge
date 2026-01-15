@@ -209,191 +209,1380 @@
         ];
 
         const questoesLote1 = [
-            { topic: "Cartografia: Escala Gráfica", text: "Um mapa apresenta uma escala gráfica onde um segmento de 2 cm corresponde a 10 km no terreno. Se a distância entre duas cidades nesse mapa é de 8,5 cm, a distância real é:", options: ["42,5 km", "85 km", "425 km", "21,25 km", "17 km"], correct: 0, explanation: "Regra de três: Se 2 cm = 10 km, então 1 cm = 5 km. <br>8,5 cm x 5 km = <strong>42,5 km</strong>.", tip: "Descubra quanto vale 1 cm primeiro." },
-            { topic: "Cartografia: Curvas de Nível", text: "Em uma carta topográfica, você observa curvas de nível formando círculos concêntricos, onde os valores de altitude diminuem da periferia para o centro. Essa forma de relevo representa:", options: ["Um morro ou colina", "Uma depressão ou cratera", "Uma planície aluvial", "Uma escarpa", "Um divisor de águas"], correct: 1, explanation: "Se a altitude diminui indo para o meio, é um buraco (depressão). Se aumentasse, seria um morro.", tip: "Círculos fechados = Cume ou Buraco. Olhe os números." },
-            { topic: "Cartografia: Projeções", text: "A Projeção de Peters é frequentemente contraposta à de Mercator por ter um viés 'terceiro-mundista'. Sua principal característica técnica é ser:", options: ["Equidistante", "Conforme", "Equivalente", "Afilática", "Azimutal"], correct: 2, explanation: "Peters mantém as ÁREAS (tamanhos) reais, realçando os países pobres do sul, mas distorce as formas (ficam esticados). Isso é ser <strong>Equivalente</strong>.", tip: "Peters = Tamanho certo, Forma errada." },
-            { topic: "Cartografia: Fusos Horários", text: "Um jogo de futebol começa às 21h em Londres (GMT 0). Que horas os torcedores no Rio Branco, Acre (GMT -5), devem ligar a TV para assistir ao início do jogo (considerando horário padrão)?", options: ["16h", "17h", "18h", "02h do dia seguinte", "19h"], correct: 0, explanation: "Londres (0) para Acre (-5) = 5 horas a menos. <br>21h - 5h = <strong>16h</strong>.", tip: "Para Oeste, diminui a hora." },
-            { topic: "Cartografia: Símbolos", text: "Nas convenções cartográficas oficiais do IBGE, a cor 'sépia' (marrom claro) é geralmente utilizada para representar:", options: ["Hidrografia", "Vegetação", "Curvas de nível e relevo", "Áreas urbanizadas", "Limites estaduais"], correct: 2, explanation: "O marrom (sépia) desenha as curvas de nível e acidentes do relevo. Verde é planta, azul é água, preto é construção.", tip: "Relevo = Marrom." },
-            { topic: "Física: Estrutura Geológica", text: "O Brasil não possui vulcões ativos ou grandes terremotos porque seu território está localizado:", options: ["Na borda da Placa Sul-Americana", "No centro da Placa Sul-Americana (intraplaca)", "Sobre uma zona de subducção", "No Círculo de Fogo do Pacífico", "Em uma área de dobramentos modernos"], correct: 1, explanation: "Estamos no meio da placa, longe das bordas onde ocorrem os choques (Andes) ou separações (Atlântico). Isso garante estabilidade tectônica.", tip: "Brasil = Centro da Placa = Estável." },
-            { topic: "Física: Clima", text: "A Massa Equatorial Continental (mEc) é quente e úmida. Ela atua o ano todo na Amazônia, mas no verão ela se expande e provoca:", options: ["Seca no Nordeste", "Chuvas no Centro-Oeste e Sudeste", "Frio no Sul", "Ventos alísios no Litoral", "Ressaca no mar"], correct: 1, explanation: "A mEc é a 'caixa d'água' do Brasil. No verão, ela leva umidade da Amazônia para o resto do país (exceto o extremo Sul e Nordeste oriental).", tip: "mEc = Chuva de verão no Centro-Sul." },
-            { topic: "Física: Hidrografia", text: "O regime de alimentação dos rios brasileiros é, em sua esmagadora maioria:", options: ["Nival (derretimento de neve)", "Pluvial (chuvas)", "Glacial (geleiras)", "Misto (neve + chuva)", "Subterrâneo exclusivo"], correct: 1, explanation: "Nossos rios enchem quando chove. A exceção é o Rio Amazonas, que é misto (recebe neve dos Andes + chuva). O resto é Pluvial.", tip: "Brasil não tem neve suficiente para encher rio. É chuva (Pluvial)." },
-            { topic: "Física: Vegetação", text: "Formação vegetal complexa, halófila (adaptada ao sal) e com raízes pneumatóforas (respiratórias) que afloram do solo lamoso. É berçário de vida marinha:", options: ["Restinga", "Manguezal", "Mata de Igapó", "Cerradão", "Caatinga"], correct: 1, explanation: "Raízes para fora para respirar + Lama + Água salobra = Manguezal. Vital para reprodução de peixes.", tip: "Lama + Raiz aérea = Mangue." },
-            { topic: "Física: Solos", text: "O processo de lixiviação, muito comum em solos tropicais chuvosos, consiste na:", options: ["Lavagem dos nutrientes pela água da chuva", "Compactação pelo gado", "Salinização por irrigação", "Desertificação eólica", "Adição de matéria orgânica"], correct: 0, explanation: "A chuva excessiva 'lava' o solo, levando os nutrientes embora e deixando-o pobre e ácido (típico da Amazônia e Cerrado).", tip: "Lixívia = Lavar." },
-            { topic: "Demografia: Transição", text: "O Brasil vive o estágio da transição demográfica onde a Taxa de Natalidade cai rapidamente, aproximando-se da Taxa de Mortalidade (que já é baixa). Isso resulta em:", options: ["Explosão demográfica", "Crescimento vegetativo lento ou estagnação", "Rejuvenescimento da população", "Aumento da mortalidade infantil", "Aumento da fecundidade"], correct: 1, explanation: "Se nasce pouco e morre pouco, a população para de crescer rápido. O crescimento vegetativo despenca.", tip: "Menos filhos = Crescimento lento." },
-            { topic: "Demografia: PEA", text: "O aumento da participação feminina na PEA (População Economicamente Ativa) nas últimas décadas resultou em:", options: ["Aumento da taxa de fecundidade", "Queda da taxa de fecundidade", "Aumento da mortalidade materna", "Redução da escolaridade feminina", "Saída das mulheres do mercado informal"], correct: 1, explanation: "Mulher no mercado de trabalho tende a ter menos filhos e mais tarde, derrubando a fecundidade.", tip: "Trabalho e estudo = Menos filhos." },
-            { topic: "Demografia: Migração", text: "O movimento de trabalhadores rurais que cortam cana em SP na época da colheita e voltam para o Nordeste na entressafra é um exemplo de:", options: ["Transumância ou Migração Sazonal", "Êxodo Rural definitivo", "Migração Pendular", "Nomadismo", "Refugiados ambientais"], correct: 0, explanation: "Sazonal = Temporário, ligado a estações do ano ou colheitas. Vai e volta meses depois.", tip: "Safra = Sazonal." },
-            { topic: "Demografia: Conceitos", text: "Para o IBGE, 'Aglomerado Subnormal' é o termo técnico utilizado para designar:", options: ["Cidades pequenas", "Condomínios de luxo irregulares", "Assentamentos irregulares (favelas, invasões, mocambos)", "Áreas rurais isoladas", "Centros industriais abandonados"], correct: 2, explanation: "Aglomerado Subnormal é o nome oficial (embora esteja mudando para 'Favela e Comunidades Urbanas') para invasões com carência de serviços.", tip: "Subnormal = Favela no 'ibgeuês' antigo." },
-            { topic: "Demografia: Etnia", text: "No quesito cor ou raça, o IBGE utiliza o método da autodeclaração. As cinco categorias oficiais são:", options: ["Branca, Negra, Parda, Índia e Mestiça", "Branca, Preta, Parda, Amarela e Indígena", "Caucasiana, Africana, Latina, Asiática e Nativa", "Branca, Morena, Negra, Amarela e Índia", "Clara, Escura, Média, Asiática e Indígena"], correct: 1, explanation: "Decore as 5 oficiais: Branca, Preta, Parda, Amarela (asiáticos) e Indígena.", tip: "Não existe 'Morena' ou 'Negra' (o termo oficial é Preta) nas opções do Censo." },
-            { topic: "Urbana: Rede", text: "Na rede urbana, a capacidade de uma cidade oferecer serviços raros (hospitais especializados, sedes de bancos, universidades) define sua:", options: ["Centralidade", "Densidade", "Conurbação", "Periferia", "Taxa de urbanização"], correct: 0, explanation: "Centralidade é o poder de atrair pessoas de fora. Quanto mais serviços complexos, maior a centralidade.", tip: "Centro atrai = Centralidade." },
-            { topic: "Urbana: Conceitos", text: "Diferencie 'Sítio Urbano' de 'Situação Urbana':", options: ["Sítio é o local físico (relevo onde a cidade está); Situação é a posição geográfica em relação à região.", "Sítio é a zona rural; Situação é a zona urbana.", "Sítio é onde tem chácaras; Situação é o centro.", "São sinônimos.", "Sítio é a economia; Situação é a política."], correct: 0, explanation: "Sítio = O chão (ex: planície, morro). Situação = O contexto (ex: porto, entroncamento rodoviário).", tip: "Sítio = Chão. Situação = Mapa." },
-            { topic: "Urbana: Megalópole", text: "A formação de uma Megalópole ocorre quando:", options: ["Uma cidade atinge 10 milhões de habitantes.", "Duas ou mais Metrópoles conurbam ou se integram funcionalmente.", "Ocorre muita favelização.", "A capital muda de lugar.", "Há apenas indústrias na região."], correct: 1, explanation: "Megalópole é a 'conurbação de metrópoles'. No Brasil, temos o eixo Rio-SP em formação.", tip: "Metrópole + Metrópole = Megalópole." },
-            { topic: "Urbana: Especulação", text: "Manter terrenos vazios em áreas infraestruturadas esperando o preço subir para vender chama-se:", options: ["Reforma Urbana", "Especulação Imobiliária", "Déficit Habitacional", "Gentrificação", "Retrofitting"], correct: 1, explanation: "O 'vazio urbano' serve para lucrar com a valorização, enquanto a cidade se expande para longe desnecessariamente.", tip: "Esperar valorizar = Especular." },
-            { topic: "Urbana: Macrocefalia", text: "A Macrocefalia Urbana, comum em países subdesenvolvidos, é:", options: ["O planejamento perfeito das cidades.", "O crescimento desproporcional da metrópole principal em relação às cidades médias, gerando inchaço.", "O desenvolvimento do interior.", "A criação de muitas capitais.", "A redução da população urbana."], correct: 1, explanation: "Uma 'cabeça grande' (Macrocefalia) num corpo pequeno. Uma cidade gigante (inchada) e o resto do país vazio.", tip: "Cabeça Grande = Cidade Inchada." },
-            { topic: "Agrária: Agricultura Familiar", text: "Apesar de ocupar menos terras que o agronegócio, a Agricultura Familiar é responsável por:", options: ["Produzir a maior parte das commodities de exportação (soja).", "Gerar a maioria dos empregos no campo e produzir a base alimentar (mandioca, feijão).", "Utilizar apenas maquinário de alta tecnologia.", "Não receber nenhum financiamento público.", "Estar extinta no Brasil."], correct: 1, explanation: "O Agro exporta e ganha dólar. A Familiar emprega e põe comida na mesa (segurança alimentar).", tip: "Familiar = Comida e Emprego. Patronal = Dólar e Máquina." },
-            { topic: "Agrária: Êxodo", text: "A 'Revolução Verde' (modernização do campo nos anos 70) teve como consequência social negativa:", options: ["Aumento do emprego rural.", "Reforma agrária ampla.", "Êxodo rural intenso e concentração de terras.", "Fim da fome no mundo.", "Redução das pragas."], correct: 2, explanation: "Máquina substitui homem -> Desemprego -> Homem vai para a cidade (Êxodo). Pequeno produtor quebra -> Vende para o grande (Concentração).", tip: "Modernização = Menos gente no campo." },
-            { topic: "Agrária: PRONAF", text: "O programa governamental focado em financiar a agricultura familiar com juros baixos é o:", options: ["Bolsa Família", "Plano Safra (apenas para grandes)", "PRONAF", "Proálcool", "SUDENE"], correct: 2, explanation: "PRONAF = Programa Nacional de Fortalecimento da Agricultura Familiar.", tip: "F de Familiar no final." },
-            { topic: "Agrária: Transgênicos", text: "O uso de sementes transgênicas (OGM) visa principalmente:", options: ["Melhorar o sabor dos alimentos.", "Aumentar a produtividade e resistência a pragas/herbicidas.", "Eliminar o uso de agrotóxicos.", "Preservar sementes crioulas.", "Reduzir o custo para o consumidor final."], correct: 1, explanation: "O foco é resistir ao veneno (para poder passar veneno na plantação toda sem matar a soja) ou matar lagartas.", tip: "Produtividade e Resistência." },
-            { topic: "Agrária: Estrutura", text: "O termo 'Terras Devolutas' refere-se a:", options: ["Terras indígenas.", "Terras privadas abandonadas.", "Terras públicas sem destinação específica (pertencem ao Estado, mas não são usadas).", "Parques nacionais.", "Áreas de quilombolas."], correct: 2, explanation: "São terras 'devolvidas' ou nunca doadas, que pertencem ao governo mas estão 'dando sopa', frequentemente alvo de grilagem.", tip: "Públicas e 'Soltas'." },
-            { topic: "Econômica: Matriz Energética", text: "A 'Cana-de-açúcar' tem papel vital na matriz energética brasileira devido à produção de:", options: ["Biodiesel", "Etanol e Bioeletricidade (queima do bagaço)", "Gás Natural", "Carvão Vegetal", "Querosene"], correct: 1, explanation: "Além do etanol para carros, queimamos o bagaço da cana para gerar luz nas usinas.", tip: "Cana = Álcool + Luz (bagaço)." },
-            { topic: "Econômica: Transportes", text: "A Cabotagem é um modal de transporte que consiste em:", options: ["Navegação entre portos do mesmo país pela costa marítima.", "Navegação em rios (fluvial).", "Transporte aéreo de cargas.", "Transporte por dutos.", "Transporte rodoviário em estradas de terra."], correct: 0, explanation: "Navegar de Santos (SP) até Suape (PE) pelo mar é cabotagem. É barato e pouco usado no Brasil comparado ao caminhão.", tip: "Cabotagem = Costa." },
-            { topic: "Econômica: Regionalização", text: "A divisão regional oficial do IBGE (Norte, Nordeste, Centro-Oeste, Sudeste, Sul) respeita:", options: ["Apenas critérios naturais.", "Os limites estaduais (um estado não pode ser dividido).", "Apenas critérios econômicos.", "As zonas climáticas.", "As fronteiras agrícolas."], correct: 1, explanation: "A divisão oficial (Macrorregiões) nunca corta um estado no meio. Já a divisão Geoeconômica (Pedro Pinchas) corta (ex: MG tem parte no Nordeste e parte no Centro-Sul).", tip: "IBGE Oficial = Respeita fronteira do estado." },
-            { topic: "Geral: IDH", text: "Qual destas variáveis NÃO entra no cálculo do IDH?", options: ["Expectativa de Vida", "Escolaridade", "Renda per capita", "Taxa de Desemprego", "Anos médios de estudo"], correct: 3, explanation: "Desemprego, violência e desigualdade (Gini) NÃO entram na conta simples do IDH (Saúde, Educação, Renda).", tip: "IDH ignora se você está desempregado, só quer saber a renda média." },
-            { topic: "Cartografia: Título", text: "Em um mapa temático, o elemento que explica o significado das cores, símbolos e hachuras utilizados é a:", options: ["Escala", "Rosa dos Ventos", "Legenda", "Projeção", "Fonte"], correct: 2, explanation: "Sem legenda, você não sabe o que o vermelho ou a bolinha significam.", tip: "Legenda traduz o desenho." }
+        { 
+            topic: "Cartografia: Escala Gráfica", 
+            text: "Um mapa apresenta uma escala gráfica onde um segmento de 2 cm corresponde a 10 km no terreno. Se a distância entre duas cidades nesse mapa é de 8,5 cm, a distância real é:", 
+            options: ["42,5 km", "85 km", "425 km", "21,25 km", "17 km"], 
+            correct: 0, 
+            explanation: "Regra de três: Se 2 cm = 10 km, então 1 cm = 5 km. <br>8,5 cm x 5 km = <strong>42,5 km</strong>.", 
+            tip: "Descubra quanto vale 1 cm primeiro." 
+        },
+        { 
+            topic: "Cartografia: Curvas de Nível", 
+            text: "Em uma carta topográfica, você observa curvas de nível formando círculos concêntricos, onde os valores de altitude diminuem da periferia para o centro. Essa forma de relevo representa:", 
+            options: ["Um morro ou colina", "Uma depressão ou cratera", "Uma planície aluvial", "Uma escarpa", "Um divisor de águas"], 
+            correct: 1, 
+            explanation: "Se a altitude diminui indo para o meio, é um buraco (depressão). Se aumentasse, seria um morro.", 
+            tip: "Círculos fechados = Cume ou Buraco. Olhe os números." 
+        },
+        { 
+            topic: "Cartografia: Projeções", 
+            text: "A Projeção de Peters é frequentemente contraposta à de Mercator por ter um viés 'terceiro-mundista'. Sua principal característica técnica é ser:", 
+            options: ["Equidistante", "Conforme", "Equivalente", "Afilática", "Azimutal"], 
+            correct: 2, 
+            explanation: "Peters mantém as ÁREAS (tamanhos) reais, realçando os países pobres do sul, mas distorce as formas (ficam esticados). Isso é ser <strong>Equivalente</strong>.", 
+            tip: "Peters = Tamanho certo, Forma errada." 
+        },
+        { 
+            topic: "Cartografia: Fusos Horários", 
+            text: "Um jogo de futebol começa às 21h em Londres (GMT 0). Que horas os torcedores no Rio Branco, Acre (GMT -5), devem ligar a TV para assistir ao início do jogo (considerando horário padrão)?", 
+            options: ["16h", "17h", "18h", "02h do dia seguinte", "19h"], 
+            correct: 0, 
+            explanation: "Londres (0) para Acre (-5) = 5 horas a menos. <br>21h - 5h = <strong>16h</strong>.", 
+            tip: "Para Oeste, diminui a hora." 
+        },
+        { 
+            topic: "Cartografia: Símbolos", 
+            text: "Nas convenções cartográficas oficiais do IBGE, a cor 'sépia' (marrom claro) é geralmente utilizada para representar:", 
+            options: ["Hidrografia", "Vegetação", "Curvas de nível e relevo", "Áreas urbanizadas", "Limites estaduais"], 
+            correct: 2, 
+            explanation: "O marrom (sépia) desenha as curvas de nível e acidentes do relevo. Verde é planta, azul é água, preto é construção.", 
+            tip: "Relevo = Marrom." 
+        },
+        { 
+            topic: "Física: Estrutura Geológica", 
+            text: "O Brasil não possui vulcões ativos ou grandes terremotos porque seu território está localizado:", 
+            options: ["Na borda da Placa Sul-Americana", "No centro da Placa Sul-Americana (intraplaca)", "Sobre uma zona de subducção", "No Círculo de Fogo do Pacífico", "Em uma área de dobramentos modernos"], 
+            correct: 1, 
+            explanation: "Estamos no meio da placa, longe das bordas onde ocorrem os choques (Andes) ou separações (Atlântico). Isso garante estabilidade tectônica.", 
+            tip: "Brasil = Centro da Placa = Estável." 
+        },
+        { 
+            topic: "Física: Clima", 
+            text: "A Massa Equatorial Continental (mEc) é quente e úmida. Ela atua o ano todo na Amazônia, mas no verão ela se expande e provoca:", 
+            options: ["Seca no Nordeste", "Chuvas no Centro-Oeste e Sudeste", "Frio no Sul", "Ventos alísios no Litoral", "Ressaca no mar"], 
+            correct: 1, 
+            explanation: "A mEc é a 'caixa d'água' do Brasil. No verão, ela leva umidade da Amazônia para o resto do país (exceto o extremo Sul e Nordeste oriental).", 
+            tip: "mEc = Chuva de verão no Centro-Sul." 
+        },
+        { 
+            topic: "Física: Hidrografia", 
+            text: "O regime de alimentação dos rios brasileiros é, em sua esmagadora maioria:", 
+            options: ["Nival (derretimento de neve)", "Pluvial (chuvas)", "Glacial (geleiras)", "Misto (neve + chuva)", "Subterrâneo exclusivo"], 
+            correct: 1, 
+            explanation: "Nossos rios enchem quando chove. A exceção é o Rio Amazonas, que é misto (recebe neve dos Andes + chuva). O resto é Pluvial.", 
+            tip: "Brasil não tem neve suficiente para encher rio. É chuva (Pluvial)." 
+        },
+        { 
+            topic: "Física: Vegetação", 
+            text: "Formação vegetal complexa, halófila (adaptada ao sal) e com raízes pneumatóforas (respiratórias) que afloram do solo lamoso. É berçário de vida marinha:", 
+            options: ["Restinga", "Manguezal", "Mata de Igapó", "Cerradão", "Caatinga"], 
+            correct: 1, 
+            explanation: "Raízes para fora para respirar + Lama + Água salobra = Manguezal. Vital para reprodução de peixes.", 
+            tip: "Lama + Raiz aérea = Mangue." 
+        },
+        { 
+            topic: "Física: Solos", 
+            text: "O processo de lixiviação, muito comum em solos tropicais chuvosos, consiste na:", 
+            options: ["Lavagem dos nutrientes pela água da chuva", "Compactação pelo gado", "Salinização por irrigação", "Desertificação eólica", "Adição de matéria orgânica"], 
+            correct: 0, 
+            explanation: "A chuva excessiva 'lava' o solo, levando os nutrientes embora e deixando-o pobre e ácido (típico da Amazônia e Cerrado).", 
+            tip: "Lixívia = Lavar." 
+        },
+        { 
+            topic: "Demografia: Transição", 
+            text: "O Brasil vive o estágio da transição demográfica onde a Taxa de Natalidade cai rapidamente, aproximando-se da Taxa de Mortalidade (que já é baixa). Isso resulta em:", 
+            options: ["Explosão demográfica", "Crescimento vegetativo lento ou estagnação", "Rejuvenescimento da população", "Aumento da mortalidade infantil", "Aumento da fecundidade"], 
+            correct: 1, 
+            explanation: "Se nasce pouco e morre pouco, a população para de crescer rápido. O crescimento vegetativo despenca.", 
+            tip: "Menos filhos = Crescimento lento." 
+        },
+        { 
+            topic: "Demografia: PEA", 
+            text: "O aumento da participação feminina na PEA (População Economicamente Ativa) nas últimas décadas resultou em:", 
+            options: ["Aumento da taxa de fecundidade", "Queda da taxa de fecundidade", "Aumento da mortalidade materna", "Redução da escolaridade feminina", "Saída das mulheres do mercado informal"], 
+            correct: 1, 
+            explanation: "Mulher no mercado de trabalho tende a ter menos filhos e mais tarde, derrubando a fecundidade.", 
+            tip: "Trabalho e estudo = Menos filhos." 
+        },
+        { 
+            topic: "Demografia: Migração", 
+            text: "O movimento de trabalhadores rurais que cortam cana em SP na época da colheita e voltam para o Nordeste na entressafra é um exemplo de:", 
+            options: ["Transumância ou Migração Sazonal", "Êxodo Rural definitivo", "Migração Pendular", "Nomadismo", "Refugiados ambientais"], 
+            correct: 0, 
+            explanation: "Sazonal = Temporário, ligado a estações do ano ou colheitas. Vai e volta meses depois.", 
+            tip: "Safra = Sazonal." 
+        },
+        { 
+            topic: "Demografia: Conceitos", 
+            text: "Para o IBGE, 'Aglomerado Subnormal' é o termo técnico utilizado para designar:", 
+            options: ["Cidades pequenas", "Condomínios de luxo irregulares", "Assentamentos irregulares (favelas, invasões, mocambos)", "Áreas rurais isoladas", "Centros industriais abandonados"], 
+            correct: 2, 
+            explanation: "Aglomerado Subnormal é o nome oficial (embora esteja mudando para 'Favela e Comunidades Urbanas') para invasões com carência de serviços.", 
+            tip: "Subnormal = Favela no 'ibgeuês' antigo." 
+        },
+        { 
+            topic: "Demografia: Etnia", 
+            text: "No quesito cor ou raça, o IBGE utiliza o método da autodeclaração. As cinco categorias oficiais são:", 
+            options: ["Branca, Negra, Parda, Índia e Mestiça", "Branca, Preta, Parda, Amarela e Indígena", "Caucasiana, Africana, Latina, Asiática e Nativa", "Branca, Morena, Negra, Amarela e Índia", "Clara, Escura, Média, Asiática e Indígena"], 
+            correct: 1, 
+            explanation: "Decore as 5 oficiais: Branca, Preta, Parda, Amarela (asiáticos) e Indígena.", 
+            tip: "Não existe 'Morena' ou 'Negra' (o termo oficial é Preta) nas opções do Censo." 
+        },
+        { 
+            topic: "Urbana: Rede", 
+            text: "Na rede urbana, a capacidade de uma cidade oferecer serviços raros (hospitais especializados, sedes de bancos, universidades) define sua:", 
+            options: ["Centralidade", "Densidade", "Conurbação", "Periferia", "Taxa de urbanização"], 
+            correct: 0, 
+            explanation: "Centralidade é o poder de atrair pessoas de fora. Quanto mais serviços complexos, maior a centralidade.", 
+            tip: "Centro atrai = Centralidade." 
+        },
+        { 
+            topic: "Urbana: Conceitos", 
+            text: "Diferencie 'Sítio Urbano' de 'Situação Urbana':", 
+            options: ["Sítio é o local físico (relevo onde a cidade está); Situação é a posição geográfica em relação à região.", "Sítio é a zona rural; Situação é a zona urbana.", "Sítio refere-se à função econômica; Situação refere-se à base geológica.", "São sinônimos.", "Sítio é o centro financeiro; Situação é a periferia."], 
+            correct: 0, 
+            explanation: "Sítio = O chão (ex: planície, morro). Situação = O contexto (ex: porto, entroncamento rodoviário).", 
+            tip: "Sítio = Chão. Situação = Mapa." 
+        },
+        { 
+            topic: "Urbana: Megalópole", 
+            text: "A formação de uma Megalópole ocorre quando:", 
+            options: ["Uma cidade atinge 10 milhões de habitantes (Megacidade).", "Duas ou mais Metrópoles conurbam ou se integram funcionalmente.", "Ocorre a gentrificação dos centros históricos.", "A capital política é transferida para o interior.", "Há a formação de uma Região Integrada de Desenvolvimento (RIDE)."], 
+            correct: 1, 
+            explanation: "Megalópole é a 'conurbação de metrópoles'. No Brasil, temos o eixo Rio-SP em formação.", 
+            tip: "Metrópole + Metrópole = Megalópole." 
+        },
+        { 
+            topic: "Urbana: Especulação", 
+            text: "Manter terrenos vazios em áreas infraestruturadas esperando o preço subir para vender chama-se:", 
+            options: ["Reforma Urbana", "Especulação Imobiliária", "Déficit Habitacional", "Gentrificação", "Retrofitting"], 
+            correct: 1, 
+            explanation: "O 'vazio urbano' serve para lucrar com a valorização, enquanto a cidade se expande para longe desnecessariamente.", 
+            tip: "Esperar valorizar = Especular." 
+        },
+        { 
+            topic: "Urbana: Macrocefalia", 
+            text: "A Macrocefalia Urbana, comum em países subdesenvolvidos, é:", 
+            options: ["A formação de uma conurbação linear contínua.", "O crescimento desproporcional da metrópole principal em relação às cidades médias, gerando inchaço.", "O desenvolvimento equitativo das redes urbanas.", "A criação de regiões metropolitanas administrativas.", "A redução da taxa de urbanização nacional."], 
+            correct: 1, 
+            explanation: "Uma 'cabeça grande' (Macrocefalia) num corpo pequeno. Uma cidade gigante (inchada) e o resto do país vazio.", 
+            tip: "Cabeça Grande = Cidade Inchada." 
+        },
+        { 
+            topic: "Agrária: Agricultura Familiar", 
+            text: "Apesar de ocupar menos terras que o agronegócio, a Agricultura Familiar é responsável por:", 
+            options: ["Produzir a maior parte das commodities de exportação (soja).", "Gerar a maioria dos empregos no campo e produzir a base alimentar (mandioca, feijão).", "Utilizar apenas maquinário de alta tecnologia e automação.", "Não receber nenhum financiamento do sistema bancário.", "Ser voltada exclusivamente à subsistência, sem comercialização de excedentes."], 
+            correct: 1, 
+            explanation: "O Agro exporta e ganha dólar. A Familiar emprega e põe comida na mesa (segurança alimentar).", 
+            tip: "Familiar = Comida e Emprego. Patronal = Dólar e Máquina." 
+        },
+        { 
+            topic: "Agrária: Êxodo", 
+            text: "A 'Revolução Verde' (modernização do campo nos anos 70) teve como consequência social negativa:", 
+            options: ["Aumento do emprego rural.", "Reforma agrária ampla e redistributiva.", "Êxodo rural intenso e concentração de terras.", "Fim da fome no mundo.", "Redução das pragas nas lavouras monocultoras."], 
+            correct: 2, 
+            explanation: "Máquina substitui homem -> Desemprego -> Homem vai para a cidade (Êxodo). Pequeno produtor quebra -> Vende para o grande (Concentração).", 
+            tip: "Modernização = Menos gente no campo." 
+        },
+        { 
+            topic: "Agrária: PRONAF", 
+            text: "O programa governamental focado em financiar a agricultura familiar com juros baixos é o:", 
+            options: ["Bolsa Família", "Plano Safra (modalidade empresarial)", "PRONAF", "Proálcool", "SUDENE"], 
+            correct: 2, 
+            explanation: "PRONAF = Programa Nacional de Fortalecimento da Agricultura Familiar.", 
+            tip: "F de Familiar no final." 
+        },
+        { 
+            topic: "Agrária: Transgênicos", 
+            text: "O uso de sementes transgênicas (OGM) visa principalmente:", 
+            options: ["Melhorar o sabor e a estética dos alimentos.", "Aumentar a produtividade e resistência a pragas/herbicidas.", "Eliminar a necessidade de fertilizantes químicos.", "Preservar a variabilidade genética das sementes crioulas.", "Reduzir o custo dos alimentos orgânicos."], 
+            correct: 1, 
+            explanation: "O foco é resistir ao veneno (para poder passar veneno na plantação toda sem matar a soja) ou matar lagartas.", 
+            tip: "Produtividade e Resistência." 
+        },
+        { 
+            topic: "Agrária: Estrutura", 
+            text: "O termo 'Terras Devolutas' refere-se a:", 
+            options: ["Terras indígenas demarcadas.", "Latifúndios produtivos privados.", "Terras públicas sem destinação específica (pertencem ao Estado, mas não são usadas).", "Unidades de Conservação de Proteção Integral.", "Áreas de preservação permanente (APP)."], 
+            correct: 2, 
+            explanation: "São terras 'devolvidas' ou nunca doadas, que pertencem ao governo mas estão 'dando sopa', frequentemente alvo de grilagem.", 
+            tip: "Públicas e 'Soltas'." 
+        },
+        { 
+            topic: "Econômica: Matriz Energética", 
+            text: "A 'Cana-de-açúcar' tem papel vital na matriz energética brasileira devido à produção de:", 
+            options: ["Biodiesel", "Etanol e Bioeletricidade (queima do bagaço)", "Gás Natural", "Carvão Vegetal", "Querosene"], 
+            correct: 1, 
+            explanation: "Além do etanol para carros, queimamos o bagaço da cana para gerar luz nas usinas.", 
+            tip: "Cana = Álcool + Luz (bagaço)." 
+        },
+        { 
+            topic: "Econômica: Transportes", 
+            text: "A Cabotagem é um modal de transporte que consiste em:", 
+            options: ["Navegação entre portos do mesmo país pela costa marítima.", "Navegação em rios (fluvial).", "Transporte aéreo de cargas.", "Transporte por dutos.", "Transporte rodoviário em estradas de terra."], 
+            correct: 0, 
+            explanation: "Navegar de Santos (SP) até Suape (PE) pelo mar é cabotagem. É barato e pouco usado no Brasil comparado ao caminhão.", 
+            tip: "Cabotagem = Costa." 
+        },
+        { 
+            topic: "Econômica: Regionalização", 
+            text: "A divisão regional oficial do IBGE (Norte, Nordeste, Centro-Oeste, Sudeste, Sul) respeita:", 
+            options: ["Apenas critérios naturais (clima e relevo).", "Os limites estaduais (um estado não pode ser dividido).", "Apenas critérios econômicos (Complexos Regionais).", "As zonas climáticas.", "As fronteiras agrícolas."], 
+            correct: 1, 
+            explanation: "A divisão oficial (Macrorregiões) nunca corta um estado no meio. Já a divisão Geoeconômica (Pedro Pinchas) corta (ex: MG tem parte no Nordeste e parte no Centro-Sul).", 
+            tip: "IBGE Oficial = Respeita fronteira do estado." 
+        },
+        { 
+            topic: "Geral: IDH", 
+            text: "Qual destas variáveis NÃO entra no cálculo do IDH?", 
+            options: ["Expectativa de Vida", "Escolaridade (anos esperados de estudo)", "Renda per capita (RNB)", "Taxa de Desemprego", "Anos médios de estudo"], 
+            correct: 3, 
+            explanation: "Desemprego, violência e desigualdade (Gini) NÃO entram na conta simples do IDH (Saúde, Educação, Renda).", 
+            tip: "IDH ignora se você está desempregado, só quer saber a renda média." 
+        },
+        { 
+            topic: "Cartografia: Elementos", 
+            text: "Em um mapa temático, o elemento que explica o significado das cores, símbolos e hachuras utilizados é a:", 
+            options: ["Escala", "Rosa dos Ventos", "Legenda", "Projeção", "Fonte"], 
+            correct: 2, 
+            explanation: "Sem legenda, você não sabe o que o vermelho ou a bolinha significam.", 
+            tip: "Legenda traduz o desenho." 
+        }
         ];
 
         const questoesLote2 = [
-            { topic: "Cartografia: Coordenadas e Antípodas", text: "Se uma cidade está localizada nas coordenadas 20°S e 45°O, qual é a coordenada aproximada do seu ponto antípoda (o ponto diametralmente oposto na Terra)?", options: ["20°N e 135°L", "20°N e 45°L", "20°S e 135°L", "70°N e 135°L", "20°N e 135°O"], correct: 0, explanation: "Para achar o antípoda: inverta a latitude (20°S vira 20°N) e subtraia a longitude de 180°, invertendo o hemisfério (180 - 45 = 135, O vira L). Resultado: 20°N, 135°L.", tip: "Antípoda = Inverte Lat, Suplemento da Long (180-x)." },
-            { topic: "Cartografia: Projeções Cilíndricas", text: "A Projeção Cilíndrica Equidistante é menos famosa que a de Mercator ou Peters, mas tem uma utilidade específica. Ela preserva:", options: ["As áreas de todos os continentes", "As formas dos continentes", "As distâncias ao longo dos meridianos", "Os ângulos de navegação", "A proporção dos oceanos"], correct: 2, explanation: "Como o nome diz, ela é Equidistante, mas geralmente apenas em direções específicas (como ao longo dos meridianos). Não serve para navegar (Mercator) nem para comparar áreas (Peters).", tip: "Equidistante = Mantém distâncias (linearmente)." },
-            { topic: "Cartografia: Sensoriamento Remoto", text: "Na produção de mapas modernos pelo IBGE, o uso de imagens de satélite e fotografias aéreas é fundamental. A técnica de obter informações sobre a superfície terrestre sem contato físico é chamada de:", options: ["Geoprocessamento", "Aerofotogrametria", "Sensoriamento Remoto", "GPS", "Topografia"], correct: 2, explanation: "Sensoriamento Remoto é o 'guarda-chuva' que engloba satélites, drones e radares. Aerofotogrametria é uma técnica específica dentro dele.", tip: "Sem contato físico = Sensoriamento Remoto." },
-            { topic: "Cartografia: Escala Numérica", text: "Um mapa tem escala 1:500.000. Se você reduzir esse mapa em uma fotocopiadora para 50% do seu tamanho original, a nova escala numérica será:", options: ["1:250.000", "1:1.000.000", "1:500.000 (não muda)", "1:100.000", "1:750.000"], correct: 1, explanation: "Se o mapa diminui de tamanho (fica menor), os detalhes diminuem. A escala fica MENOR. O denominador dobra. 1:1.000.000 é uma escala menor que 1:500.000.", tip: "Reduzir mapa = Aumentar denominador = Escala Menor." },
-            { topic: "Cartografia: UTM", text: "O sistema de coordenadas UTM (Universal Transversa de Mercator) é muito utilizado em trabalhos de campo e GPS. Diferente de Lat/Long, ele usa:", options: ["Graus, Minutos e Segundos", "Metros (Coordenadas Planas)", "Radianos", "Milhas Náuticas", "Porcentagem"], correct: 1, explanation: "UTM projeta a Terra em zonas planas e mede a posição em metros (Norte e Leste), facilitando o cálculo de distâncias em metros no campo.", tip: "UTM = Metros." },
-            { topic: "Física: Estrutura do Relevo", text: "As bacias sedimentares cobrem a maior parte do território brasileiro (cerca de 64%). Sua importância econômica reside principalmente na presença de:", options: ["Minerais metálicos como ferro e ouro", "Combustíveis fósseis (petróleo, carvão) e aquíferos", "Pedras preciosas", "Rochas magmáticas para construção", "Solos de terra roxa"], correct: 1, explanation: "Petróleo, carvão e água subterrânea (aquíferos) se acumulam em camadas de sedimentos. Minérios metálicos ficam nos Escudos Cristalinos (36% do território).", tip: "Bacia Sedimentar = Energia (Petróleo) e Água." },
-            { topic: "Física: Clima Semiárido", text: "A irregularidade das chuvas no Sertão Nordestino (Clima Semiárido) não se deve à falta de umidade, mas sim à:", options: ["Falta de vegetação", "Dinâmica das massas de ar e relevo (Planalto da Borborema)", "Existência de desertos vizinhos", "Alta latitude", "Corrente fria no litoral"], correct: 1, explanation: "O Planalto da Borborema barra a umidade do oceano (chuvas orográficas no litoral), deixando passar pouco para o sertão. Além disso, as massas de ar ali são divergentes.", tip: "Borborema barra a chuva." },
-            { topic: "Física: Intemperismo", text: "Em climas quentes e úmidos como o da Amazônia, o tipo de intemperismo predominante na formação dos solos é o:", options: ["Físico (quebra da rocha)", "Químico (decomposição pela água)", "Eólico", "Glacial", "Biológico puro"], correct: 1, explanation: "Muita água + Calor = Reação Química rápida. A rocha 'apodrece' (vira solo) rápido e profundamente (solos profundos). Intemperismo Físico domina em desertos.", tip: "Água = Intemperismo Químico." },
-            { topic: "Física: Aquíferos", text: "O Aquífero Guarani é um dos maiores do mundo, mas em volume de água, foi superado por descobertas recentes na região Norte. O 'Sistema Aquífero Grande Amazônia' (SAGA) destaca-se por:", options: ["Ser totalmente confinado e inacessível", "Ter água salobra imprópria", "Ser o maior do mundo em volume de água potável", "Estar localizado em rochas cristalinas", "Ser poluído por mercúrio"], correct: 2, explanation: "O SAGA (ou Alter do Chão) tem volume estimado muito superior ao Guarani, sendo uma reserva estratégica global sob a Amazônia.", tip: "SAGA (Amazônia) > Guarani (Sul) em volume." },
-            { topic: "Física: Domínios (Mares de Morros)", text: "O Domínio dos Mares de Morros estende-se pelo litoral brasileiro e é caracterizado por:", options: ["Relevo plano e vegetação de caatinga", "Formas arredondadas (meia-laranja) e Mata Atlântica", "Chapadas tabulares e Cerrado", "Coxilhas e Campos", "Planícies inundáveis e Floresta Equatorial"], correct: 1, explanation: "Os morros arredondados (mamelonares) pela erosão da chuva são a marca do litoral Sudeste/Nordeste, domínio da Mata Atlântica.", tip: "Mares de Morros = Morros redondos + Mata Atlântica." },
-            { topic: "Demografia: Razão de Sexo", text: "Se em um município a Razão de Sexo é de 95, isso significa que:", options: ["Existem 95 homens para cada 100 mulheres", "Existem 95 mulheres para cada 100 homens", "A população é 95% masculina", "A população é 95% feminina", "Há equilíbrio perfeito"], correct: 0, explanation: "Razão de Sexo = (Homens / Mulheres) * 100. Se é menor que 100, tem menos homem que mulher. 95 significa 95 homens para cada 100 mulheres.", tip: "< 100 = Mais Mulheres. > 100 = Mais Homens." },
-            { topic: "Demografia: Envelhecimento", text: "O aumento da proporção de idosos no Brasil traz como desafio imediato para as políticas públicas:", options: ["A construção de mais creches", "A reforma da previdência e adaptação do sistema de saúde (geriatria)", "O aumento de vagas no ensino fundamental", "O incentivo à emigração", "A redução de impostos sobre brinquedos"], correct: 1, explanation: "Mais idosos = Mais gasto com aposentadoria e saúde crônica. É o custo do envelhecimento.", tip: "Idoso = Previdência + Saúde." },
-            { topic: "Demografia: Migração Pendular", text: "A migração pendular não é exclusiva de trabalhadores. Estudantes universitários que viajam diariamente para outra cidade também se enquadram. Esse fluxo diário exige:", options: ["Construção de alojamentos", "Sistemas de transporte intermunicipal eficientes", "Aumento de fronteiras agrícolas", "Criação de novos estados", "Redução da carga horária escolar"], correct: 1, explanation: "Se muita gente vai e volta todo dia, a estrada ou o trem tem que funcionar. É um problema de mobilidade urbana/regional.", tip: "Pendular = Transporte." },
-            { topic: "Demografia: Censo", text: "No Censo, a 'População Residente' difere da 'População Presente'. O IBGE foca na Residente, que são:", options: ["As pessoas que estavam na cidade no dia do Censo, mesmo turistas", "As pessoas que têm aquele domicílio como sua residência habitual", "Apenas quem nasceu no município", "Quem tem título de eleitor na cidade", "Quem paga IPTU"], correct: 1, explanation: "O Censo conta quem MORA lá (habitual), não quem está passeando. Se você viaja a trabalho, é contado na sua casa, não no hotel.", tip: "Censo conta onde você dorme a maior parte do ano." },
-            { topic: "Demografia: Mortalidade Infantil", text: "A Taxa de Mortalidade Infantil calcula os óbitos de crianças:", options: ["Até 5 anos de idade", "Até 1 ano de idade (completos) para cada 1.000 nascidos vivos", "Ao nascer (natimortos)", "Até 10 anos", "Por causas violentas apenas"], correct: 1, explanation: "O indicador padrão internacional é óbitos < 1 ano por 1.000 nascimentos. Reflete muito a qualidade da saúde e saneamento.", tip: "Infantil = Menos de 1 ano." },
-            { topic: "Urbana: Gentrificação", text: "A revitalização de uma zona portuária antiga, transformando galpões em lofts caros e museus, atraindo classe média alta e expulsando moradores pobres antigos, é um caso clássico de:", options: ["Favelização", "Periferização", "Gentrificação", "Conurbação", "Desmetropolização"], correct: 2, explanation: "Enobrecimento da área. Fica bonito, mas fica caro, e o pobre sai.", tip: "Revitalização cara = Gentrificação." },
-            { topic: "Urbana: Plano Diretor", text: "O principal instrumento legal da política urbana brasileira, obrigatório para cidades com mais de 20 mil habitantes, é o:", options: ["Código Florestal", "Estatuto da Terra", "Plano Diretor", "Lei de Diretrizes Orçamentárias", "Plano Plurianual"], correct: 2, explanation: "O Plano Diretor define onde pode construir prédio, onde é área verde, onde é industrial. É a 'constituição' da cidade.", tip: "Cidade > 20k hab = Plano Diretor." },
-            { topic: "Urbana: Verticalização", text: "O processo de verticalização (construção de prédios) intensiva em uma área urbana pode causar problemas microclimáticos como:", options: ["Inversão térmica apenas", "Redução da ilha de calor", "Formação de 'Canyons Urbanos' que alteram a circulação dos ventos e retêm calor", "Aumento da umidade relativa", "Resfriamento do solo"], correct: 2, explanation: "Prédios altos formam corredores (canyons) que canalizam ou barram o vento e impedem a dispersão de poluentes e calor.", tip: "Prédios altos = Barreira de vento/calor." },
-            { topic: "Urbana: Região Metropolitana", text: "A criação de uma Região Metropolitana é uma decisão política que cabe aos:", options: ["Municípios envolvidos", "Governos Estaduais (via Lei Complementar)", "Governo Federal", "IBGE", "ONU"], correct: 1, explanation: "O Estado decide criar a RM para integrar o planejamento (transporte, lixo) das cidades conurbadas. RIDE é federal, RM é estadual.", tip: "RM = Lei Estadual." },
-            { topic: "Urbana: Hierarquia", text: "Na classificação do IBGE, um 'Centro Local' é aquele que:", options: ["Comanda o país todo", "Tem influência apenas dentro dos seus próprios limites municipais, atendendo necessidades básicas", "Atrai gente de outros estados", "É uma capital", "Tem aeroporto internacional"], correct: 1, explanation: "É a base da pirâmide. A cidade pequena onde o morador compra pão e remédio, mas vai na cidade vizinha comprar móveis ou ir ao médico especialista.", tip: "Centro Local = Atende só a si mesmo." },
-            { topic: "Agrária: Modernização Conservadora", text: "A modernização da agricultura brasileira nas décadas de 70/80 é chamada de 'Conservadora' porque:", options: ["Conservou o meio ambiente", "Manteve as tecnologias antigas", "Modernizou a técnica (máquinas/química) mas manteve a estrutura fundiária concentrada (latifúndio)", "Foi feita por partidos conservadores", "Conservou a mão de obra familiar"], correct: 2, explanation: "Mudou o trator, manteve o dono. A tecnologia chegou, mas a terra continuou na mão de poucos.", tip: "Técnica nova, Dono velho." },
-            { topic: "Agrária: Silvicultura", text: "O crescimento da Silvicultura no Brasil refere-se principalmente ao plantio de:", options: ["Soja e Milho", "Eucalipto e Pinus (para celulose e madeira)", "Mata Atlântica nativa", "Árvores frutíferas", "Cana-de-açúcar"], correct: 1, explanation: "Florestas plantadas (monocultura de árvores) para papel e celulose. O Brasil é líder mundial nisso.", tip: "Silvicultura = Eucalipto/Pinus." },
-            { topic: "Agrária: Conflitos", text: "A região do 'Bico do Papagaio' (norte do Tocantins) é historicamente conhecida por:", options: ["Paz no campo", "Alta produtividade de uva", "Intensos conflitos agrários e violência no campo", "Turismo ecológico", "Indústria de tecnologia"], correct: 2, explanation: "Ponto de encontro da Amazônia com o Cerrado, é palco de disputas violentas entre posseiros, grileiros e fazendeiros há décadas.", tip: "Bico do Papagaio = Conflito Agrário." },
-            { topic: "Agrária: Pecuária", text: "A pecuária brasileira pode ser dividida em Intensiva e Extensiva. A Extensiva caracteriza-se por:", options: ["Gado confinado e ração balanceada", "Gado solto em grandes pastagens, com baixa tecnologia por hectare", "Uso de inseminação artificial em massa", "Produção leiteira mecanizada", "Pequenas propriedades"], correct: 1, explanation: "Extensiva = Gado solto ocupando muita terra ('estendida'). É o modelo tradicional que ocupa grandes áreas.", tip: "Extensiva = Gado solto." },
-            { topic: "Agrária: MST", text: "Os movimentos sociais no campo, como o MST, reivindicam principalmente:", options: ["O fim da agricultura", "A Reforma Agrária (redistribuição de terras improdutivas)", "Subsídios para a soja", "Mecanização total", "Urbanização das áreas rurais"], correct: 1, explanation: "A pauta histórica é cumprir a função social da terra: se é latifúndio e não produz, deve ser desapropriado e dividido.", tip: "MST = Reforma Agrária." },
-            { topic: "Regional: Amazônia Legal", text: "A 'Amazônia Legal' é um conceito administrativo criado pelo governo que:", options: ["Corresponde exatamente ao bioma Amazônia", "É menor que o bioma Amazônia", "Engloba o bioma Amazônia e partes do Cerrado e Pantanal (Mato Grosso, Tocantins, parte do Maranhão)", "Só inclui estados do Norte", "É uma área de reserva internacional"], correct: 2, explanation: "Amazônia Legal > Bioma Amazônia. Foi criada para dar incentivos fiscais (SUDAM). Inclui o MT todo (que tem muito Cerrado) e o oeste do MA.", tip: "Amazônia Legal é gigante (inclui MT e MA)." },
-            { topic: "Econômica: Terciarização", text: "A hipertrofia do Setor Terciário (Comércio e Serviços) nas metrópoles brasileiras muitas vezes esconde:", options: ["Um desenvolvimento tecnológico pleno", "O aumento do subemprego e da informalidade (camelôs, uberização)", "A extinção da indústria", "O fim da agricultura", "O pleno emprego"], correct: 1, explanation: "O setor terciário cresce não só porque a economia vai bem, mas porque quem perde emprego na indústria vai vender algo na rua (refúgio). Isso é o 'inchaço' do terciário.", tip: "Terciário inchado = Informalidade." },
-            { topic: "Meio Ambiente: Unidades de Conservação", text: "Diferença entre Unidade de Proteção Integral e Unidade de Uso Sustentável:", options: ["Não há diferença", "Integral: só pesquisa e turismo (sem morador); Sustentável: permite extração controlada e moradores tradicionais", "Integral: permite mineração; Sustentável: intocável", "Integral: privada; Sustentável: pública", "Integral: urbana; Sustentável: rural"], correct: 1, explanation: "Integral (ex: Parque Nacional) é para preservar a natureza bruta. Sustentável (ex: RESEX) permite que comunidades vivam lá e usem os recursos com cuidado.", tip: "Integral = Só olha. Sustentável = Usa com cuidado." },
-            { topic: "Regional: Nordeste (Zona da Mata)", text: "A Zona da Mata nordestina é a sub-região mais urbanizada e industrializada, mas historicamente foi ocupada pela monocultura da:", options: ["Soja", "Cana-de-açúcar", "Algodão", "Café", "Cacau (apenas na Bahia)"], correct: 1, explanation: "Desde as Capitanias Hereditárias, o litoral úmido (Zona da Mata) foi o reino da cana.", tip: "Zona da Mata = Cana." },
-            { topic: "Geral: Globalização", text: "Na Divisão Internacional do Trabalho (DIT) atual, o Brasil se insere principalmente como:", options: ["Exportador de tecnologia de ponta", "Importador de alimentos", "Exportador de commodities (agro/minério) e importador de produtos industrializados de alta tecnologia", "País fechado autossuficiente", "Centro financeiro global"], correct: 2, explanation: "Vendemos soja e ferro (barato/tonelada), compramos chip e remédio (caro/grama).", tip: "Brasil vende Commodity, compra Tecnologia." }
-        ];
+        { 
+            topic: "Cartografia: Coordenadas e Antípodas", 
+            text: "Se uma cidade está localizada nas coordenadas 20°S e 45°O, qual é a coordenada aproximada do seu ponto antípoda (o ponto diametralmente oposto na Terra)?", 
+            options: ["20°N e 135°L", "20°N e 45°L", "20°S e 135°L", "70°N e 135°L", "20°N e 135°O"], 
+            correct: 0, 
+            explanation: "Para achar o antípoda: inverta a latitude (20°S vira 20°N) e subtraia a longitude de 180°, invertendo o hemisfério (180 - 45 = 135, O vira L). Resultado: 20°N, 135°L.", 
+            tip: "Antípoda = Inverte Lat, Suplemento da Long (180-x)." 
+        },
+        { 
+            topic: "Cartografia: Projeções Cilíndricas", 
+            text: "A Projeção Cilíndrica Equidistante é menos famosa que a de Mercator ou Peters, mas tem uma utilidade específica. Ela preserva:", 
+            options: ["As áreas de todos os continentes", "As formas dos continentes", "As distâncias ao longo dos meridianos", "Os ângulos de navegação", "A proporção dos oceanos"], 
+            correct: 2, 
+            explanation: "Como o nome diz, ela é Equidistante, mas geralmente apenas em direções específicas (como ao longo dos meridianos). Não serve para navegar (Mercator) nem para comparar áreas (Peters).", 
+            tip: "Equidistante = Mantém distâncias (linearmente)." 
+        },
+        { 
+            topic: "Cartografia: Sensoriamento Remoto", 
+            text: "Na produção de mapas modernos pelo IBGE, o uso de imagens de satélite e fotografias aéreas é fundamental. A técnica de obter informações sobre a superfície terrestre sem contato físico é chamada de:", 
+            options: ["Geoprocessamento", "Aerofotogrametria", "Sensoriamento Remoto", "GPS", "Topografia"], 
+            correct: 2, 
+            explanation: "Sensoriamento Remoto é o 'guarda-chuva' que engloba satélites, drones e radares. Aerofotogrametria é uma técnica específica dentro dele.", 
+            tip: "Sem contato físico = Sensoriamento Remoto." 
+        },
+        { 
+            topic: "Cartografia: Escala Numérica", 
+            text: "Um mapa tem escala 1:500.000. Se você reduzir esse mapa em uma fotocopiadora para 50% do seu tamanho original, a nova escala numérica será:", 
+            options: ["1:250.000", "1:1.000.000", "1:500.000 (não muda)", "1:100.000", "1:750.000"], 
+            correct: 1, 
+            explanation: "Se o mapa diminui de tamanho (fica menor), os detalhes diminuem. A escala fica MENOR. O denominador dobra. 1:1.000.000 é uma escala menor que 1:500.000.", 
+            tip: "Reduzir mapa = Aumentar denominador = Escala Menor." 
+        },
+        { 
+            topic: "Cartografia: UTM", 
+            text: "O sistema de coordenadas UTM (Universal Transversa de Mercator) é muito utilizado em trabalhos de campo e GPS. Diferente de Lat/Long, ele usa:", 
+            options: ["Graus, Minutos e Segundos", "Metros (Coordenadas Planas)", "Coordenadas Geocêntricas", "Milhas Náuticas", "Fusos Horários"], 
+            correct: 1, 
+            explanation: "UTM projeta a Terra em zonas planas e mede a posição em metros (Norte e Leste), facilitando o cálculo de distâncias em metros no campo.", 
+            tip: "UTM = Metros." 
+        },
+        { 
+            topic: "Física: Estrutura do Relevo", 
+            text: "As bacias sedimentares cobrem a maior parte do território brasileiro (cerca de 64%). Sua importância econômica reside principalmente na presença de:", 
+            options: ["Minerais metálicos como ferro e ouro", "Combustíveis fósseis (petróleo, carvão) e aquíferos", "Pedras preciosas", "Rochas magmáticas para construção", "Solos de terra roxa"], 
+            correct: 1, 
+            explanation: "Petróleo, carvão e água subterrânea (aquíferos) se acumulam em camadas de sedimentos. Minérios metálicos ficam nos Escudos Cristalinos (36% do território).", 
+            tip: "Bacia Sedimentar = Energia (Petróleo) e Água." 
+        },
+        { 
+            topic: "Física: Clima Semiárido", 
+            text: "A irregularidade das chuvas no Sertão Nordestino (Clima Semiárido) não se deve à falta de umidade no oceano, mas sim à:", 
+            options: ["Falta de vegetação de grande porte", "Dinâmica das massas de ar e relevo (Planalto da Borborema)", "Existência de células de alta pressão atmosférica constantes", "Continentalidade excessiva (distância do mar)", "Corrente marítima fria no litoral"], 
+            correct: 1, 
+            explanation: "O Planalto da Borborema barra a umidade do oceano (chuvas orográficas no litoral), deixando passar pouco para o sertão. Além disso, as massas de ar ali tendem à divergência.", 
+            tip: "Borborema barra a chuva." 
+        },
+        { 
+            topic: "Física: Intemperismo", 
+            text: "Em climas quentes e úmidos como o da Amazônia, o tipo de intemperismo predominante na formação dos solos é o:", 
+            options: ["Físico (fragmentação da rocha)", "Químico (decomposição pela água)", "Eólico (abrasão pelo vento)", "Glacial", "Termoclastia (variação de temperatura)"], 
+            correct: 1, 
+            explanation: "Muita água + Calor = Reação Química rápida. A rocha 'apodrece' (vira solo) rápido e profundamente (solos profundos). Intemperismo Físico domina em desertos.", 
+            tip: "Água = Intemperismo Químico." 
+        },
+        { 
+            topic: "Física: Aquíferos", 
+            text: "O Aquífero Guarani é um dos maiores do mundo, mas em volume de água, foi superado por descobertas recentes na região Norte. O 'Sistema Aquífero Grande Amazônia' (SAGA) destaca-se por:", 
+            options: ["Ser totalmente confinado e inacessível", "Ter água salobra imprópria para consumo", "Ser o maior do mundo em volume de água potável", "Estar localizado em rochas cristalinas impermeáveis", "Ser poluído por mercúrio de garimpo em toda sua extensão"], 
+            correct: 2, 
+            explanation: "O SAGA (ou Alter do Chão) tem volume estimado muito superior ao Guarani, sendo uma reserva estratégica global sob a Amazônia.", 
+            tip: "SAGA (Amazônia) > Guarani (Sul) em volume." 
+        },
+        { 
+            topic: "Física: Domínios (Mares de Morros)", 
+            text: "O Domínio dos Mares de Morros estende-se pelo litoral brasileiro e é caracterizado por:", 
+            options: ["Relevo plano e vegetação de caatinga", "Formas arredondadas (meia-laranja) e Mata Atlântica", "Chapadas tabulares e Cerrado", "Coxilhas e Campos Sulinos", "Planícies inundáveis e Floresta Equatorial"], 
+            correct: 1, 
+            explanation: "Os morros arredondados (mamelonares) pela erosão da chuva são a marca do litoral Sudeste/Nordeste, domínio da Mata Atlântica.", 
+            tip: "Mares de Morros = Morros redondos + Mata Atlântica." 
+        },
+        { 
+            topic: "Demografia: Razão de Sexo", 
+            text: "Se em um município a Razão de Sexo é de 95, isso significa que:", 
+            options: ["Existem 95 homens para cada 100 mulheres", "Existem 95 mulheres para cada 100 homens", "A população é 95% masculina", "A população é 95% feminina", "Há equilíbrio perfeito na pirâmide etária"], 
+            correct: 0, 
+            explanation: "Razão de Sexo = (Homens / Mulheres) * 100. Se é menor que 100, tem menos homem que mulher. 95 significa 95 homens para cada 100 mulheres.", 
+            tip: "< 100 = Mais Mulheres. > 100 = Mais Homens." 
+        },
+        { 
+            topic: "Demografia: Envelhecimento", 
+            text: "O aumento da proporção de idosos no Brasil traz como desafio imediato para as políticas públicas:", 
+            options: ["A construção massiva de creches", "A reforma da previdência e adaptação do sistema de saúde (geriatria)", "O aumento de vagas no ensino fundamental", "O incentivo à emigração de jovens", "O déficit na oferta de mão de obra economicamente ativa"], 
+            correct: 1, 
+            explanation: "Mais idosos = Mais gasto com aposentadoria e saúde crônica. É o custo do envelhecimento. (A opção de déficit de mão de obra é consequência futura, a previdência é o desafio *imediato* de caixa).", 
+            tip: "Idoso = Previdência + Saúde." 
+        },
+        { 
+            topic: "Demografia: Migração Pendular", 
+            text: "A migração pendular não é exclusiva de trabalhadores. Estudantes universitários que viajam diariamente para outra cidade também se enquadram. Esse fluxo diário exige:", 
+            options: ["Construção de alojamentos estudantis", "Sistemas de transporte intermunicipal eficientes e integrados", "Abertura de novas fronteiras agrícolas", "Verticalização das áreas rurais", "Redução da carga horária escolar"], 
+            correct: 1, 
+            explanation: "Se muita gente vai e volta todo dia, a estrada ou o trem tem que funcionar. É um problema de mobilidade urbana/regional.", 
+            tip: "Pendular = Transporte." 
+        },
+        { 
+            topic: "Demografia: Censo", 
+            text: "No Censo, a 'População Residente' difere da 'População Presente'. O IBGE foca na Residente, que são:", 
+            options: ["As pessoas que estavam na cidade no dia do Censo, mesmo turistas", "As pessoas que têm aquele domicílio como sua residência habitual", "Apenas quem nasceu no município (naturais)", "Quem tem título de eleitor registrado na cidade", "Quem paga IPTU no município"], 
+            correct: 1, 
+            explanation: "O Censo conta quem MORA lá (habitual), não quem está passeando. Se você viaja a trabalho, é contado na sua casa, não no hotel.", 
+            tip: "Censo conta onde você dorme a maior parte do ano." 
+        },
+        { 
+            topic: "Demografia: Mortalidade Infantil", 
+            text: "A Taxa de Mortalidade Infantil calcula os óbitos de crianças:", 
+            options: ["Até 5 anos de idade", "Até 1 ano de idade (completos) para cada 1.000 nascidos vivos", "Ao nascer (natimortos)", "Até 10 anos de idade", "Por causas violentas ou acidentais apenas"], 
+            correct: 1, 
+            explanation: "O indicador padrão internacional é óbitos < 1 ano por 1.000 nascimentos. Reflete muito a qualidade da saúde e saneamento.", 
+            tip: "Infantil = Menos de 1 ano." 
+        },
+        { 
+            topic: "Urbana: Gentrificação", 
+            text: "A revitalização de uma zona portuária antiga, transformando galpões em lofts caros e museus, atraindo classe média alta e expulsando moradores pobres antigos, é um caso clássico de:", 
+            options: ["Favelização", "Periferização", "Gentrificação", "Conurbação", "Desmetropolização"], 
+            correct: 2, 
+            explanation: "Enobrecimento da área. Fica bonito, mas fica caro, e o pobre sai.", 
+            tip: "Revitalização cara = Gentrificação." 
+        },
+        { 
+            topic: "Urbana: Plano Diretor", 
+            text: "O principal instrumento legal da política urbana brasileira, obrigatório para cidades com mais de 20 mil habitantes, é o:", 
+            options: ["Código Florestal", "Estatuto da Terra", "Plano Diretor", "Lei de Diretrizes Orçamentárias (LDO)", "Plano Plurianual (PPA)"], 
+            correct: 2, 
+            explanation: "O Plano Diretor define onde pode construir prédio, onde é área verde, onde é industrial. É a 'constituição' da cidade.", 
+            tip: "Cidade > 20k hab = Plano Diretor." 
+        },
+        { 
+            topic: "Urbana: Verticalização", 
+            text: "O processo de verticalização (construção de prédios) intensiva em uma área urbana pode causar problemas microclimáticos como:", 
+            options: ["Inversão térmica (fenômeno natural)", "Redução da ilha de calor", "Formação de 'Canyons Urbanos' que alteram a circulação dos ventos e retêm calor", "Aumento da evapotranspiração local", "Resfriamento do solo urbano"], 
+            correct: 2, 
+            explanation: "Prédios altos formam corredores (canyons) que canalizam ou barram o vento e impedem a dispersão de poluentes e calor.", 
+            tip: "Prédios altos = Barreira de vento/calor." 
+        },
+        { 
+            topic: "Urbana: Região Metropolitana", 
+            text: "A criação de uma Região Metropolitana é uma decisão política para integrar o planejamento urbano que cabe aos:", 
+            options: ["Municípios envolvidos (via Consórcios)", "Governos Estaduais (via Lei Complementar)", "Governo Federal (via Decreto)", "Instituto Brasileiro de Geografia e Estatística (IBGE)", "Comitês de Bacia Hidrográfica"], 
+            correct: 1, 
+            explanation: "O Estado decide criar a RM para integrar o planejamento (transporte, lixo) das cidades conurbadas. RIDE é federal, RM é estadual.", 
+            tip: "RM = Lei Estadual." 
+        },
+        { 
+            topic: "Urbana: Hierarquia", 
+            text: "Na classificação da hierarquia urbana do IBGE, um 'Centro Local' é aquele que:", 
+            options: ["Polariza todo o território nacional", "Tem influência apenas dentro dos seus próprios limites municipais, atendendo necessidades básicas", "Atrai população de outros estados para serviços de saúde", "Possui sede de multinacionais", "Conta com aeroporto internacional e porto"], 
+            correct: 1, 
+            explanation: "É a base da pirâmide. A cidade pequena onde o morador compra pão e remédio, mas vai na cidade vizinha comprar móveis ou ir ao médico especialista.", 
+            tip: "Centro Local = Atende só a si mesmo." 
+        },
+        { 
+            topic: "Agrária: Modernização Conservadora", 
+            text: "A modernização da agricultura brasileira nas décadas de 70/80 é chamada de 'Conservadora' porque:", 
+            options: ["Promoveu a conservação ambiental rigorosa", "Manteve as tecnologias rudimentares de produção", "Modernizou a técnica (máquinas/química) mas manteve a estrutura fundiária concentrada (latifúndio)", "Foi financiada exclusivamente por capital privado estrangeiro", "Conservou a estrutura de mão de obra familiar tradicional"], 
+            correct: 2, 
+            explanation: "Mudou o trator, manteve o dono. A tecnologia chegou, mas a terra continuou na mão de poucos.", 
+            tip: "Técnica nova, Dono velho." 
+        },
+        { 
+            topic: "Agrária: Silvicultura", 
+            text: "O crescimento da Silvicultura no Brasil refere-se principalmente ao plantio de:", 
+            options: ["Soja e Milho transgênicos", "Eucalipto e Pinus (para celulose e madeira)", "Mata Atlântica para reflorestamento nativo", "Árvores frutíferas para exportação", "Palmeiras para extração de óleo de palma"], 
+            correct: 1, 
+            explanation: "Florestas plantadas (monocultura de árvores) para papel e celulose. O Brasil é líder mundial nisso.", 
+            tip: "Silvicultura = Eucalipto/Pinus." 
+        },
+        { 
+            topic: "Agrária: Conflitos", 
+            text: "A região do 'Bico do Papagaio' (norte do Tocantins) é historicamente conhecida por:", 
+            options: ["Ser o maior polo de tecnologia agrícola do país", "Ter alta produtividade de uva irrigada", "Intensos conflitos agrários e violência no campo", "Ser um destino exclusivo de ecoturismo de luxo", "Ter a estrutura fundiária mais igualitária do Brasil"], 
+            correct: 2, 
+            explanation: "Ponto de encontro da Amazônia com o Cerrado, é palco de disputas violentas entre posseiros, grileiros e fazendeiros há décadas.", 
+            tip: "Bico do Papagaio = Conflito Agrário." 
+        },
+        { 
+            topic: "Agrária: Pecuária", 
+            text: "A pecuária brasileira pode ser dividida em Intensiva e Extensiva. A Extensiva caracteriza-se por:", 
+            options: ["Gado confinado e uso de ração balanceada", "Gado solto em grandes pastagens, com baixa tecnologia por hectare", "Uso massivo de inseminação artificial e melhoramento genético", "Produção leiteira mecanizada em estábulos", "Pequenas propriedades com rotação de pasto"], 
+            correct: 1, 
+            explanation: "Extensiva = Gado solto ocupando muita terra ('estendida'). É o modelo tradicional que ocupa grandes áreas.", 
+            tip: "Extensiva = Gado solto." 
+        },
+        { 
+            topic: "Agrária: MST", 
+            text: "Os movimentos sociais no campo, como o MST, têm como reivindicação central histórica:", 
+            options: ["A coletivização forçada de todas as propriedades rurais", "A Reforma Agrária (redistribuição de terras improdutivas)", "O aumento de subsídios para a monocultura da soja", "A mecanização total da produção agrícola", "A proibição da agricultura familiar"], 
+            correct: 1, 
+            explanation: "A pauta histórica é cumprir a função social da terra: se é latifúndio e não produz, deve ser desapropriado e dividido.", 
+            tip: "MST = Reforma Agrária." 
+        },
+        { 
+            topic: "Regional: Amazônia Legal", 
+            text: "A 'Amazônia Legal' é um conceito administrativo criado pelo governo que:", 
+            options: ["Corresponde exatamente aos limites biológicos do bioma Amazônia", "É menor que a área do bioma Amazônia", "Engloba o bioma Amazônia e áreas de Cerrado e Pantanal (Mato Grosso, Tocantins, parte do Maranhão)", "Inclui apenas os estados da Região Norte", "Define a área de preservação internacional da UNESCO"], 
+            correct: 2, 
+            explanation: "Amazônia Legal > Bioma Amazônia. Foi criada para dar incentivos fiscais (SUDAM). Inclui o MT todo (que tem muito Cerrado) e o oeste do MA.", 
+            tip: "Amazônia Legal é gigante (inclui MT e MA)." 
+        },
+        { 
+            topic: "Econômica: Terciarização", 
+            text: "A hipertrofia do Setor Terciário (Comércio e Serviços) nas grandes metrópoles brasileiras muitas vezes reflete:", 
+            options: ["Um desenvolvimento tecnológico pleno e alta qualificação", "O aumento do subemprego e da informalidade (refúgio para desempregados)", "A extinção completa da atividade industrial no país", "A primarização da pauta de exportações", "O pleno emprego da população economicamente ativa"], 
+            correct: 1, 
+            explanation: "O setor terciário cresce não só porque a economia vai bem, mas porque quem perde emprego na indústria vai vender algo na rua (refúgio). Isso é o 'inchaço' do terciário.", 
+            tip: "Terciário inchado = Informalidade." 
+        },
+        { 
+            topic: "Meio Ambiente: Unidades de Conservação", 
+            text: "Diferencie 'Unidade de Proteção Integral' de 'Unidade de Uso Sustentável':", 
+            options: ["Proteção Integral visa a preservação (intocável); Uso Sustentável visa a conservação (uso racional)", "Integral permite mineração; Sustentável proíbe qualquer atividade", "Integral é gerida por empresas privadas; Sustentável é pública", "Não há distinção legal entre as duas categorias", "Integral permite moradores; Sustentável exige a remoção da população"], 
+            correct: 0, 
+            explanation: "Integral (ex: Parque Nacional) é para preservar a natureza bruta. Sustentável (ex: RESEX) permite que comunidades vivam lá e usem os recursos com cuidado.", 
+            tip: "Integral = Só olha. Sustentável = Usa com cuidado." 
+        },
+        { 
+            topic: "Regional: Nordeste (Zona da Mata)", 
+            text: "A Zona da Mata nordestina é a sub-região mais urbanizada e industrializada, mas historicamente sua ocupação inicial deve-se à monocultura da:", 
+            options: ["Soja (para exportação)", "Cana-de-açúcar", "Algodão arbóreo", "Café", "Cacau (no sul da Bahia)"], 
+            correct: 1, 
+            explanation: "Desde as Capitanias Hereditárias, o litoral úmido (Zona da Mata) foi o reino da cana.", 
+            tip: "Zona da Mata = Cana." 
+        },
+        { 
+            topic: "Geral: Globalização", 
+            text: "Na Nova Divisão Internacional do Trabalho (DIT), o Brasil se insere predominantemente como:", 
+            options: ["Exportador de tecnologia de ponta e patentes", "Importador de alimentos básicos", "Exportador de commodities (agro/minério) e importador de produtos de alta tecnologia", "Plataforma de exportação de produtos manufaturados (como a China)", "Centro financeiro global de decisão"], 
+            correct: 2, 
+            explanation: "Vendemos soja e ferro (barato/tonelada), compramos chip e remédio (caro/grama).", 
+            tip: "Brasil vende Commodity, compra Tecnologia." 
+        }
+    ];
 
         const questoesLote3 = [
-            { topic: "Cartografia: Projeção Azimutal", text: "A bandeira da ONU utiliza uma projeção cartográfica centrada no Polo Norte, o que permite visualizar todos os continentes ao redor desse ponto central, mas distorce as formas à medida que se afasta do centro. Essa projeção é classificada como:", options: ["Cilíndrica", "Cônica", "Azimutal ou Plana", "Anamórfica", "Descontínua"], correct: 2, explanation: "A projeção Azimutal (ou Plana) toca o globo em um único ponto (neste caso, o Polo). É ideal para distâncias a partir do centro (equidistante do centro), muito usada em geopolítica e estratégia militar.", tip: "ONU = Polo no centro = Azimutal." },
-            { topic: "Cartografia: Curvas de Nível (Perfil)", text: "Ao analisar uma carta topográfica, você percebe que as curvas de nível formam um 'V' apontando para as áreas mais altas do relevo. Essa formação indica a presença de:", options: ["Um divisor de águas (cume)", "Um vale ou curso de rio", "Uma planície", "Um planalto tabular", "Uma depressão absoluta"], correct: 1, explanation: "Regra dos Vales: As curvas de nível sempre 'dobram' para dentro (para montante) ao cruzar um rio, formando um 'V' que aponta para a nascente (parte alta).", tip: "V aponta pra cima = Rio corre pra baixo." },
-            { topic: "Cartografia: Norte", text: "A diferença angular entre o Norte Geográfico (Verdadeiro) e o Norte Magnético (indicado pela bússola) varia com o tempo e o local. Essa diferença é chamada de:", options: ["Azimute", "Declinação Magnética", "Latitude", "Longitude", "Convergência Meridiana"], correct: 1, explanation: "O polo magnético da Terra não fica no mesmo lugar que o polo geográfico. O ângulo de diferença entre eles é a Declinação Magnética, crucial para navegação precisa.", tip: "Bússola não aponta pro Norte verdadeiro, tem um desvio (Declinação)." },
-            { topic: "Cartografia: Escala (Detalhe)", text: "Para mapear os focos de dengue em um único bairro com precisão de ruas e lotes, qual destas escalas é a mais adequada?", options: ["1:1.000.000", "1:250.000", "1:50.000", "1:2.000", "1:10.000.000"], correct: 3, explanation: "Bairro exige muito detalhe (zoom). Escala Grande = Denominador Pequeno. 1:2.000 é a maior escala dentre as opções (1 cm = 20 metros).", tip: "Mais detalhe = Menor número depois do '1:'." },
-            { topic: "Geotecnologias: GPS", text: "O sistema GPS funciona através da triangulação de sinais. Para determinar a posição exata (Latitude, Longitude e Altitude) de um receptor na Terra, são necessários sinais de, no mínimo:", options: ["1 satélite", "2 satélites", "3 satélites (para 2D) ou 4 satélites (para 3D)", "12 satélites", "24 satélites"], correct: 2, explanation: "3 satélites dão a posição 2D (lat/long). O 4º satélite é necessário para calcular a Altitude e corrigir o erro de tempo do relógio.", tip: "Mínimo de 4 satélites para precisão total." },
-            { topic: "Física: Solos (Laterização)", text: "Em regiões tropicais, o desmatamento expõe o solo à chuva intensa e ao sol, formando uma crosta dura de ferro e alumínio na superfície que impede a agricultura. Esse processo é a:", options: ["Lixiviação", "Laterização (formação de canga)", "Salinização", "Arenização", "Eutrofização"], correct: 1, explanation: "A 'ferrugem' do solo. O ferro oxida e forma uma crosta dura (laterita ou canga), tornando o solo inútil para plantio.", tip: "Laterização = Solo vira tijolo/pedra." },
-            { topic: "Física: Ventos Alísios", text: "Os Ventos Alísios sopram constantemente dos trópicos em direção ao Equador, trazendo umidade do oceano. No Nordeste brasileiro, eles são responsáveis por:", options: ["Levar a seca para o litoral", "Trazer chuvas para o litoral oriental (Zona da Mata)", "Impedir a formação de nuvens", "Criar o fenômeno da friagem", "Formar desertos"], correct: 1, explanation: "Os Alísios empurram umidade do mar contra a costa. Quando batem no Planalto da Borborema, chove no litoral (Zona da Mata) e o ar chega seco no Sertão.", tip: "Alísios = Umidade pro litoral." },
-            { topic: "Física: Bacias Hidrográficas", text: "A linha imaginária que separa duas bacias hidrográficas, geralmente localizada nas cristas de morros ou serras, direcionando a água da chuva para vertentes opostas, é chamada de:", options: ["Talvegue", "Foz", "Divisor de Águas (Interflúvio)", "Lençol Freático", "Meandro"], correct: 2, explanation: "É o ponto mais alto. A chuva que cai de um lado vai para o rio A, a que cai do outro vai para o rio B.", tip: "Divisor de Águas = Topo do morro." },
-            { topic: "Física: El Niño", text: "Durante o fenômeno El Niño (aquecimento do Pacífico), observa-se no Brasil um padrão climático típico:", options: ["Seca no Sul e Chuva na Amazônia", "Chuva excessiva no Sul e Seca no Norte/Nordeste", "Frio intenso em todo o país", "Regularidade das chuvas no Sertão", "Aumento de furacões"], correct: 1, explanation: "Decoreba clássica: El Niño aquece a atmosfera, bloqueia frentes frias no Sul (inundações lá) e impede a chuva na Amazônia/Nordeste (seca/queimadas).", tip: "El Niño = Sul alagado, Norte seco." },
-            { topic: "Física: Caatinga (Xerófilas)", text: "As plantas da Caatinga possuem adaptações como folhas transformadas em espinhos, raízes profundas e caules que armazenam água. Essas plantas são classificadas como:", options: ["Higrófilas", "Tropófilas", "Xerófilas", "Halófilas", "Ombrófilas"], correct: 2, explanation: "Xeros = Seco. Filo = Amigo. Plantas amigas da seca (Cactos). Higrófilas são de lugares úmidos (Amazônia).", tip: "Xerófila = Cacto (Seco)." },
-            { topic: "Demografia: Densidade Demográfica", text: "O Brasil é um país 'populoso', mas 'pouco povoado'. Isso significa que:", options: ["Tem pouca gente no total.", "Tem muita gente no total (população absoluta), mas baixa densidade demográfica (hab/km²).", "Tem distribuição uniforme da população.", "Tem alta densidade em todo o território.", "A população está diminuindo."], correct: 1, explanation: "Populoso = Muita gente (número total). Povoado = Muita gente por metro quadrado (densidade). O Brasil tem vazios enormes (Amazônia), por isso é pouco povoado.", tip: "Populoso = Total. Povoado = Densidade." },
-            { topic: "Demografia: Fuga de Cérebros", text: "A emigração de profissionais altamente qualificados (cientistas, engenheiros) do Brasil para países desenvolvidos em busca de melhores salários e infraestrutura é chamada de:", options: ["Migração Pendular", "Transumância", "Fuga de Cérebros (Brain Drain)", "Xenofobia", "Migração de Retorno"], correct: 2, explanation: "O país investe na formação da pessoa, mas ela vai gerar riqueza em outro lugar. Prejuízo enorme para o desenvolvimento nacional.", tip: "Cérebro sai = Brain Drain." },
-            { topic: "Demografia: Pirâmide Invertida", text: "Quando a base da pirâmide etária fica mais estreita que o corpo e o topo começa a alargar, isso indica que o país está:", options: ["Rejuvenescendo", "Aumentando a natalidade", "Em fase avançada de transição demográfica (envelhecimento)", "Em guerra", "Recebendo muitos imigrantes jovens"], correct: 2, explanation: "Base estreita = Poucos filhos. Topo largo = Muitos velhos. É o padrão de países desenvolvidos ou em desenvolvimento rápido (Brasil).", tip: "Base fina = Envelhecimento." },
-            { topic: "Demografia: Mortalidade", text: "A diferença entre Taxa de Natalidade e Taxa de Mortalidade gera o indicador conhecido como:", options: ["Crescimento Vegetativo (ou Natural)", "Taxa de Fecundidade", "Esperança de Vida", "Saldo Migratório", "Crescimento Absoluto"], correct: 0, explanation: "O quanto a população cresce 'naturalmente' (sem contar quem chega de mudança). Natalidade - Mortalidade.", tip: "Nasceu - Morreu = Crescimento Vegetativo." },
-            { topic: "Demografia: PEA", text: "Um estudante de 20 anos que dedica-se exclusivamente aos estudos e não procura emprego é classificado pelo IBGE como:", options: ["Desocupado (PEA)", "Ocupado (PEA)", "Fora da Força de Trabalho (Inativo)", "Subocupado", "Desalentado"], correct: 2, explanation: "Só é Desocupado (PEA) quem PROCURA emprego. Quem não quer ou não pode trabalhar agora é 'Fora da Força de Trabalho' (antiga PNEA).", tip: "Não procura = Inativo." },
-            { topic: "Urbana: Espraiamento", text: "O crescimento horizontal da cidade, ocupando novas áreas periféricas cada vez mais distantes do centro, exigindo expansão de redes de água e transporte, é chamado de:", options: ["Verticalização", "Espraiamento Urbano (Urban Sprawl)", "Gentrificação", "Revitalização", "Compactação"], correct: 1, explanation: "A cidade se 'esparrama' como uma mancha de óleo. É caro para a prefeitura levar esgoto e ônibus tão longe.", tip: "Horizontal e longe = Espraiamento." },
-            { topic: "Urbana: Rede Urbana", text: "Em países desenvolvidos, a rede urbana tende a ser densa e articulada. Em países subdesenvolvidos, é comum ocorrer a 'Primazia Urbana', que é:", options: ["Equilíbrio entre as cidades", "Existência de uma única metrópole gigante que concentra tudo, inibindo cidades médias", "Muitas cidades pequenas ricas", "Ausência de capital", "Desurbanização"], correct: 1, explanation: "Uma cidade 'vampiriza' o país (ex: Buenos Aires na Argentina, Montevidéu no Uruguai). No Brasil isso diminuiu com o crescimento das cidades médias.", tip: "Primazia = Uma cidade manda em tudo." },
-            { topic: "Urbana: Segregação", text: "A 'Autossegregação' difere da segregação imposta porque:", options: ["É forçada pelo Estado", "Ocorre em favelas", "É praticada pelas classes altas que escolhem se isolar em enclaves fortificados (condomínios)", "Não existe no Brasil", "É baseada apenas em religião"], correct: 2, explanation: "O rico se tranca voluntariamente. O pobre é segregado involuntariamente (jogado para a periferia).", tip: "Autossegregação = Condomínio de luxo." },
-            { topic: "Urbana: Função Urbana", text: "Cidades como Brasília (DF) e Ouro Preto (MG) possuem funções urbanas predominantes distintas, sendo, respectivamente:", options: ["Industrial e Comercial", "Político-Administrativa e Turística/Histórica", "Religiosa e Portuária", "Militar e Industrial", "Universitária e Agrícola"], correct: 1, explanation: "Brasília foi criada para administrar (política). Ouro Preto vive do seu patrimônio (turismo).", tip: "Brasília = Política. Ouro Preto = Turismo." },
-            { topic: "Urbana: Periurbanização", text: "Áreas localizadas na franja da cidade, onde se misturam características rurais (sítios, chácaras) e urbanas (loteamentos, indústrias), são chamadas de:", options: ["Centro Expandido", "Espaço Periurbano (ou Rururbano)", "Área de Preservação", "Zona Franca", "Gueto"], correct: 1, explanation: "É a zona de transição confusa. Tem horta do lado de fábrica.", tip: "Periurbano = Nem campo, nem cidade (misturado)." },
-            { topic: "Agrária: Cinturões", text: "Ao redor das grandes metrópoles, forma-se o 'Cinturão Verde' (Green Belt), dedicado principalmente à produção de:", options: ["Soja para exportação", "Gado de corte", "Hortifrutigranjeiros (verduras, legumes, ovos) para abastecer a cidade", "Cana-de-açúcar", "Eucalipto"], correct: 2, explanation: "Produtos perecíveis (alface estraga rápido) precisam ser plantados perto de quem come (cidade).", tip: "Cinturão Verde = Salada fresca pra cidade." },
-            { topic: "Agrária: Terraciamento", text: "Técnica agrícola utilizada em terrenos muito inclinados (morros) para evitar a erosão, 'fatiando' o morro em degraus:", options: ["Plantio direto", "Terraciamento (ou Curvas de Nível)", "Rotação de culturas", "Queimada", "Calagem"], correct: 1, explanation: "Os degraus seguram a velocidade da água da chuva, impedindo que ela leve a terra embora (erosão).", tip: "Morro em degraus = Terraciamento." },
-            { topic: "Agrária: Cadeia Produtiva", text: "No agronegócio, os setores que fornecem máquinas, adubos e tecnologia ANTES da porteira da fazenda são chamados de:", options: ["Downstream (Jusante)", "Upstream (Montante)", "Setor Terciário", "Agricultura Familiar", "Agroindústria"], correct: 1, explanation: "Quem está 'antes' da produção (fornecedor) é Upstream. Quem está 'depois' (transporte, mercado) é Downstream.", tip: "Upstream = Insumos. Downstream = Venda." },
-            { topic: "Regional: Zona Franca", text: "A Zona Franca de Manaus foi criada com o objetivo geopolítico de:", options: ["Exportar soja", "Ocupar e desenvolver a Amazônia para garantir a soberania nacional, atraindo indústrias via isenção fiscal", "Preservar a floresta intacta", "Criar um polo turístico", "Produzir navios"], correct: 1, explanation: "Lema militar: 'Integrar para não entregar'. O governo deu imposto zero para fábricas irem para o meio da selva e povoar a região.", tip: "Zona Franca = Indústria na selva (Imposto Zero)." },
-            { topic: "Regional: Polígono das Secas", text: "O 'Polígono das Secas' é uma delimitação legal que engloba áreas sujeitas a crises hídricas periódicas. Ele abrange:", options: ["Apenas o Sertão nordestino", "Todo o Nordeste", "O Semiárido nordestino e parte do norte de Minas Gerais", "O Cerrado e a Caatinga", "Apenas o litoral do Nordeste"], correct: 2, explanation: "Importante: O norte de Minas (Vale do Jequitinhonha) sofre com seca e faz parte oficial do Polígono/SUDENE.", tip: "Polígono = Sertão + Norte de MG." },
-            { topic: "IBGE: Morador", text: "Para o Censo, uma pessoa que está ausente de seu domicílio por motivo de trabalho há 10 meses, mas pretende voltar, deve ser considerada:", options: ["Morador", "Não Morador", "Visitante", "Morador Temporário", "Em trânsito"], correct: 0, explanation: "A regra de corte geralmente é 12 meses. Se está fora há menos de 12 meses e tem vínculo/pretende voltar, ainda é morador.", tip: "Ausente < 12 meses = Morador." },
-            { topic: "IBGE: Domicílio Coletivo", text: "Qual das opções abaixo é classificada como Domicílio Coletivo?", options: ["Apartamento de família", "Casa em condomínio", "Asilo, Quartel, Presídio ou Orfanato", "Tenda de cigano", "Casa de veraneio"], correct: 2, explanation: "Lugar onde a convivência é regida por normas administrativas e as pessoas não têm parentesco obrigatório.", tip: "Regras comuns + Muita gente sem parentesco = Coletivo." },
-            { topic: "IBGE: Setor Censitário", text: "Existem tipos especiais de Setores Censitários. Um setor que abrange uma área indígena ou quilombola reconhecida tem tratamento diferenciado no Censo?", options: ["Não, é tratado como urbano comum.", "Sim, possui protocolos específicos de abordagem e coleta.", "Não, essas áreas não são recenseadas.", "Sim, mas apenas se tiver mais de 1000 habitantes.", "Não, conta como área rural comum."], correct: 1, explanation: "Povos e Comunidades Tradicionais (PCTs) têm setores específicos e o recenseador segue regras protocolares (falar com o líder primeiro, etc).", tip: "Área Indígena = Setor Especial." },
-            { topic: "Geral: Gini vs IDH", text: "Diferença fundamental entre Gini e IDH:", options: ["Gini mede riqueza; IDH mede pobreza.", "Gini mede desigualdade; IDH mede qualidade de vida média.", "São sinônimos.", "Gini é para empresas; IDH é para pessoas.", "Gini vai de 0 a 100; IDH vai de 0 a 10."], correct: 1, explanation: "Um país pode ter IDH alto (rico) e Gini alto (muito desigual - ex: EUA). IDH é a média, Gini é a distribuição.", tip: "Gini = Desigualdade. IDH = Bem-estar." },
-            { topic: "Física: Efeito Coriolis", text: "O movimento de rotação da Terra gera o Efeito Coriolis, que influencia a circulação dos ventos. No Hemisfério Sul, os ventos tendem a desviar para:", options: ["A direita", "A esquerda", "O norte", "O sul", "Não desviam"], correct: 1, explanation: "Física pura. Hemisfério Sul = Desvio para a Esquerda. Hemisfério Norte = Desvio para a Direita. Isso define o giro dos ciclones.", tip: "Sul = Esquerda." }
-        ];
+        { 
+            topic: "Cartografia: Projeção Azimutal", 
+            text: "A bandeira da ONU utiliza uma projeção cartográfica centrada no Polo Norte, o que permite visualizar todos os continentes ao redor desse ponto central, mas distorce as formas à medida que se afasta do centro. Essa projeção é classificada como:", 
+            options: ["Cilíndrica Conforme", "Cônica Equivalente", "Azimutal ou Plana", "Anamórfica", "Policônica"], 
+            correct: 2, 
+            explanation: "A projeção Azimutal (ou Plana) toca o globo em um único ponto (neste caso, o Polo). É ideal para distâncias a partir do centro (equidistante do centro), muito usada em geopolítica. ", 
+            tip: "ONU = Polo no centro = Azimutal." 
+        },
+        { 
+            topic: "Cartografia: Curvas de Nível (Perfil)", 
+            text: "Ao analisar uma carta topográfica, você percebe que as curvas de nível formam um 'V' apontando para as áreas mais altas do relevo. Essa formação indica a presença de:", 
+            options: ["Um divisor de águas (interflúvio)", "Um vale ou curso de rio (talvegue)", "Um terraço fluvial plano", "Um planalto tabular", "Uma escarpa de falha"], 
+            correct: 1, 
+            explanation: "Regra dos Vales: As curvas de nível sempre 'dobram' para dentro (para montante) ao cruzar um rio, formando um 'V' que aponta para a nascente (parte alta). ", 
+            tip: "V aponta pra cima = Rio corre pra baixo." 
+        },
+        { 
+            topic: "Cartografia: Norte", 
+            text: "A diferença angular entre o Norte Geográfico (Verdadeiro) e o Norte Magnético (indicado pela bússola) varia com o tempo e o local. Essa diferença é chamada de:", 
+            options: ["Azimute Geodésico", "Declinação Magnética", "Latitude", "Inclinação Magnética", "Convergência Meridiana"], 
+            correct: 1, 
+            explanation: "O polo magnético da Terra não fica no mesmo lugar que o polo geográfico. O ângulo de diferença entre eles é a Declinação Magnética, crucial para navegação precisa.", 
+            tip: "Bússola não aponta pro Norte verdadeiro, tem um desvio (Declinação)." 
+        },
+        { 
+            topic: "Cartografia: Escala (Detalhe)", 
+            text: "Para mapear os focos de dengue em um único bairro com precisão de ruas e lotes, qual destas escalas é a mais adequada?", 
+            options: ["1:1.000.000 (Milionésimo)", "1:250.000", "1:50.000", "1:2.000", "1:10.000.000"], 
+            correct: 3, 
+            explanation: "Bairro exige muito detalhe (zoom). Escala Grande = Denominador Pequeno. 1:2.000 é a maior escala dentre as opções (1 cm = 20 metros). ", 
+            tip: "Mais detalhe = Menor número depois do '1:'." 
+        },
+        { 
+            topic: "Geotecnologias: GPS", 
+            text: "O sistema GPS funciona através da triangulação de sinais. Para determinar a posição exata (Latitude, Longitude e Altitude) de um receptor na Terra, são necessários sinais de, no mínimo:", 
+            options: ["1 satélite geoestacionário", "2 satélites de órbita baixa", "3 satélites (para 2D) ou 4 satélites (para 3D)", "12 satélites da constelação", "24 satélites simultâneos"], 
+            correct: 2, 
+            explanation: "3 satélites dão a posição 2D (lat/long). O 4º satélite é necessário para calcular a Altitude e corrigir o erro de tempo do relógio atômico.", 
+            tip: "Mínimo de 4 satélites para precisão total." 
+        },
+        { 
+            topic: "Física: Solos (Laterização)", 
+            text: "Em regiões tropicais, o desmatamento expõe o solo à chuva intensa e ao sol, formando uma crosta dura de ferro e alumínio na superfície que impede a agricultura. Esse processo é a:", 
+            options: ["Lixiviação (lavagem simples)", "Laterização (formação de canga)", "Salinização", "Arenização", "Eutrofização"], 
+            correct: 1, 
+            explanation: "A 'ferrugem' do solo. O ferro oxida e forma uma crosta dura (laterita ou canga), tornando o solo inútil para plantio. ", 
+            tip: "Laterização = Solo vira tijolo/pedra." 
+        },
+        { 
+            topic: "Física: Ventos Alísios", 
+            text: "Os Ventos Alísios sopram constantemente dos trópicos em direção ao Equador, trazendo umidade do oceano. No Nordeste brasileiro, eles são responsáveis por:", 
+            options: ["Impedir a entrada de Frentes Frias", "Trazer chuvas para o litoral oriental (Zona da Mata)", "Provocar o fenômeno da Ressurgência", "Criar o fenômeno da friagem na Amazônia", "Formar dunas no interior do continente"], 
+            correct: 1, 
+            explanation: "Os Alísios empurram umidade do mar contra a costa. Quando batem no Planalto da Borborema, chove no litoral (Zona da Mata) e o ar chega seco no Sertão.", 
+            tip: "Alísios = Umidade pro litoral." 
+        },
+        { 
+            topic: "Física: Bacias Hidrográficas", 
+            text: "A linha imaginária que separa duas bacias hidrográficas, geralmente localizada nas cristas de morros ou serras, direcionando a água da chuva para vertentes opostas, é chamada de:", 
+            options: ["Talvegue", "Foz em Estuário", "Divisor de Águas (Interflúvio)", "Lençol Freático", "Jusante"], 
+            correct: 2, 
+            explanation: "É o ponto mais alto. A chuva que cai de um lado vai para o rio A, a que cai do outro vai para o rio B. ", 
+            tip: "Divisor de Águas = Topo do morro." 
+        },
+        { 
+            topic: "Física: El Niño", 
+            text: "Durante o fenômeno El Niño (aquecimento anormal do Pacífico), observa-se no Brasil um padrão climático típico:", 
+            options: ["Seca no Sul e Chuva na Amazônia", "Chuva excessiva no Sul e Seca no Norte/Nordeste", "Intensificação dos ventos Alísios", "Regularidade das chuvas no Sertão", "Queda brusca de temperatura no Centro-Oeste"], 
+            correct: 1, 
+            explanation: "Decoreba clássica: El Niño aquece a atmosfera, bloqueia frentes frias no Sul (inundações lá) e impede a chuva na Amazônia/Nordeste (seca/queimadas).", 
+            tip: "El Niño = Sul alagado, Norte seco." 
+        },
+        { 
+            topic: "Física: Caatinga (Xerófilas)", 
+            text: "As plantas da Caatinga possuem adaptações como folhas transformadas em espinhos, raízes profundas e caules que armazenam água. Essas plantas são classificadas como:", 
+            options: ["Higrófilas", "Tropófilas", "Xerófilas", "Halófilas", "Ombrófilas"], 
+            correct: 2, 
+            explanation: "Xeros = Seco. Filo = Amigo. Plantas amigas da seca (Cactos). Higrófilas são de lugares úmidos (Amazônia).", 
+            tip: "Xerófila = Cacto (Seco)." 
+        },
+        { 
+            topic: "Demografia: Densidade Demográfica", 
+            text: "O Brasil é um país 'populoso', mas 'pouco povoado'. Isso significa que:", 
+            options: ["Apresenta crescimento vegetativo negativo.", "Tem muita gente no total (população absoluta), mas baixa densidade demográfica (hab/km²).", "Tem distribuição uniforme da população pelo território.", "Possui mais emigrantes do que imigrantes.", "A população rural supera a urbana."], 
+            correct: 1, 
+            explanation: "Populoso = Muita gente (número total). Povoado = Muita gente por metro quadrado (densidade). O Brasil tem vazios enormes (Amazônia), por isso é pouco povoado.", 
+            tip: "Populoso = Total. Povoado = Densidade." 
+        },
+        { 
+            topic: "Demografia: Fuga de Cérebros", 
+            text: "A emigração de profissionais altamente qualificados (cientistas, engenheiros) do Brasil para países desenvolvidos em busca de melhores salários e infraestrutura é chamada de:", 
+            options: ["Migração de Retorno", "Transumância", "Fuga de Cérebros (Brain Drain)", "Migração Pendular", "Êxodo Urbano"], 
+            correct: 2, 
+            explanation: "O país investe na formação da pessoa, mas ela vai gerar riqueza em outro lugar. Prejuízo enorme para o desenvolvimento nacional.", 
+            tip: "Cérebro sai = Brain Drain." 
+        },
+        { 
+            topic: "Demografia: Pirâmide Invertida", 
+            text: "Quando a base da pirâmide etária fica mais estreita que o corpo e o topo começa a alargar, isso indica que o país está:", 
+            options: ["Passando pelo 'Bônus Demográfico' inicial", "Aumentando drasticamente a natalidade", "Em fase avançada de transição demográfica (envelhecimento)", "Sofrendo impacto de grandes guerras", "Recebendo fluxo intenso de imigrantes jovens"], 
+            correct: 2, 
+            explanation: "Base estreita = Poucos filhos. Topo largo = Muitos velhos. É o padrão de países desenvolvidos ou em desenvolvimento rápido (Brasil).", 
+            tip: "Base fina = Envelhecimento." 
+        },
+        { 
+            topic: "Demografia: Mortalidade", 
+            text: "A diferença entre Taxa de Natalidade e Taxa de Mortalidade gera o indicador conhecido como:", 
+            options: ["Crescimento Vegetativo (ou Natural)", "Taxa de Fecundidade Total", "Taxa de Reposição Populacional", "Saldo Migratório", "Crescimento Absoluto"], 
+            correct: 0, 
+            explanation: "O quanto a população cresce 'naturalmente' (sem contar quem chega de mudança). Natalidade - Mortalidade.", 
+            tip: "Nasceu - Morreu = Crescimento Vegetativo." 
+        },
+        { 
+            topic: "Demografia: PEA", 
+            text: "Um estudante de 20 anos que dedica-se exclusivamente aos estudos e não procura emprego é classificado pelo IBGE como:", 
+            options: ["Desocupado (na PEA)", "Ocupado (na PEA)", "Fora da Força de Trabalho (Inativo)", "Subocupado por insuficiência de horas", "Desalentado"], 
+            correct: 2, 
+            explanation: "Só é Desocupado (PEA) quem PROCURA emprego. Quem não quer ou não pode trabalhar agora é 'Fora da Força de Trabalho' (antiga PNEA).", 
+            tip: "Não procura = Inativo." 
+        },
+        { 
+            topic: "Urbana: Espraiamento", 
+            text: "O crescimento horizontal da cidade, ocupando novas áreas periféricas cada vez mais distantes do centro, exigindo expansão de redes de água e transporte, é chamado de:", 
+            options: ["Verticalização", "Espraiamento Urbano (Urban Sprawl)", "Gentrificação", "Revitalização de brownfields", "Compactação urbana"], 
+            correct: 1, 
+            explanation: "A cidade se 'esparrama' como uma mancha de óleo. É caro para a prefeitura levar esgoto e ônibus tão longe.", 
+            tip: "Horizontal e longe = Espraiamento." 
+        },
+        { 
+            topic: "Urbana: Rede Urbana", 
+            text: "Em países desenvolvidos, a rede urbana tende a ser densa e articulada. Em países subdesenvolvidos, é comum ocorrer a 'Primazia Urbana', que é:", 
+            options: ["Equilíbrio hierárquico entre as cidades", "Existência de uma metrópole gigante que concentra tudo, inibindo cidades médias", "Predomínio de cidades globais", "Ausência de capital administrativa", "Rede urbana dendrítica"], 
+            correct: 1, 
+            explanation: "Uma cidade 'vampiriza' o país (ex: Buenos Aires na Argentina, Montevidéu no Uruguai). No Brasil isso diminuiu com o crescimento das cidades médias.", 
+            tip: "Primazia = Uma cidade manda em tudo." 
+        },
+        { 
+            topic: "Urbana: Segregação", 
+            text: "A 'Autossegregação' difere da segregação socioespacial imposta porque:", 
+            options: ["É uma política de Estado oficial", "Ocorre predominantemente em favelas", "É praticada pelas classes altas que escolhem se isolar em enclaves fortificados (condomínios)", "É exclusiva de cidades rurais", "É baseada apenas em segregação religiosa"], 
+            correct: 2, 
+            explanation: "O rico se tranca voluntariamente. O pobre é segregado involuntariamente (jogado para a periferia).", 
+            tip: "Autossegregação = Condomínio de luxo." 
+        },
+        { 
+            topic: "Urbana: Função Urbana", 
+            text: "Cidades como Brasília (DF) e Ouro Preto (MG) possuem funções urbanas predominantes distintas, sendo, respectivamente:", 
+            options: ["Industrial e Comercial", "Político-Administrativa e Turística/Histórica", "Religiosa e Portuária", "Militar e Tecnológica", "Universitária e Agrícola"], 
+            correct: 1, 
+            explanation: "Brasília foi criada para administrar (política). Ouro Preto vive do seu patrimônio (turismo).", 
+            tip: "Brasília = Política. Ouro Preto = Turismo." 
+        },
+        { 
+            topic: "Urbana: Periurbanização", 
+            text: "Áreas localizadas na franja da cidade, onde se misturam características rurais (sítios, chácaras) e urbanas (loteamentos, indústrias), são chamadas de:", 
+            options: ["Centro Expandido", "Espaço Periurbano (ou Rururbano)", "Cinturão Verde (Green Belt)", "Zona Franca Industrial", "Área de Proteção Ambiental (APA)"], 
+            correct: 1, 
+            explanation: "É a zona de transição confusa. Tem horta do lado de fábrica.", 
+            tip: "Periurbano = Nem campo, nem cidade (misturado)." 
+        },
+        { 
+            topic: "Agrária: Cinturões", 
+            text: "Ao redor das grandes metrópoles, forma-se o 'Cinturão Verde' (Green Belt), dedicado principalmente à produção de:", 
+            options: ["Soja e milho para exportação (commodities)", "Gado de corte extensivo", "Hortifrutigranjeiros (verduras, legumes, ovos) para abastecer a cidade", "Cana-de-açúcar para biocombustível", "Madeira para celulose"], 
+            correct: 2, 
+            explanation: "Produtos perecíveis (alface estraga rápido) precisam ser plantados perto de quem come (cidade).", 
+            tip: "Cinturão Verde = Salada fresca pra cidade." 
+        },
+        { 
+            topic: "Agrária: Terraciamento", 
+            text: "Técnica agrícola utilizada em terrenos muito inclinados (morros) para evitar a erosão, 'fatiando' o morro em degraus:", 
+            options: ["Plantio direto na palha", "Terraciamento (ou Curvas de Nível)", "Rotação de culturas", "Aração profunda", "Queimada controlada"], 
+            correct: 1, 
+            explanation: "Os degraus seguram a velocidade da água da chuva, impedindo que ela leve a terra embora (erosão). ", 
+            tip: "Morro em degraus = Terraciamento." 
+        },
+        { 
+            topic: "Agrária: Cadeia Produtiva", 
+            text: "No agronegócio, os setores que fornecem máquinas, adubos e tecnologia ANTES da porteira da fazenda são chamados de:", 
+            options: ["Downstream (Jusante)", "Upstream (Montante)", "Setor Terciário", "Agricultura de Precisão", "Agroindústria de transformação"], 
+            correct: 1, 
+            explanation: "Quem está 'antes' da produção (fornecedor) é Upstream. Quem está 'depois' (transporte, mercado) é Downstream.", 
+            tip: "Upstream = Insumos. Downstream = Venda." 
+        },
+        { 
+            topic: "Regional: Zona Franca", 
+            text: "A Zona Franca de Manaus foi criada com o objetivo geopolítico de:", 
+            options: ["Tornar o Brasil exportador de soja", "Ocupar e desenvolver a Amazônia para garantir a soberania nacional, atraindo indústrias via isenção fiscal", "Criar uma reserva de biosfera internacional intocável", "Estabelecer um polo de ecoturismo sustentável", "Produzir navios para a marinha mercante"], 
+            correct: 1, 
+            explanation: "Lema militar: 'Integrar para não entregar'. O governo deu imposto zero para fábricas irem para o meio da selva e povoar a região.", 
+            tip: "Zona Franca = Indústria na selva (Imposto Zero)." 
+        },
+        { 
+            topic: "Regional: Polígono das Secas", 
+            text: "O 'Polígono das Secas' é uma delimitação legal que engloba áreas sujeitas a crises hídricas periódicas. Ele abrange:", 
+            options: ["Apenas o Sertão nordestino", "Todo o território da região Nordeste, sem exceções", "O Semiárido nordestino e parte do norte de Minas Gerais", "O Cerrado e a Caatinga em sua totalidade", "Apenas a faixa litorânea do Nordeste"], 
+            correct: 2, 
+            explanation: "Importante: O norte de Minas (Vale do Jequitinhonha) sofre com seca e faz parte oficial do Polígono/SUDENE.", 
+            tip: "Polígono = Sertão + Norte de MG." 
+        },
+        { 
+            topic: "IBGE: Morador", 
+            text: "Para o Censo, uma pessoa que está ausente de seu domicílio por motivo de trabalho há 10 meses, mas pretende voltar, deve ser considerada:", 
+            options: ["Morador", "Não Morador", "Emigrante Internacional", "Morador Temporário", "Visitante em trânsito"], 
+            correct: 0, 
+            explanation: "A regra de corte geralmente é 12 meses. Se está fora há menos de 12 meses e tem vínculo/pretende voltar, ainda é morador.", 
+            tip: "Ausente < 12 meses = Morador." 
+        },
+        { 
+            topic: "IBGE: Domicílio Coletivo", 
+            text: "Qual das opções abaixo é classificada como Domicílio Coletivo?", 
+            options: ["Apartamento dividido por amigos", "Vila de casas geminadas", "Asilo, Quartel, Presídio ou Orfanato", "Cortiço (Cabeça de Porco)", "Condomínio Fechado"], 
+            correct: 2, 
+            explanation: "Lugar onde a convivência é regida por normas administrativas e as pessoas não têm parentesco obrigatório. Cortiços geralmente são considerados domicílios particulares improvisados ou permanentes, mas não coletivos no sentido institucional.", 
+            tip: "Regras comuns + Muita gente sem parentesco = Coletivo." 
+        },
+        { 
+            topic: "IBGE: Setor Censitário", 
+            text: "Existem tipos especiais de Setores Censitários. Um setor que abrange uma área indígena ou quilombola reconhecida tem tratamento diferenciado no Censo?", 
+            options: ["Não, é tratado como urbano comum.", "Sim, possui protocolos específicos de abordagem e coleta.", "Não, essas áreas não são recenseadas por questões de soberania.", "Sim, mas apenas se tiverem mais de 5000 habitantes.", "Não, são contabilizados como Reserva Biológica."], 
+            correct: 1, 
+            explanation: "Povos e Comunidades Tradicionais (PCTs) têm setores específicos e o recenseador segue regras protocolares (falar com o líder primeiro, etc).", 
+            tip: "Área Indígena = Setor Especial." 
+        },
+        { 
+            topic: "Geral: Gini vs IDH", 
+            text: "Diferença fundamental entre Gini e IDH:", 
+            options: ["Gini mede o desenvolvimento humano; IDH mede a concentração de renda.", "Gini mede desigualdade de renda; IDH mede qualidade de vida média (Saúde, Educação, Renda).", "São indicadores sinônimos calculados pelo FMI.", "Gini é usado para empresas; IDH é para países.", "Gini varia de 0 a 10; IDH varia de 0 a 100."], 
+            correct: 1, 
+            explanation: "Um país pode ter IDH alto (rico) e Gini alto (muito desigual - ex: EUA). IDH é a média, Gini é a distribuição.", 
+            tip: "Gini = Desigualdade. IDH = Bem-estar." 
+        },
+        { 
+            topic: "Física: Efeito Coriolis", 
+            text: "O movimento de rotação da Terra gera o Efeito Coriolis, que influencia a circulação dos ventos. No Hemisfério Sul, os ventos tendem a desviar para:", 
+            options: ["A direita", "A esquerda", "O norte geográfico", "O centro da Terra", "Não sofrem desvio"], 
+            correct: 1, 
+            explanation: "Física pura. Hemisfério Sul = Desvio para a Esquerda. Hemisfério Norte = Desvio para a Direita. Isso define o giro dos ciclones. ", 
+            tip: "Sul = Esquerda." 
+        }
+    ];
 
         
         const questoesLote4 = [
-            { topic: "IBGE: Endereço", text: "Em um endereço cadastrado pelo IBGE, o elemento 'Quadra e Lote' ou 'Apartamento 302' é classificado tecnicamente como:", options: ["Logradouro", "Complemento", "Número", "Ponto de Referência", "Coordenada"], correct: 1, explanation: "Logradouro é o nome da rua/avenida. O número é o identificador na rua. O resto (Apto, Bloco, Fundos, Quadra) é <strong>Complemento</strong>. Ponto de referência é uma dica de localização (ex: 'perto da padaria'), não faz parte oficial do endereço.", tip: "Apto, Bloco, Fundos = Complemento." },
-            { topic: "IBGE: Data de Referência", text: "Uma criança nasceu no dia 02 de agosto (o Censo começou dia 01 de agosto, data de referência). Essa criança deve ser recenseada?", options: ["Sim, pois já está viva no momento da visita.", "Sim, mas apenas como 'Hóspede'.", "Não, pois ela não existia na Data de Referência.", "Sim, se os pais quiserem.", "Depende do peso ao nascer."], correct: 2, explanation: "Regra de Ouro: O Censo é uma 'foto' do dia 31/julho para 01/agosto. Se nasceu DEPOIS, não sai na foto. Se morreu DEPOIS, sai na foto (é contado como vivo).", tip: "Nasceu depois da data? Não conta. Morreu depois? Conta." },
-            { topic: "IBGE: Morador Habitual", text: "Uma pessoa que está internada permanentemente em um sanatório ou asilo há mais de 12 meses deve ser recenseada:", options: ["No seu domicílio de origem (casa da família).", "Não deve ser recenseada.", "No sanatório/asilo, que é considerado um Domicílio Coletivo.", "Como 'Em Trânsito'.", "Apenas se tiver lucidez."], correct: 2, explanation: "Se vive lá permanentemente ou há mais de 12 meses, o Asilo é o seu domicílio (do tipo Coletivo). Ela não conta mais na casa da família.", tip: "Asilo/Quartel > 12 meses = Domicílio Coletivo." },
-            { topic: "IBGE: Setor Censitário", text: "O Setor Censitário é a menor unidade territorial de trabalho. Para garantir que um recenseador consiga cobrir a área, um setor urbano comum tem idealmente cerca de:", options: ["10 a 20 domicílios", "50 a 100 domicílios", "250 a 350 domicílios", "1.000 a 2.000 domicílios", "5.000 domicílios"], correct: 2, explanation: "O IBGE desenha os setores para que caibam no trabalho de um mês de uma pessoa. Em áreas urbanas, a média é de 300 domicílios. Se crescer muito, o setor é dividido.", tip: "Média de 300 casas por setor urbano." },
-            { topic: "IBGE: Área Urbanizada", text: "Para o IBGE, o que define se uma área é 'Urbana' ou 'Rural' para fins de apuração não é a paisagem (prédios vs mato), mas sim:", options: ["A densidade demográfica.", "A existência de asfalto.", "O Perímetro Urbano definido por lei municipal.", "A atividade econômica (Indústria vs Agricultura).", "A presença de saneamento básico."], correct: 2, explanation: "Definição Político-Administrativa: Se a prefeitura passou uma lei dizendo 'daqui pra cá é cidade', o IBGE conta como Urbano, mesmo que só tenha mato. É o <strong>Perímetro Urbano Legal</strong>.", tip: "Lei municipal manda no Urbano/Rural." },
-            { topic: "Cartografia: Fuso Horário (Oeste)", text: "Um avião sai de Tóquio (135°L) às 10h da manhã de terça-feira rumo a São Francisco (120°O). Ao cruzar a Linha Internacional da Data (LID) no sentido Ásia -> América, o que acontece com o calendário?", options: ["Aumenta um dia (vai para quarta-feira).", "Diminui um dia (volta para segunda-feira).", "Mantém o mesmo dia.", "O relógio para.", "Aumenta 12 horas."], correct: 1, explanation: "Ao cruzar a linha do Pacífico indo para a América (Leste), você 'ganha' um dia de volta. É como voltar no tempo. Sai terça do Japão, chega segunda nos EUA.", tip: "Cruzar LID para a América = Volta 1 dia (ontem)." },
-            { topic: "Cartografia: Escala de Área (Difícil)", text: "Um município tem 400 km² de área. Em um mapa na escala 1:100.000, esse município ocupará uma área de:", options: ["4 cm²", "40 cm²", "400 cm²", "0,4 cm²", "4.000 cm²"], correct: 2, explanation: "1. Converta a escala linear: 1 cm = 1 km (pois 100.000 cm = 1 km). <br>2. Converta a escala de área: (1 cm)² = (1 km)². Logo, 1 cm² = 1 km². <br>3. Se a cidade tem 400 km², ela ocupará <strong>400 cm²</strong> no mapa.", tip: "Se 1 cm = 1 km, a relação de área é 1 pra 1." },
-            { topic: "Cartografia: Curvas de Nível", text: "O que significa uma 'equidistância vertical' de 20 metros em uma carta topográfica?", options: ["Que a distância entre dois pontos no mapa é sempre 20m.", "Que a diferença de altitude entre uma curva de nível e a próxima é sempre de 20m.", "Que o morro tem 20m de altura total.", "Que a escala é 1:20.", "Que cada curva representa 20km."], correct: 1, explanation: "Equidistância é o 'degrau'. Se uma curva marca 100m, a próxima marca 120m, a outra 140m. É o intervalo de altura.", tip: "Equidistância = Tamanho do degrau de altura." },
-            { topic: "Cartografia: Projeção Cônica", text: "A Projeção Cônica é mais adequada para representar quais regiões do globo?", options: ["As regiões equatoriais (Baixa Latitude).", "O mapa-múndi completo.", "As zonas temperadas (Média Latitude), como Europa ou EUA.", "As regiões polares.", "Os oceanos."], correct: 2, explanation: "O cone 'veste' a Terra tocando nas zonas temperadas. É ruim para o Equador e ruim para os Polos, mas ótima para o meio do caminho (Europa, EUA, Sul do Brasil).", tip: "Cônica = Zonas Temperadas (Médias)." },
-            { topic: "Cartografia: Coordenadas", text: "Todos os pontos localizados no mesmo Meridiano têm obrigatoriamente:", options: ["A mesma Latitude.", "A mesma temperatura.", "O mesmo clima.", "A mesma Longitude e a mesma hora solar.", "A mesma duração do dia e da noite."], correct: 3, explanation: "Meridiano = Linha vertical. Todos nela têm a mesma longitude e o Sol passa sobre eles ao mesmo tempo (mesma hora solar). A latitude varia.", tip: "Meridiano = Mesma Hora." },
-            { topic: "Física: Tipos de Rocha", text: "O Petróleo e o Gás Natural são encontrados exclusivamente em estruturas geológicas formadas por:", options: ["Rochas Magmáticas (vulcânicas)", "Rochas Metamórficas (pressão/calor)", "Bacias Sedimentares (acúmulo de detritos)", "Escudos Cristalinos Antigos", "Dobramentos Modernos"], correct: 2, explanation: "Matéria orgânica morre, é soterrada por areia/lama (sedimentos) e cozinha por milhões de anos. Só existe petróleo em Bacia Sedimentar.", tip: "Petróleo = Bacia Sedimentar. Ferro = Cristalino." },
-            { topic: "Física: Solo Massapê", text: "O solo de Massapê, escuro, argiloso e muito fértil, encontrado no litoral do Nordeste (Zona da Mata), é resultado da decomposição de:", options: ["Basalto", "Gnaisse e Calcário", "Areia de praia", "Granito", "Cinza vulcânica"], correct: 1, explanation: "Diferente da Terra Roxa (Basalto), o Massapê vem de rochas como Gnaisse/Calcário em clima tropical úmido. Foi a base da riqueza da cana-de-açúcar.", tip: "Massapê = Zona da Mata (Cana) = Gnaisse/Calcário." },
-            { topic: "Física: Intemperismo", text: "A 'termoclastia' é um tipo de intemperismo físico comum em desertos ou semiáridos, causado por:", options: ["Ação das raízes das plantas.", "Congelamento da água nas fendas.", "Variação brusca de temperatura (esquenta/esfria) que quebra a rocha.", "Chuva ácida.", "Vento constante."], correct: 2, explanation: "A rocha dilata no sol e contrai à noite. Esse 'estica e puxa' quebra a rocha sem água. É físico.", tip: "Termoclastia = Quebra por calor." },
-            { topic: "Física: Clima Tropical de Altitude", text: "Cidades como Campos do Jordão (SP) ou Petrópolis (RJ) apresentam temperaturas mais baixas que o litoral, mesmo estando na mesma latitude. O fator climático determinante aqui é:", options: ["A Maritimidade", "A Continentalidade", "A Altitude", "O Albedo", "As Correntes Marinhas"], correct: 2, explanation: "A cada 1.000m que subimos, a temperatura cai cerca de 6°C. O ar é mais rarefeito e retém menos calor.", tip: "Mais alto = Mais frio." },
-            { topic: "Física: Voçoroca", text: "A erosão acelerada do solo pode criar grandes buracos ou ravinas profundas que atingem o lençol freático, causando danos irreversíveis. Esse fenômeno chama-se:", options: ["Lixiviação", "Voçoroca", "Assoreamento", "Compactação", "Laterização"], correct: 1, explanation: "Voçoroca é o estágio final e catastrófico da erosão pela chuva em solos desprotegidos.", tip: "Buraco gigante no chão = Voçoroca." },
-            { topic: "Urbana: Conurbação", text: "A Conurbação não é apenas o encontro físico de duas cidades, mas exige também:", options: ["Uma lei federal.", "Integração funcional (fluxo diário de pessoas, trabalho e serviços entre elas).", "Que ambas sejam capitais.", "Que tenham a mesma população.", "Que tenham metrô."], correct: 1, explanation: "Não basta as casas se encostarem. As pessoas têm que viver a cidade como se fosse uma só (morar numa, trabalhar na outra).", tip: "Conurbação = Encontro físico + Vida integrada." },
-            { topic: "Urbana: Metropolização", text: "Atualmente, o Brasil vive um processo de 'Desmetropolização' relativa. Isso significa que:", options: ["As metrópoles estão sendo destruídas.", "As pessoas estão abandonando as cidades e voltando para a roça.", "As cidades médias estão crescendo mais rápido que as grandes metrópoles, atraindo indústrias e migrantes.", "A população brasileira está diminuindo.", "Não existem mais regiões metropolitanas."], correct: 2, explanation: "As metrópoles ficaram caras, violentas e engarrafadas. Indústrias e pessoas estão indo para cidades médias (ex: interior de SP). A metrópole ainda cresce, mas mais devagar.", tip: "Desmetropolização = Cidades Médias crescendo mais." },
-            { topic: "População: Teoria Malthusiana", text: "Thomas Malthus (século 18) previu uma catástrofe demográfica dizendo que:", options: ["A população cresceria em progressão geométrica (PG) e a comida em progressão aritmética (PA), gerando fome.", "A tecnologia resolveria a fome.", "A população pararia de crescer naturalmente.", "O problema era a má distribuição de renda.", "As vacinas salvariam a humanidade."], correct: 0, explanation: "Ele errou porque não previu a tecnologia na agricultura (Revolução Verde), que fez a comida crescer muito rápido.", tip: "Malthus = Fome (População > Comida)." },
-            { topic: "População: Bônus Demográfico (Fim)", text: "O fim do Bônus Demográfico no Brasil trará qual consequência econômica principal?", options: ["Sobra de vagas nas escolas.", "Aumento da mão de obra jovem.", "Pressão sobre o sistema previdenciário (poucos trabalhando para sustentar muitos aposentados).", "Redução dos gastos com saúde.", "Aumento da natalidade."], correct: 2, explanation: "Quando a 'janela' fecha, temos muitos velhos e poucos jovens. A conta da aposentadoria não fecha.", tip: "Fim do Bônus = Crise da Previdência." },
-            { topic: "População: IDH (Crítica)", text: "Uma crítica comum ao uso do IDH como indicador único é que ele:", options: ["É muito complexo.", "Não considera a desigualdade interna e esconde a realidade de minorias (é uma média).", "Só considera países ricos.", "Ignora a educação.", "Foca demais no meio ambiente."], correct: 1, explanation: "O Brasil tem IDH 'Alto' (0,760), mas isso esconde que o Sul tem IDH de Europa e partes do Nordeste têm IDH de África. A média esconde os extremos.", tip: "IDH é média, esconde desigualdade." },
-            { topic: "Agrária: Estrutura Fundiária", text: "O Brasil tem muitas propriedades pequenas (minifúndios) e poucas propriedades gigantes (latifúndios). No entanto, a maior parte da área total pertence aos latifúndios. Isso configura uma estrutura:", options: ["Igualitária", "Concentrada", "Comunista", "De subsistência", "Reformada"], correct: 1, explanation: "Muita terra na mão de poucos. É a marca histórica do Brasil desde as Capitanias Hereditárias.", tip: "Estrutura Concentrada." },
-            { topic: "Agrária: Revolução Verde", text: "A Revolução Verde trouxe máquinas e químicos para o campo. Um efeito colateral ambiental negativo foi:", options: ["Reflorestamento", "Contaminação do lençol freático e compactação do solo.", "Aumento da biodiversidade.", "Redução da erosão.", "Fim das pragas para sempre."], correct: 1, explanation: "Muito trator compacta a terra (água não entra). Muito veneno desce pro lençol freático.", tip: "Revolução Verde = Poluição e Compactação." },
-            { topic: "Econômica: Balança Comercial", text: "Quando o Brasil exporta mais (em valor) do que importa, dizemos que a Balança Comercial teve:", options: ["Déficit", "Superávit", "Inflação", "Estagnação", "Recessão"], correct: 1, explanation: "Vendeu mais que comprou = Sobrou dinheiro = Superávit.", tip: "Export > Import = Superávit." },
-            { topic: "Regional: Centro-Oeste", text: "O rápido crescimento populacional e econômico do Centro-Oeste nas últimas décadas deve-se principalmente à:", options: ["Industrialização têxtil", "Expansão da fronteira agrícola (soja/gado) e construção de Brasília.", "Turismo no Pantanal.", "Extração de látex.", "Indústria automobilística."], correct: 1, explanation: "A marcha para o Oeste: Brasília levou gente, e a tecnologia (calagem) permitiu plantar soja no Cerrado.", tip: "Centro-Oeste = Agro + Brasília." },
-            { topic: "Meio Ambiente: Hotspots", text: "Para ser considerado um 'Hotspot' de biodiversidade (área crítica para conservação), um bioma precisa ter alta biodiversidade endêmica e:", options: ["Ser intocado.", "Estar altamente ameaçado (ter perdido mais de 70% da vegetação original).", "Ser um deserto.", "Estar na Europa.", "Ter clima frio."], correct: 1, explanation: "Hotspot é um lugar rico, mas que está quase acabando. No Brasil: Mata Atlântica e Cerrado.", tip: "Hotspot = Rico e Destruído." },
-            { topic: "Geral: Sustentabilidade", text: "O conceito de 'Desenvolvimento Sustentável', definido no Relatório Brundtland (1987), é:", options: ["Não usar nenhum recurso natural.", "Parar o crescimento econômico.", "Atender às necessidades do presente sem comprometer a capacidade das gerações futuras.", "Priorizar o lucro acima de tudo.", "Voltar a viver como indígenas."], correct: 2, explanation: "Usar hoje, mas deixar pro filho usar amanhã. Equilíbrio entre Economia, Social e Ambiental.", tip: "Sustentável = Futuro garantido." },
-            { topic: "Cartografia: ISO", text: "Nas curvas de nível, as linhas mestras (mais grossas e numeradas) servem para:", options: ["Decorar o mapa.", "Facilitar a leitura da altitude sem poluir o desenho com muitos números.", "Indicar rios.", "Marcar estradas.", "Separar países."], correct: 1, explanation: "Geralmente a cada 5 curvas, uma é Mestra (marcada com o valor). As intermediárias você deduz pela equidistância.", tip: "Linha Mestra = Tem o número da altura." },
-            { topic: "Física: Rios", text: "Um rio que nunca seca, mesmo na estiagem, é chamado de:", options: ["Intermitente ou Temporário", "Perene", "Efêmero", "Torrencial", "Subterrâneo"], correct: 1, explanation: "Perene = Permanente. O Rio São Francisco é perene (atravessa o sertão sem secar). Rios do sertão (geralmente) são intermitentes (secam).", tip: "Perene = Para sempre." },
-            { topic: "Econômica: PIB", text: "O PIB (Produto Interno Bruto) mede:", options: ["A riqueza acumulada pelo país (tesouro).", "A soma de todos os bens e serviços finais produzidos em um local num período.", "A qualidade de vida.", "O dinheiro impresso.", "A felicidade da população."], correct: 1, explanation: "PIB é fluxo (o que foi produzido esse ano), não estoque (riqueza guardada).", tip: "PIB = Produção do ano." },
-            { topic: "IBGE: PNAD", text: "Diferente do Censo (que é decenal e total), a PNAD Contínua é uma pesquisa:", options: ["Diária em todas as casas.", "Amostral (entrevista apenas algumas casas) realizada trimestralmente para acompanhar emprego e renda.", "Exclusiva para empresas.", "Realizada a cada 50 anos.", "Apenas rural."], correct: 1, explanation: "O Censo é caro e demorado. A PNAD visita algumas casas todo mês/trimestre para dar dados rápidos (como a taxa de desemprego que sai no jornal).", tip: "PNAD = Amostra rápida (Desemprego)." }
-        ];
+        { 
+            topic: "IBGE: Endereço", 
+            text: "Em um endereço cadastrado pelo IBGE, o elemento 'Quadra e Lote' ou 'Apartamento 302' é classificado tecnicamente como:", 
+            options: ["Tipo de Logradouro", "Complemento", "Número do Domicílio", "Ponto de Referência", "Identificador Geográfico"], 
+            correct: 1, 
+            explanation: "Logradouro é o nome da rua/avenida. O número é o identificador principal na via. O resto (Apto, Bloco, Fundos, Quadra, Lote) é <strong>Complemento</strong>. Ponto de referência é apenas uma dica de localização.", 
+            tip: "Apto, Bloco, Fundos = Complemento." 
+        },
+        { 
+            topic: "IBGE: Data de Referência", 
+            text: "Uma criança nasceu no dia 02 de agosto (o Censo começou dia 01 de agosto, à meia-noite, data de referência). Essa criança deve ser recenseada?", 
+            options: ["Sim, pois já está viva no momento da entrevista presencial.", "Sim, mas apenas na lista de moradores ausentes.", "Não, pois ela não tinha nascido na Data de Referência.", "Sim, desde que possua certidão de nascimento.", "Não, a menos que seja o primeiro filho."], 
+            correct: 2, 
+            explanation: "Regra de Ouro: O Censo é uma 'foto' do instante da meia-noite de 31/julho para 01/agosto. Se nasceu DEPOIS desse segundo, não sai na foto. Se morreu DEPOIS, sai na foto (é contado como vivo).", 
+            tip: "Nasceu depois da data? Não conta. Morreu depois? Conta." 
+        },
+        { 
+            topic: "IBGE: Morador Habitual", 
+            text: "Uma pessoa que está internada permanentemente em um sanatório ou asilo há mais de 12 meses deve ser recenseada:", 
+            options: ["No seu domicílio de origem (casa da família), como morador ausente.", "Não deve ser recenseada pelo IBGE.", "No sanatório/asilo, que é considerado um Domicílio Coletivo.", "Como morador temporário no asilo.", "Sim, desde que mantenha vínculos financeiros com a família."], 
+            correct: 2, 
+            explanation: "Se vive lá permanentemente ou há mais de 12 meses, o Asilo é o seu domicílio habitual (do tipo Coletivo). Ela não conta mais na casa da família.", 
+            tip: "Asilo/Quartel > 12 meses = Domicílio Coletivo." 
+        },
+        { 
+            topic: "IBGE: Setor Censitário", 
+            text: "O Setor Censitário é a menor unidade territorial de trabalho. Para garantir que um recenseador consiga cobrir a área, um setor urbano comum tem idealmente cerca de:", 
+            options: ["10 a 20 domicílios", "50 a 100 domicílios", "250 a 350 domicílios", "1.000 a 2.000 domicílios", "Mais de 5.000 domicílios"], 
+            correct: 2, 
+            explanation: "O IBGE desenha os setores para que caibam no trabalho de um mês de uma pessoa. Em áreas urbanas, a média é de 300 domicílios. Se crescer muito, o setor é dividido. ", 
+            tip: "Média de 300 casas por setor urbano." 
+        },
+        { 
+            topic: "IBGE: Área Urbanizada", 
+            text: "Para o IBGE, o que define se uma área é 'Urbana' ou 'Rural' para fins de apuração não é a paisagem (prédios vs mato), mas sim:", 
+            options: ["A densidade demográfica superior a 100 hab/km².", "A existência de infraestrutura como asfalto e luz.", "O Perímetro Urbano definido por lei municipal.", "A predominância de atividades industriais e de serviços.", "A presença de rede de esgoto e água encanada."], 
+            correct: 2, 
+            explanation: "Definição Político-Administrativa: Se a prefeitura passou uma lei dizendo 'daqui pra cá é cidade', o IBGE conta como Urbano, mesmo que só tenha mato. É o <strong>Perímetro Urbano Legal</strong>.", 
+            tip: "Lei municipal manda no Urbano/Rural." 
+        },
+        { 
+            topic: "Cartografia: Fuso Horário (LID)", 
+            text: "Um avião sai de Tóquio (135°L) às 10h da manhã de terça-feira rumo a São Francisco (120°O). Ao cruzar a Linha Internacional da Data (LID) no sentido Ásia -> América (Oeste para Leste), o que acontece com o calendário?", 
+            options: ["Aumenta um dia (vai para quarta-feira).", "Diminui um dia (volta para segunda-feira).", "Mantém o mesmo dia, alterando apenas a hora.", "Ocorre a perda de 24 horas líquidas.", "Aumenta 12 horas no relógio biológico."], 
+            correct: 1, 
+            explanation: "Ao cruzar a linha do Pacífico indo para a América (Leste), você 'ganha' um dia de volta. É como voltar no tempo. Sai terça do Japão, chega segunda nos EUA. ", 
+            tip: "Cruzar LID para a América = Volta 1 dia (ontem)." 
+        },
+        { 
+            topic: "Cartografia: Escala de Área", 
+            text: "Um município tem 400 km² de área. Em um mapa na escala 1:100.000, esse município ocupará uma área desenhada de:", 
+            options: ["4 cm²", "40 cm²", "400 cm²", "0,4 cm²", "4.000 cm²"], 
+            correct: 2, 
+            explanation: "1. Converta a escala linear: 1 cm = 1 km (pois 100.000 cm = 1.000m = 1 km). <br>2. Converta a escala de área: (1 cm)² = (1 km)². Logo, 1 cm² = 1 km². <br>3. Se a cidade tem 400 km², ela ocupará <strong>400 cm²</strong> no mapa.", 
+            tip: "Se 1 cm = 1 km, a relação de área é 1 pra 1." 
+        },
+        { 
+            topic: "Cartografia: Curvas de Nível", 
+            text: "O que significa uma 'equidistância vertical' de 20 metros em uma carta topográfica?", 
+            options: ["Que a distância horizontal entre dois pontos no mapa é sempre 20m.", "Que a diferença de altitude entre uma curva de nível e a próxima é sempre de 20m.", "Que a declividade média do terreno é de 20 graus.", "Que a escala numérica do mapa é 1:20.", "Que cada centímetro no mapa equivale a 20km."], 
+            correct: 1, 
+            explanation: "Equidistância é o 'degrau'. Se uma curva marca 100m, a próxima marca 120m, a outra 140m. É o intervalo fixo de altura entre as linhas. ", 
+            tip: "Equidistância = Tamanho do degrau de altura." 
+        },
+        { 
+            topic: "Cartografia: Projeção Cônica", 
+            text: "A Projeção Cônica é a mais adequada (menor distorção) para representar quais regiões do globo?", 
+            options: ["As regiões equatoriais (Baixa Latitude).", "O mapa-múndi completo em uma única folha.", "As zonas temperadas (Média Latitude), como Europa ou EUA.", "As regiões polares (Alta Latitude).", "Exclusivamente os oceanos."], 
+            correct: 2, 
+            explanation: "O cone 'veste' a Terra tocando nas zonas temperadas. É ruim para o Equador e ruim para os Polos, mas ótima para o meio do caminho (Europa, EUA, Sul do Brasil). ", 
+            tip: "Cônica = Zonas Temperadas (Médias)." 
+        },
+        { 
+            topic: "Cartografia: Coordenadas", 
+            text: "Todos os pontos localizados exatamente sobre o mesmo Meridiano têm obrigatoriamente:", 
+            options: ["A mesma Latitude.", "O mesmo ângulo de incidência solar o ano todo.", "O mesmo clima e vegetação.", "A mesma Longitude e a mesma hora solar.", "A mesma duração do dia e da noite em qualquer época."], 
+            correct: 3, 
+            explanation: "Meridiano = Linha vertical. Todos nela têm a mesma longitude e o Sol passa sobre eles ao mesmo tempo (mesma hora solar/meio-dia solar). A latitude varia.", 
+            tip: "Meridiano = Mesma Hora." 
+        },
+        { 
+            topic: "Física: Tipos de Rocha", 
+            text: "O Petróleo e o Gás Natural são encontrados exclusivamente em estruturas geológicas formadas por:", 
+            options: ["Rochas Magmáticas (vulcânicas antigas)", "Rochas Metamórficas (alteradas por pressão)", "Bacias Sedimentares (acúmulo de detritos)", "Escudos Cristalinos e Crátons", "Dobramentos Modernos de origem vulcânica"], 
+            correct: 2, 
+            explanation: "Matéria orgânica morre, é soterrada por areia/lama (sedimentos) e cozinha por milhões de anos. Só existe petróleo em Bacia Sedimentar.", 
+            tip: "Petróleo = Bacia Sedimentar. Ferro = Cristalino." 
+        },
+        { 
+            topic: "Física: Solo Massapê", 
+            text: "O solo de Massapê, escuro, argiloso e muito fértil, encontrado no litoral do Nordeste (Zona da Mata), é resultado da decomposição de:", 
+            options: ["Rochas Basálticas (Terra Roxa)", "Gnaisse e Calcário", "Depósitos arenosos recentes de praia", "Granito puro", "Cinzas vulcânicas andinas"], 
+            correct: 1, 
+            explanation: "Diferente da Terra Roxa (Basalto do Sul), o Massapê vem de rochas como Gnaisse/Calcário em clima tropical úmido. Foi a base da riqueza da cana-de-açúcar. ", 
+            tip: "Massapê = Zona da Mata (Cana) = Gnaisse/Calcário." 
+        },
+        { 
+            topic: "Física: Intemperismo", 
+            text: "A 'termoclastia' é um tipo de intemperismo físico comum em desertos ou semiáridos, causado por:", 
+            options: ["Ação biológica das raízes das plantas.", "Congelamento da água nas fendas (crioclastia).", "Variação brusca de temperatura (dilatação/contração) que fragmenta a rocha.", "Reação química da chuva ácida.", "Ação abrasiva dos ventos constantes."], 
+            correct: 2, 
+            explanation: "A rocha dilata no sol e contrai à noite. Esse 'estica e puxa' quebra a rocha sem água. É intemperismo físico (mecânico).", 
+            tip: "Termoclastia = Quebra por calor." 
+        },
+        { 
+            topic: "Física: Clima Tropical de Altitude", 
+            text: "Cidades como Campos do Jordão (SP) ou Petrópolis (RJ) apresentam temperaturas mais baixas que o litoral, mesmo estando na mesma latitude. O fator climático determinante aqui é:", 
+            options: ["A Maritimidade", "A Continentalidade", "A Altitude", "O Albedo das nuvens", "A atuação da Corrente de Humboldt"], 
+            correct: 2, 
+            explanation: "A cada 1.000m que subimos, a temperatura cai cerca de 6°C. O ar é mais rarefeito e retém menos calor (menor efeito estufa natural).", 
+            tip: "Mais alto = Mais frio." 
+        },
+        { 
+            topic: "Física: Voçoroca", 
+            text: "A erosão acelerada do solo pode criar grandes buracos ou ravinas profundas que atingem o lençol freático, causando danos irreversíveis. Esse fenômeno chama-se:", 
+            options: ["Lixiviação Laminar", "Voçoroca", "Assoreamento", "Compactação", "Laterização"], 
+            correct: 1, 
+            explanation: "Voçoroca é o estágio final e catastrófico da erosão pela chuva em solos desprotegidos, criando crateras gigantes. ", 
+            tip: "Buraco gigante no chão = Voçoroca." 
+        },
+        { 
+            topic: "Urbana: Conurbação", 
+            text: "A Conurbação não é apenas o encontro físico da mancha urbana de duas cidades, mas exige também:", 
+            options: ["Uma lei federal de unificação.", "Integração funcional (fluxo diário de pessoas, trabalho e serviços entre elas).", "Que ambas sejam capitais estaduais.", "Que possuam a mesma densidade demográfica.", "A existência de uma autoridade metropolitana única."], 
+            correct: 1, 
+            explanation: "Não basta as casas se encostarem. As pessoas têm que viver a cidade como se fosse uma só (morar numa, trabalhar na outra).", 
+            tip: "Conurbação = Encontro físico + Vida integrada." 
+        },
+        { 
+            topic: "Urbana: Metropolização", 
+            text: "Atualmente, o Brasil vive um processo de 'Desmetropolização' relativa. Isso significa que:", 
+            options: ["As metrópoles estão sendo demolidas e extintas.", "Ocorreu uma ruralização massiva da economia.", "As cidades médias estão crescendo em ritmo mais acelerado que as grandes metrópoles.", "A população brasileira absoluta está diminuindo.", "Não existem mais regiões metropolitanas legais."], 
+            correct: 2, 
+            explanation: "As metrópoles ficaram caras, violentas e engarrafadas. Indústrias e pessoas estão indo para cidades médias (ex: interior de SP). A metrópole ainda cresce, mas mais devagar.", 
+            tip: "Desmetropolização = Cidades Médias crescendo mais." 
+        },
+        { 
+            topic: "População: Teoria Malthusiana", 
+            text: "Thomas Malthus (século 18) previu uma catástrofe demográfica dizendo que:", 
+            options: ["A população cresceria em progressão geométrica (PG) e a comida em progressão aritmética (PA), gerando fome.", "A tecnologia agrícola resolveria a fome mundial.", "A transição demográfica estabilizaria o crescimento naturalmente.", "O problema era a má distribuição de renda (Teoria Reformista).", "As epidemias controlariam o crescimento populacional de forma benéfica."], 
+            correct: 0, 
+            explanation: "Ele errou porque não previu a tecnologia na agricultura (Revolução Verde), que fez a comida crescer muito rápido.", 
+            tip: "Malthus = Fome (População > Comida)." 
+        },
+        { 
+            topic: "População: Bônus Demográfico (Fim)", 
+            text: "O fim do Bônus Demográfico (janela de oportunidade) no Brasil trará como consequência econômica principal imediata:", 
+            options: ["Sobra de vagas no ensino fundamental.", "Aumento explosivo da mão de obra jovem disponível.", "Pressão sobre o sistema previdenciário (poucos ativos para sustentar muitos inativos).", "Redução drástica dos gastos com saúde pública.", "Aumento natural da taxa de fecundidade."], 
+            correct: 2, 
+            explanation: "Quando a 'janela' fecha, temos muitos idosos e poucos jovens trabalhando. A conta da aposentadoria para de fechar.", 
+            tip: "Fim do Bônus = Crise da Previdência." 
+        },
+        { 
+            topic: "População: IDH (Crítica)", 
+            text: "Uma crítica técnica comum ao uso do IDH como indicador único de desenvolvimento é que ele:", 
+            options: ["É um cálculo muito complexo e inacessível.", "Não considera a desigualdade interna e esconde a realidade dos extremos (é uma média).", "Só é calculado para países desenvolvidos.", "Ignora totalmente a escolaridade.", "Foca excessivamente na preservação ambiental."], 
+            correct: 1, 
+            explanation: "O Brasil tem IDH 'Alto' (0,760), mas isso esconde que o Sul tem IDH de Europa e partes do Nordeste têm IDH muito baixo. A média mascara a desigualdade.", 
+            tip: "IDH é média, esconde desigualdade." 
+        },
+        { 
+            topic: "Agrária: Estrutura Fundiária", 
+            text: "O Brasil tem muitas propriedades pequenas (minifúndios) e poucas propriedades gigantes (latifúndios). No entanto, a maior parte da área total pertence aos latifúndios. Isso configura uma estrutura:", 
+            options: ["Igualitária", "Concentrada", "Coletivista", "De subsistência", "Reformada"], 
+            correct: 1, 
+            explanation: "Muita terra na mão de poucos. O Índice de Gini fundiário do Brasil é um dos piores do mundo. É a marca histórica desde as Capitanias Hereditárias. ", 
+            tip: "Estrutura Concentrada." 
+        },
+        { 
+            topic: "Agrária: Revolução Verde", 
+            text: "A Revolução Verde trouxe máquinas e químicos para o campo. Um efeito colateral ambiental negativo significativo foi:", 
+            options: ["Reflorestamento de áreas degradadas.", "Contaminação do lençol freático por agrotóxicos e compactação do solo.", "Aumento exponencial da biodiversidade genética.", "Eliminação da necessidade de irrigação.", "Erradicação definitiva das pragas agrícolas."], 
+            correct: 1, 
+            explanation: "Muito trator compacta a terra (água não infiltra). Muito veneno desce pro lençol freático e contamina rios.", 
+            tip: "Revolução Verde = Poluição e Compactação." 
+        },
+        { 
+            topic: "Econômica: Balança Comercial", 
+            text: "Quando o Brasil exporta mais (em valor monetário) do que importa, dizemos que a Balança Comercial teve:", 
+            options: ["Déficit", "Superávit", "Inflação", "Estagnação", "Recessão técnica"], 
+            correct: 1, 
+            explanation: "Vendeu mais que comprou = Sobrou dinheiro = Superávit. Se comprar mais do que vende = Déficit.", 
+            tip: "Export > Import = Superávit." 
+        },
+        { 
+            topic: "Regional: Centro-Oeste", 
+            text: "O rápido crescimento populacional e econômico da Região Centro-Oeste nas últimas décadas deve-se principalmente à:", 
+            options: ["Instalação da indústria têxtil e de calçados.", "Expansão da fronteira agrícola (soja/gado) e construção de Brasília.", "Exploração do turismo ecológico no Pantanal.", "Extração vegetal de látex e castanha.", "Descentralização da indústria automobilística do ABC."], 
+            correct: 1, 
+            explanation: "A marcha para o Oeste: Brasília levou gente, e a tecnologia (calagem do solo ácido) permitiu plantar soja no Cerrado.", 
+            tip: "Centro-Oeste = Agro + Brasília." 
+        },
+        { 
+            topic: "Meio Ambiente: Hotspots", 
+            text: "Para ser considerado um 'Hotspot' de biodiversidade (área crítica para conservação), um bioma precisa ter alta biodiversidade endêmica e:", 
+            options: ["Possuir grandes áreas de preservação integral intactas.", "Estar altamente ameaçado (ter perdido mais de 70% da vegetação original).", "Ser classificado como deserto absoluto.", "Estar localizado em países desenvolvidos.", "Ter clima polar ou frio."], 
+            correct: 1, 
+            explanation: "Hotspot é um lugar rico, mas que está quase acabando (ameaçado). No Brasil: Mata Atlântica e Cerrado (A Amazônia NÃO é hotspot ainda porque é muito preservada em % total).", 
+            tip: "Hotspot = Rico e Destruído." 
+        },
+        { 
+            topic: "Geral: Sustentabilidade", 
+            text: "O conceito de 'Desenvolvimento Sustentável', consolidado no Relatório Brundtland (1987), define-se como:", 
+            options: ["A preservação intocável de todos os recursos naturais.", "A interrupção imediata do crescimento econômico industrial.", "Atender às necessidades do presente sem comprometer a capacidade das gerações futuras.", "Priorizar o lucro empresarial acima da questão ambiental.", "Promover o desinvestimento industrial e o retorno à vida agrária."], 
+            correct: 2, 
+            explanation: "Usar hoje, mas deixar pro filho usar amanhã. Busca o equilíbrio entre Econômico, Social e Ambiental.", 
+            tip: "Sustentável = Futuro garantido." 
+        },
+        { 
+            topic: "Cartografia: ISO", 
+            text: "Nas cartas topográficas, as curvas de nível chamadas de 'Mestras' (geralmente mais grossas) têm a função de:", 
+            options: ["Definir os limites de propriedade privada.", "Facilitar a leitura da altitude, pois são numeradas (cotadas).", "Indicar apenas os rios principais.", "Marcar as estradas pavimentadas.", "Separar municípios."], 
+            correct: 1, 
+            explanation: "Geralmente a cada 5 curvas, uma é Mestra (marcada com o valor da altitude). As intermediárias você deduz pela equidistância.", 
+            tip: "Linha Mestra = Tem o número da altura." 
+        },
+        { 
+            topic: "Física: Rios", 
+            text: "Um rio que mantém seu fluxo de água durante o ano todo, sem secar mesmo na estação de estiagem, é classificado como:", 
+            options: ["Intermitente ou Temporário", "Perene", "Efêmero", "Torrencial", "Drenagem Arreica"], 
+            correct: 1, 
+            explanation: "Perene = Permanente. O Rio São Francisco é perene (atravessa o sertão sem secar). Rios do sertão (geralmente) são intermitentes (secam na seca).", 
+            tip: "Perene = Para sempre." 
+        },
+        { 
+            topic: "Econômica: PIB", 
+            text: "O PIB (Produto Interno Bruto) é o indicador que mede:", 
+            options: ["A riqueza total acumulada pelo país ao longo da história (estoque).", "A soma de todos os bens e serviços finais produzidos em um local num período (fluxo).", "O Índice de Desenvolvimento Humano (IDH).", "A quantidade de dinheiro impresso pelo Banco Central.", "O lucro líquido das empresas nacionais no exterior."], 
+            correct: 1, 
+            explanation: "PIB é fluxo (o que foi produzido e vendido esse ano), não é estoque (riqueza guardada no cofre).", 
+            tip: "PIB = Produção do ano." 
+        },
+        { 
+            topic: "IBGE: PNAD", 
+            text: "Diferente do Censo (que é decenal e entrevista todos), a PNAD Contínua é uma pesquisa:", 
+            options: ["Censitária realizada anualmente.", "Amostral (visita apenas domicílios selecionados) realizada continuamente para acompanhar emprego e renda.", "Exclusiva para o setor industrial.", "Realizada a cada 50 anos.", "Focada apenas na zona rural."], 
+            correct: 1, 
+            explanation: "O Censo é caro e demorado. A PNAD visita algumas casas (amostra) todo mês/trimestre para dar dados rápidos (como a taxa de desemprego que sai no jornal).", 
+            tip: "PNAD = Amostra rápida (Desemprego)." 
+        }
+    ];
 
         const questoesLote5 = [
-            { topic: "Cartografia: Orientação em Campo", text: "Um APM está em zona rural sem GPS e precisa confirmar se está indo para o Leste. Ao meio-dia (12h), ele observa que o Sol está a pino (levemente ao Norte). Para onde sua sombra está apontando?", options: ["Para o Leste", "Para o Oeste", "Para o Sul", "Para o Norte", "Não há sombra"], correct: 2, explanation: "No Hemisfério Sul (fora dos trópicos), o Sol ao meio-dia fica ao Norte. Logo, a sombra aponta para o Sul. Se ele quer ir para Leste, deve virar à esquerda da sombra.", tip: "Sol no Norte (meio-dia) = Sombra no Sul." },
-            { topic: "Cartografia: Leitura de Mapa", text: "No mapa do setor censitário, o APM vê um símbolo de linha tracejada preta cruzando um rio. Na legenda oficial do IBGE, isso geralmente indica:", options: ["Uma ponte destruída", "Uma estrada de terra ou trilha", "Uma divisa estadual", "Uma ferrovia", "Uma linha de transmissão"], correct: 1, explanation: "Linhas contínuas são estradas pavimentadas. Linhas tracejadas costumam ser caminhos de terra, trilhas ou limites não físicos.", tip: "Tracejado = Caminho precário ou limite." },
-            { topic: "Cartografia: Croqui", text: "Durante a atualização de logradouros, o APM desenha um croqui. O elemento essencial que indica a direção do Norte nesse desenho é:", options: ["A escala gráfica", "A legenda", "A Rosa dos Ventos", "O título", "As coordenadas UTM"], correct: 2, explanation: "Sem a Rosa dos Ventos (ou uma seta indicando o Norte), o croqui não tem orientação e fica inútil para o próximo recenseador.", tip: "Croqui precisa de Norte (Rosa dos Ventos)." },
-            { topic: "Cartografia: GPS", text: "O APM usa o DMC (Dispositivo Móvel de Coleta) para pegar uma coordenada. O aparelho mostra 'Precisão: 20 metros'. Isso significa que:", options: ["O ponto está errado em 20 metros.", "A altitude é de 20 metros.", "A posição real está dentro de um raio de 20 metros de onde o aparelho marca.", "Ele precisa andar 20 metros.", "O satélite está a 20 metros de altura."], correct: 2, explanation: "A precisão indica a margem de erro. O ponto real pode estar em qualquer lugar num círculo de 20m ao redor de você.", tip: "Precisão = Raio de incerteza." },
-            { topic: "Cartografia: Divisão Política", text: "Ao percorrer um setor, o APM descobre que uma casa está exatamente sobre a linha que divide dois municípios. Segundo a regra do IBGE, o morador deve ser recenseado:", options: ["No município onde está a porta principal de acesso ou a maior parte da casa.", "No município onde ele vota.", "Nos dois municípios (meio a meio).", "Onde ele paga IPTU.", "Onde ele preferir."], correct: 0, explanation: "Critério da entrada principal: A casa pertence ao município onde fica sua porta de entrada/acesso à rua.", tip: "A porta define o endereço." },
-            { topic: "Urbana: Favelas", text: "Ao entrar em um Aglomerado Subnormal, o APM nota vielas estreitas e desordenadas. A dificuldade de mapear esses locais deve-se à:", options: ["Falta de satélites na região.", "Ausência de arruamento oficial e numeração irregular.", "Recusa dos moradores.", "Baixa densidade demográfica.", "Plano Diretor rígido."], correct: 1, explanation: "Aglomerados crescem espontaneamente. Sem ruas retas e números oficiais, o APM tem que descrever muito bem os pontos de referência.", tip: "Subnormal = Sem endereço formal." },
-            { topic: "Urbana: Condomínios", text: "O crescimento dos condomínios horizontais fechados na periferia das cidades cria um desafio para o APM chamado:", options: ["Conurbação", "Acessibilidade restrita (Dificuldade de acesso aos domicílios)", "Gentrificação", "Verticalização", "Ilha de Calor"], correct: 1, explanation: "Portarias barram a entrada. É um obstáculo logístico, não conceitual. O APM precisa negociar a entrada.", tip: "Condomínio = Acesso difícil." },
-            { topic: "Urbana: Centro Expandido", text: "Em grandes metrópoles, o APM percebe que antigos bairros residenciais estão virando comerciais, com casas virando lojas e clínicas. Esse processo é a:", options: ["Favelização", "Terciarização do espaço urbano", "Industrialização", "Ruralização", "Especulação"], correct: 1, explanation: "O setor Terciário (serviços) expulsa o uso residencial. O bairro vira um centro de negócios.", tip: "Casa vira Loja = Terciarização." },
-            { topic: "Urbana: Periferia", text: "Nas bordas da cidade, o APM encontra loteamentos irregulares sem água encanada. Isso reflete o processo de:", options: ["Planejamento Urbano", "Segregação Socioespacial e Expansão Periférica", "Reforma Agrária", "Desmetropolização", "Macrocefalia"], correct: 1, explanation: "A cidade cresce para longe (periferia) de forma precária, empurrando os pobres para áreas sem infraestrutura.", tip: "Longe e sem água = Segregação." },
-            { topic: "Urbana: Verticalização", text: "Em um setor censitário com alta verticalização (muitos prédios), o APM deve esperar:", options: ["Poucos domicílios e muita área verde.", "Altíssima densidade demográfica (muita gente em pouco espaço).", "Apenas escritórios.", "Facilidade de locomoção.", "Baixo consumo de energia."], correct: 1, explanation: "Prédios empilham gente. Um quarteirão de prédios tem muito mais gente que um de casas.", tip: "Prédios = Alta Densidade." },
-            { topic: "Agrária: Agricultura Familiar", text: "Visitando um sítio, o APM vê que a família planta milho, feijão e cria galinhas, usando a produção para comer e vendendo o excedente na feira local. Isso caracteriza:", options: ["Monocultura de exportação", "Agricultura de Subsistência/Familiar", "Agronegócio", "Plantation", "Latifúndio improdutivo"], correct: 1, explanation: "Produz para viver e vende o que sobra. Mão de obra da própria família.", tip: "Comer + Vender sobra = Familiar." },
-            { topic: "Agrária: Modernização", text: "Em uma grande fazenda no Centro-Oeste, o APM não vê trabalhadores, apenas colheitadeiras guiadas por GPS. Isso indica:", options: ["Baixa produtividade.", "Agricultura 4.0 (Alta tecnologia e pouca mão de obra).", "Falta de dinheiro do fazendeiro.", "Agricultura orgânica.", "Reforma agrária."], correct: 1, explanation: "O campo moderno é vazio de gente e cheio de máquinas. Alta produtividade, baixo emprego.", tip: "GPS e Máquina = Agro 4.0." },
-            { topic: "Agrária: Silvicultura", text: "O APM mapeia uma área coberta por fileiras idênticas de eucaliptos. Isso não é mata nativa, é:", options: ["Silvicultura (Floresta Plantada)", "Extrativismo Vegetal", "Mata Ciliar", "Cerradão", "Caatinga"], correct: 0, explanation: "Árvore em fila = Plantação (Silvicultura). Geralmente para papel/celulose.", tip: "Eucalipto em fila = Silvicultura." },
-            { topic: "Agrária: Conflitos", text: "Ao tentar entrar em uma área, o APM encontra uma barreira de 'Posseiros'. Posseiros são:", options: ["Donos da terra com escritura.", "Trabalhadores rurais que ocupam a terra para produzir, mas sem título de propriedade.", "Invasores urbanos.", "Indígenas.", "Grileiros."], correct: 1, explanation: "Posseiro mora e trabalha na terra, mas não tem o papel (escritura). Grileiro tem papel falso.", tip: "Posseiro = Tem a posse (uso), não a propriedade (papel)." },
-            { topic: "Agrária: Irrigação", text: "No Nordeste, o APM vê uvas e mangas sendo cultivadas no meio do semiárido. Isso é possível graças à:", options: ["Chuva artificial", "Agricultura Irrigada (Fruticultura Irrigada)", "Mudança climática", "Transposição natural", "Uso de transgênicos de seca"], correct: 1, explanation: "O Vale do São Francisco exporta frutas graças à irrigação com água do rio.", tip: "Fruta no Sertão = Irrigação." },
-            { topic: "IBGE: Domicílio Vago", text: "O APM visita uma casa. Olha pela janela e vê que está vazia, sem móveis. O vizinho confirma que ninguém mora lá. Ele classifica como:", options: ["Domicílio Particular Permanente Ocupado", "Domicílio Vago", "Domicílio de Uso Ocasional", "Domicílio Coletivo", "Ruína"], correct: 1, explanation: "Se está habitável (tem teto/parede) mas não tem ninguém morando nem visitando, é Vago.", tip: "Sem gente e sem móvel = Vago." },
-            { topic: "IBGE: Uso Ocasional", text: "Uma casa de praia que a família só usa no verão e feriados deve ser classificada no Censo como:", options: ["Domicílio Vago", "Domicílio de Uso Ocasional", "Domicílio Permanente Ocupado", "Hotel", "Alojamento"], correct: 1, explanation: "Tem móveis, tem dono, mas o dono mora em outro lugar e só passeia ali. É Ocasional.", tip: "Veraneio = Ocasional." },
-            { topic: "IBGE: Cômodos", text: "Ao contar os cômodos de uma casa, o APM NÃO deve incluir:", options: ["Quarto", "Sala", "Cozinha", "Banheiro, corredores e varandas abertas", "Copa"], correct: 3, explanation: "Regra do Censo: Banheiro, corredor, varanda e garagem não contam como cômodo para fins estatísticos de densidade.", tip: "Banheiro não é cômodo (pro IBGE)." },
-            { topic: "IBGE: Responsável", text: "Quem deve responder ao questionário do Censo?", options: ["Qualquer pessoa na rua.", "Apenas o chefe da família (homem).", "Qualquer morador capaz de fornecer as informações (Responsável).", "O vizinho.", "O porteiro."], correct: 2, explanation: "Não precisa ser o 'chefe'. Precisa ser um morador que saiba os dados de todos.", tip: "Qualquer morador capaz serve." },
-            { topic: "IBGE: Lista Prévia", text: "O APM recebe uma 'Lista Prévia' de endereços no seu DMC. A função dele é:", options: ["Seguir a lista cegamente e ignorar casas novas.", "Confirmar os endereços da lista, incluir os novos e excluir os que deixaram de existir (Atualização).", "Apagar a lista e fazer do zero.", "Apenas visitar os números pares.", "Entregar a lista ao correio."], correct: 1, explanation: "O trabalho é 'Atualizar'. O Brasil muda todo dia. A lista é só um guia inicial.", tip: "Lista Prévia = Guia para atualizar." },
-            { topic: "Ambiente: Mata Ciliar", text: "O APM nota que o rio do setor está assoreado (raso e cheio de areia). A causa provável é a falta de:", options: ["Peixes", "Mata Ciliar (Vegetação nas margens)", "Chuvas", "Pontes", "Pedras"], correct: 1, explanation: "Sem as árvores na beira (cílios), a terra cai no rio e entope o fundo (assoreamento).", tip: "Rio raso/sujo = Falta de Mata Ciliar." },
-            { topic: "Ambiente: Lixo", text: "Em um bairro periférico, o APM vê lixo acumulado em terrenos baldios. O principal risco geográfico associado a isso na época de chuvas é:", options: ["Seca", "Inundações e proliferação de doenças (vetores)", "Terremotos", "Frio intenso", "Aumento do turismo"], correct: 1, explanation: "Lixo entope bueiro -> Enchente. Lixo junta água -> Dengue.", tip: "Lixo + Chuva = Enchente/Doença." },
-            { topic: "Física: Relevo", text: "Um setor censitário está localizado em uma 'Encosta'. O maior risco natural para os moradores dessa área é:", options: ["Tsunami", "Deslizamento de terra (Movimento de Massa)", "Furacão", "Seca", "Geada"], correct: 1, explanation: "Morro íngreme + Chuva + Casas pesadas = Deslizamento.", tip: "Encosta = Risco de Deslizamento." },
-            { topic: "Física: Clima Urbano", text: "Trabalhando no centro da cidade, o APM sente muito mais calor do que quando vai para o bairro arborizado. Ele está sentindo o efeito da:", options: ["Inversão Térmica", "Ilha de Calor", "Chuva Ácida", "Maritimidade", "Frente Fria"], correct: 1, explanation: "Asfalto e concreto retêm calor. O centro vira uma ilha quente.", tip: "Centro quente = Ilha de Calor." },
-            { topic: "Física: Hidrografia", text: "O APM precisa atravessar um divisor de águas para chegar ao próximo setor. Ele terá que:", options: ["Atravessar um rio a nado.", "Subir até o topo do morro/serra e descer do outro lado.", "Andar pela praia.", "Entrar em uma caverna.", "Passar por uma ponte."], correct: 1, explanation: "Divisor de águas é a parte mais alta que separa as bacias. É o topo do morro.", tip: "Divisor = Topo." },
-            { topic: "Demografia: Fecundidade Baixa", text: "Ao entrevistar famílias em um bairro nobre, o APM nota que a maioria tem apenas 1 filho ou nenhum. Em bairros pobres, vê mais filhos. Isso ilustra que a Taxa de Fecundidade:", options: ["É igual em todo lugar.", "Cai conforme aumenta a renda e a escolaridade.", "Aumenta com a renda.", "Depende apenas do clima.", "Não tem relação com economia."], correct: 1, explanation: "Renda e estudo maiores = Menos filhos. É a regra da transição demográfica.", tip: "Mais estudo = Menos filhos." },
-            { topic: "Demografia: Migração Pendular", text: "O APM visita um bairro dormitório às 10h da manhã e não encontra ninguém em casa. Os vizinhos dizem: 'Eles trabalham na capital e só voltam à noite'. Isso é:", options: ["Êxodo Rural", "Migração Pendular", "Transumância", "Turismo", "Migração de Retorno"], correct: 1, explanation: "Bairro Dormitório é clássico da pendularidade. A pessoa dorme num município e trabalha no outro.", tip: "Bairro vazio de dia = Pendular." },
-            { topic: "Demografia: Envelhecimento", text: "Se o APM encontrar muitos idosos morando sozinhos, isso pode indicar uma necessidade local de políticas para:", options: ["Escolas primárias", "Assistência Social e Saúde Geriátrica", "Quadras de futebol", "Baladas", "Emprego industrial"], correct: 1, explanation: "Geografia serve para planejar. Bairro de velho precisa de posto de saúde, não de escola.", tip: "Muitos idosos = Saúde." },
-            { topic: "Demografia: Gênero", text: "Ao tabular os dados, nota-se que há mais mulheres que homens na faixa acima de 60 anos. Isso ocorre porque:", options: ["Nascem mais mulheres.", "A expectativa de vida das mulheres é maior (homens morrem mais cedo por violência/saúde).", "Mulheres migram mais.", "Homens viram mulheres.", "Erro de contagem."], correct: 1, explanation: "Mulheres vivem, em média, 7 a 8 anos a mais que homens no Brasil.", tip: "Velhice é feminina." },
-            { topic: "Demografia: Etnia", text: "O APM pergunta a cor/raça. O morador diz 'Moreno'. O APM deve:", options: ["Marcar 'Pardo' automaticamente.", "Marcar 'Preto'.", "Ler as opções oficiais (Branca, Preta, Parda, Amarela, Indígena) e pedir para ele escolher.", "Escrever 'Moreno'.", "Escolher o que ele achar melhor."], correct: 2, explanation: "Autodeclaração. O recenseador não escolhe. Se o termo não existe, ele lê as opções para o morador se enquadrar.", tip: "Leia as opções, não adivinhe." },
-            { topic: "Regional: MATOPIBA", text: "Trabalhando no oeste da Bahia, o APM vê imensas plantações de soja. Ele está na região geoeconômica do:", options: ["Polígono das Secas", "MATOPIBA", "Zona da Mata", "Pantanal", "Vale do Paraíba"], correct: 1, explanation: "Bahia + Soja = MATOPIBA (Fronteira Agrícola).", tip: "Soja no Nordeste = MATOPIBA." },
-            { topic: "Regional: Zona Franca", text: "Em Manaus, o APM entrevista operários de fábricas de eletrônicos. A existência dessas fábricas no meio da Amazônia se deve:", options: ["À matéria prima local.", "Aos incentivos fiscais da Zona Franca de Manaus.", "Ao mercado consumidor local.", "Ao transporte barato.", "Ao clima."], correct: 1, explanation: "Sem a isenção de imposto, não valeria a pena ter fábrica lá longe.", tip: "Manaus = Incentivo Fiscal." },
-            { topic: "Regional: Centro-Sul", text: "O Complexo Regional do Centro-Sul é caracterizado por:", options: ["Ser o mais pobre.", "Concentrar a maior parte da população, indústria e PIB do país.", "Ser focado apenas em extrativismo.", "Ter clima semiárido.", "Ser despovoado."], correct: 1, explanation: "Centro-Sul (Geoeconômico) = SP, RJ, MG, Sul, MS, GO... É o motor econômico.", tip: "Centro-Sul = Coração Econômico." },
-            { topic: "Geral: Globalização", text: "O uso de tablets e internet 4G para a coleta do Censo em tempo real é um exemplo de como a _______ afeta o trabalho do IBGE.", options: ["Revolução Industrial antiga", "Revolução Técnico-Científico-Informacional", "Guerra Fria", "Crise Econômica", "Agricultura"], correct: 1, explanation: "Informação instantânea = Meio Técnico-Científico-Informacional (Milton Santos).", tip: "Tecnologia + Informação = Revolução Atual." },
-            { topic: "Geral: Sustentabilidade", text: "O Censo também levanta dados sobre saneamento. Se um bairro joga esgoto no rio, ele fere o princípio da:", options: ["Produtividade", "Sustentabilidade Ambiental", "Lucratividade", "Hierarquia Urbana", "Conurbação"], correct: 1, explanation: "Poluir água compromete o futuro. É insustentável.", tip: "Esgoto no rio = Anti-sustentável." },
-            { topic: "Técnica: Sigilo", text: "Um vizinho curioso pergunta ao APM: 'O Sr. João ali da frente ganha quanto?'. O APM deve:", options: ["Falar, pois é dado público.", "Falar só se o vizinho prometer segredo.", "Explicar que os dados são sigilosos e estatísticos, não podendo revelar nada individual.", "Inventar um valor.", "Mandar ele perguntar pro João."], correct: 2, explanation: "Sigilo Estatístico é sagrado. O IBGE divulga números do bairro, nunca da pessoa.", tip: "Sigilo é absoluto." },
-            { topic: "Técnica: Recusa", text: "Um morador diz: 'Não vou responder porque tenho medo de ser assaltado'. O APM deve:", options: ["Ir embora e marcar como recusa.", "Chamar a polícia.", "Mostrar o crachá, o colete, o 0800 do IBGE para confirmação e explicar a segurança dos dados.", "Forçar a entrada.", "Gritar com ele."], correct: 2, explanation: "O papel do APM é passar confiança. Identificação e explicação vencem o medo.", tip: "Identifique-se e acalme." },
-            { topic: "Técnica: Ausente", text: "O APM foi 3 vezes em horários diferentes e não achou ninguém. Ele deve:", options: ["Desistir.", "Deixar um recado (papel) com contato para agendar ou preencher pela internet.", "Perguntar pro vizinho.", "Inventar.", "Dormir na porta."], correct: 1, explanation: "Folha de recado é a última tentativa amigável antes de classificar como fechado.", tip: "Deixe recado." },
-            { topic: "Técnica: Censo Experimental", text: "Antes do Censo real, o IBGE faz um 'Ensaio' em uma cidade pequena. Isso serve para:", options: ["Gastar dinheiro.", "Testar os equipamentos, questionários e logística para corrigir erros antes da operação nacional.", "Apenas treinar a equipe.", "Fazer turismo.", "Não serve pra nada."], correct: 1, explanation: "O Censo Experimental é o 'test-drive' para garantir que tudo funcione no dia D.", tip: "Ensaio = Teste de erros." },
-            { topic: "Geografia: Densidade", text: "Se um setor censitário é muito pequeno no mapa (pouca área) mas tem muitos domicílios para visitar, ele tem:", options: ["Baixa densidade demográfica.", "Alta densidade demográfica.", "População rural.", "Problemas de chuva.", "Muitos animais."], correct: 1, explanation: "Muita gente (casas) em pouco espaço (mapa pequeno) = Alta densidade (ex: Copacabana, Favelas).", tip: "Pequeno e cheio = Alta densidade." },
-            { topic: "Cartografia: Escala", text: "Qual escala mostra MAIS detalhes de uma rua?", options: ["1:1.000.000", "1:500.000", "1:100.000", "1:50.000", "1:5.000"], correct: 4, explanation: "Menor denominador = Maior Escala = Mais Zoom.", tip: "Menor número = Mais detalhe." },
-            { topic: "Física: Planície", text: "O Pantanal e a Ilha de Marajó são exemplos de:", options: ["Planaltos", "Depressões", "Planícies de Inundação", "Montanhas", "Serras"], correct: 2, explanation: "Áreas planas e baixas que alagam periodicamente.", tip: "Pantanal = Planície que alaga." },
-            { topic: "Demografia: PEA", text: "A PEA inclui:", options: ["Crianças.", "Idosos aposentados que não trabalham.", "Pessoas trabalhando ou procurando trabalho.", "Estudantes exclusivos.", "Donas de casa exclusivas."], correct: 2, explanation: "Trabalha ou Procura = Ativo.", tip: "Procura = Ativo." },
-            { topic: "Regional: Sul", text: "A região Sul do Brasil destaca-se climaticamente por:", options: ["Ser a única com Clima Subtropical (estações definidas).", "Ser desértica.", "Ser Equatorial.", "Não ter chuvas.", "Ser muito quente o ano todo."], correct: 0, explanation: "Abaixo do Trópico de Capricórnio = Subtropical. Tem inverno frio.", tip: "Sul = Subtropical." },
-            { topic: "Urbana: Metrópole", text: "A cidade mãe de uma Região Metropolitana é chamada de:", options: ["Cidade Satélite", "Núcleo", "Periferia", "Município Polo ou Sede", "Distrito"], correct: 3, explanation: "A cidade principal que dá nome à RM (ex: São Paulo, Recife).", tip: "Cidade Polo." },
-            { topic: "Cartografia: Norte", text: "Em um mapa, se não houver Rosa dos Ventos, assume-se que o Norte está:", options: ["Na parte de baixo.", "Na parte de cima (topo da folha).", "Na esquerda.", "Na direita.", "No centro."], correct: 1, explanation: "Convenção internacional. Cima = Norte.", tip: "Sem seta? Norte é pra cima." },
-            { topic: "Geografia: Bioma", text: "Bioma que já perdeu mais de 90% de sua área original, onde vive a maioria da população brasileira:", options: ["Amazônia", "Cerrado", "Mata Atlântica", "Caatinga", "Pampa"], correct: 2, explanation: "O litoral foi ocupado primeiro. A Mata Atlântica foi quase toda destruída.", tip: "Litoral povoado = Mata Atlântica destruída." },
-            { topic: "IBGE: Missão", text: "A missão do IBGE é:", options: ["Cobrar impostos.", "Retratar o Brasil com informações necessárias ao conhecimento de sua realidade.", "Fazer leis.", "Prender quem não responde.", "Vender mapas."], correct: 1, explanation: "Frase clássica da missão institucional.", tip: "Retratar o Brasil." },
-            { topic: "Técnica: Abordagem", text: "A melhor maneira de começar uma entrevista é:", options: ["Entrando na casa sem pedir.", "Cumprimentar, se identificar e explicar brevemente o objetivo.", "Perguntar logo o salário.", "Pedir água.", "Dizer que é da polícia."], correct: 1, explanation: "Educação e transparência abrem portas.", tip: "Bom dia + Crachá + Objetivo." },
-            { topic: "Final: Confiança", text: "Se você estudou todos esses lotes, você está:", options: ["Perdido.", "Atrasado.", "Muito bem preparado para encarar a FGV.", "Com sono.", "Desistindo."], correct: 2, explanation: "Você cobriu Cartografia, Física, Humana, Agrária e Técnica. Boa prova!", tip: "Confie no processo." }
-        ];
-
+        { 
+            topic: "Cartografia: Orientação em Campo", 
+            text: "Um APM está em zona rural sem GPS e precisa confirmar se está indo para o Leste. Ao meio-dia (12h), ele observa que o Sol está a pino (levemente ao Norte). Para onde sua sombra está apontando?", 
+            options: ["Para o Leste", "Para o Oeste", "Para o Sul", "Para o Norte", "Não há sombra visível"], 
+            correct: 2, 
+            explanation: "No Hemisfério Sul (fora dos trópicos), o Sol ao meio-dia fica posicionado ao Norte. Logo, a sombra se projeta para o Sul. Se ele quer ir para Leste, deve virar à esquerda da sombra.", 
+            tip: "Sol no Norte (meio-dia) = Sombra no Sul." 
+        },
+        { 
+            topic: "Cartografia: Leitura de Mapa", 
+            text: "No mapa do setor censitário, o APM vê um símbolo de linha tracejada preta cruzando um rio. Na legenda oficial do IBGE, isso geralmente indica:", 
+            options: ["Uma ponte de concreto em bom estado", "Uma estrada de terra, trilha ou caminho precário", "Uma rodovia federal pavimentada", "Uma ferrovia eletrificada", "Uma linha de transmissão de energia"], 
+            correct: 1, 
+            explanation: "Linhas contínuas são estradas pavimentadas. Linhas tracejadas costumam ser caminhos de terra, trilhas ou limites não físicos.", 
+            tip: "Tracejado = Caminho precário ou limite." 
+        },
+        { 
+            topic: "Cartografia: Croqui", 
+            text: "Durante a atualização de logradouros, o APM desenha um croqui. O elemento essencial que indica a direção e permite a orientação correta do desenho é:", 
+            options: ["A escala gráfica detalhada", "A legenda de cores", "A Rosa dos Ventos (ou seta Norte)", "O título do mapa", "A lista de coordenadas UTM"], 
+            correct: 2, 
+            explanation: "Sem a Rosa dos Ventos (ou uma seta indicando o Norte), o croqui não tem orientação e fica inútil para o próximo recenseador se localizar. ", 
+            tip: "Croqui precisa de Norte (Rosa dos Ventos)." 
+        },
+        { 
+            topic: "Cartografia: GPS", 
+            text: "O APM usa o DMC (Dispositivo Móvel de Coleta) para pegar uma coordenada. O aparelho mostra 'Precisão: 20 metros'. Isso significa que:", 
+            options: ["A altitude do ponto é de 20 metros acima do mar.", "O ponto foi gravado com erro fatal e deve ser refeito.", "A posição real está dentro de um raio de incerteza de 20 metros onde o aparelho marca.", "O satélite está a apenas 20 metros de altura.", "O aparelho está sem bateria."], 
+            correct: 2, 
+            explanation: "A precisão indica a margem de erro (diluição da precisão). O ponto real pode estar em qualquer lugar num círculo de 20m ao redor de você.", 
+            tip: "Precisão = Raio de incerteza." 
+        },
+        { 
+            topic: "Cartografia: Divisão Política", 
+            text: "Ao percorrer um setor, o APM descobre que uma casa está construída exatamente sobre a linha que divide dois municípios. Segundo a regra do IBGE, o morador deve ser recenseado:", 
+            options: ["No município onde está a porta principal de acesso ou a maior parte da fachada para a rua.", "No município onde ele vota (domicílio eleitoral).", "Nos dois municípios (contagem proporcional).", "Onde ele paga o IPTU.", "No município que o morador escolher."], 
+            correct: 0, 
+            explanation: "Critério da entrada principal: A casa pertence ao município onde fica sua porta de entrada/acesso à rua, independentemente de onde fica o quarto ou a cozinha.", 
+            tip: "A porta define o endereço." 
+        },
+        { 
+            topic: "Urbana: Favelas", 
+            text: "Ao entrar em um Aglomerado Subnormal (Favela), o APM nota vielas estreitas e desordenadas. A principal dificuldade técnica de mapear esses locais deve-se à:", 
+            options: ["Interferência eletromagnética nos satélites.", "Ausência de arruamento oficial, traçado irregular e numeração desordenada.", "Recusa sistemática dos moradores em falar.", "Baixa densidade demográfica da área.", "Existência de um Plano Diretor muito rígido."], 
+            correct: 1, 
+            explanation: "Aglomerados crescem espontaneamente. Sem ruas retas e números oficiais, o APM tem que descrever muito bem os pontos de referência para localizar o domicílio. ", 
+            tip: "Subnormal = Sem endereço formal." 
+        },
+        { 
+            topic: "Urbana: Condomínios", 
+            text: "O crescimento dos condomínios horizontais fechados na periferia das cidades cria um desafio logístico para o APM tecnicamente chamado de:", 
+            options: ["Conurbação acelerada", "Acessibilidade restrita (Dificuldade de acesso aos domicílios)", "Gentrificação central", "Verticalização difusa", "Ilha de Calor localizada"], 
+            correct: 1, 
+            explanation: "Portarias e muros barram a entrada. É um obstáculo logístico onde o APM precisa negociar a entrada com síndicos ou administradoras.", 
+            tip: "Condomínio = Acesso difícil." 
+        },
+        { 
+            topic: "Urbana: Centro Expandido", 
+            text: "Em grandes metrópoles, o APM percebe que antigos bairros estritamente residenciais estão se transformando, com casas virando lojas, clínicas e escritórios. Esse processo é a:", 
+            options: ["Favelização", "Terciarização do espaço urbano (Substituição por Comércio e Serviços)", "Reindustrialização pesada", "Ruralização da metrópole", "Desmetropolização"], 
+            correct: 1, 
+            explanation: "O setor Terciário (serviços) expulsa o uso residencial devido à valorização do solo. O bairro vira um centro de negócios.", 
+            tip: "Casa vira Loja = Terciarização." 
+        },
+        { 
+            topic: "Urbana: Periferia", 
+            text: "Nas bordas da cidade, o APM encontra loteamentos irregulares sem água encanada ou asfalto. Isso reflete o processo de:", 
+            options: ["Planejamento Urbano Integrado", "Segregação Socioespacial e Expansão Periférica desordenada", "Reforma Agrária Urbana", "Gentrificação", "Macrocefalia planejada"], 
+            correct: 1, 
+            explanation: "A cidade cresce para longe (periferia) de forma precária, empurrando a população de baixa renda para áreas sem infraestrutura.", 
+            tip: "Longe e sem água = Segregação." 
+        },
+        { 
+            topic: "Urbana: Verticalização", 
+            text: "Em um setor censitário com alta verticalização (muitos edifícios residenciais altos), o APM deve esperar encontrar:", 
+            options: ["Baixo número de domicílios para visitar.", "Altíssima densidade demográfica (muita gente concentrada em pouco espaço).", "Exclusivamente escritórios comerciais.", "Facilidade de locomoção e estacionamento.", "Predominância de domicílios vagos."], 
+            correct: 1, 
+            explanation: "Prédios empilham gente. Um quarteirão de prédios tem muito mais moradores que um de casas térreas. ", 
+            tip: "Prédios = Alta Densidade." 
+        },
+        { 
+            topic: "Agrária: Agricultura Familiar", 
+            text: "Visitando um sítio, o APM vê que a família planta milho, feijão e cria galinhas, usando a produção para alimentação própria e vendendo apenas o excedente na feira local. Isso caracteriza:", 
+            options: ["Monocultura de exportação", "Agricultura de Subsistência/Familiar", "Agronegócio Patronal", "Sistema de Plantation", "Latifúndio improdutivo"], 
+            correct: 1, 
+            explanation: "Produz para viver e vende o que sobra. Mão de obra da própria família, em pequenas propriedades.", 
+            tip: "Comer + Vender sobra = Familiar." 
+        },
+        { 
+            topic: "Agrária: Modernização", 
+            text: "Em uma grande fazenda no Centro-Oeste, o APM não vê trabalhadores braçais, apenas colheitadeiras guiadas por GPS. Isso indica:", 
+            options: ["Baixa produtividade da terra.", "Agricultura 4.0 (Alta tecnologia e reduzida mão de obra humana).", "Crise financeira do produtor.", "Agricultura orgânica tradicional.", "Um assentamento de reforma agrária."], 
+            correct: 1, 
+            explanation: "O campo moderno é vazio de gente e cheio de máquinas. Alta produtividade, baixo emprego rural.", 
+            tip: "GPS e Máquina = Agro 4.0." 
+        },
+        { 
+            topic: "Agrária: Silvicultura", 
+            text: "O APM mapeia uma área coberta por fileiras idênticas e alinhadas de eucaliptos. Isso não é classificado como mata nativa, mas sim como:", 
+            options: ["Silvicultura (Floresta Plantada)", "Extrativismo Vegetal Sustentável", "Mata Ciliar em recuperação", "Vegetação de Cerradão", "Caatinga Arbórea"], 
+            correct: 0, 
+            explanation: "Árvore em fila = Plantação (Silvicultura). Geralmente monocultura para produção de papel, celulose ou carvão. ", 
+            tip: "Eucalipto em fila = Silvicultura." 
+        },
+        { 
+            topic: "Agrária: Conflitos", 
+            text: "Ao tentar entrar em uma área rural, o APM encontra uma barreira de 'Posseiros'. Juridicamente, posseiros são:", 
+            options: ["Proprietários da terra com escritura registrada em cartório.", "Trabalhadores rurais que ocupam e trabalham na terra, mas não possuem título de propriedade.", "Invasores urbanos em área rural.", "Arrendatários que pagam aluguel.", "Grileiros que falsificam documentos."], 
+            correct: 1, 
+            explanation: "Posseiro mora e trabalha na terra (tem a posse), mas não tem o papel (propriedade/escritura). Grileiro é o criminoso que falsifica o papel.", 
+            tip: "Posseiro = Tem a posse (uso), não a propriedade (papel)." 
+        },
+        { 
+            topic: "Agrária: Irrigação", 
+            text: "No Sertão Nordestino (Vale do São Francisco), o APM vê uvas e mangas tipo exportação sendo cultivadas. Isso é possível graças à:", 
+            options: ["Existência de um microclima equatorial.", "Agricultura Irrigada (Fruticultura Irrigada)", "Mudança climática natural.", "Transposição de rios da Amazônia.", "Uso exclusivo de sementes transgênicas resistentes à seca total."], 
+            correct: 1, 
+            explanation: "O Vale do São Francisco exporta frutas de alta qualidade graças à tecnologia de irrigação com água do rio perene.", 
+            tip: "Fruta no Sertão = Irrigação." 
+        },
+        { 
+            topic: "IBGE: Domicílio Vago", 
+            text: "O APM visita uma casa. Olha pela janela e vê que está vazia, sem móveis. O vizinho confirma que ninguém mora lá atualmente. Ele classifica como:", 
+            options: ["Domicílio Particular Permanente Ocupado", "Domicílio Vago", "Domicílio de Uso Ocasional", "Domicílio Coletivo", "Ruína ou Demolição"], 
+            correct: 1, 
+            explanation: "Se está habitável (tem teto/parede) mas não tem ninguém morando nem visitando (sem móveis), é Vago.", 
+            tip: "Sem gente e sem móvel = Vago." 
+        },
+        { 
+            topic: "IBGE: Uso Ocasional", 
+            text: "Uma casa de praia que a família, residente em outra cidade, só utiliza durante o verão e feriados deve ser classificada no Censo como:", 
+            options: ["Domicílio Vago", "Domicílio de Uso Ocasional", "Domicílio Permanente Ocupado", "Estabelecimento Comercial (Hotel)", "Alojamento Coletivo"], 
+            correct: 1, 
+            explanation: "Tem móveis, tem dono, mas o dono mora (habitualmente) em outro lugar e só passeia ali. É Ocasional.", 
+            tip: "Veraneio = Ocasional." 
+        },
+        { 
+            topic: "IBGE: Cômodos", 
+            text: "Ao contar os cômodos de uma casa para o Censo, o APM NÃO deve incluir na contagem:", 
+            options: ["Quartos de dormir", "Sala de estar", "Cozinha", "Banheiros, corredores, varandas abertas e garagens", "Sala de jantar"], 
+            correct: 3, 
+            explanation: "Regra do Censo: Banheiro, corredor, varanda e garagem não contam como cômodo para fins estatísticos de densidade domiciliar.", 
+            tip: "Banheiro não é cômodo (pro IBGE)." 
+        },
+        { 
+            topic: "IBGE: Responsável", 
+            text: "Quem está apto a responder ao questionário do Censo como informante?", 
+            options: ["Qualquer pessoa que esteja passando na rua.", "Apenas o chefe da família do sexo masculino.", "Qualquer morador do domicílio capaz de fornecer as informações (Responsável).", "O vizinho de confiança.", "O síndico ou porteiro do prédio."], 
+            correct: 2, 
+            explanation: "Não precisa ser o 'chefe' financeiro. Precisa ser um morador (com discernimento) que saiba os dados de todos os residentes.", 
+            tip: "Qualquer morador capaz serve." 
+        },
+        { 
+            topic: "IBGE: Lista Prévia", 
+            text: "O APM recebe uma 'Lista Prévia' de endereços no seu DMC. A função dele em campo é:", 
+            options: ["Seguir a lista cegamente e ignorar novas construções.", "Confirmar os endereços da lista, incluir os novos e excluir os que deixaram de existir (Atualização).", "Descartar a lista e começar o setor do zero.", "Apenas visitar os números pares da lista.", "Entregar a lista ao correio para verificação."], 
+            correct: 1, 
+            explanation: "O trabalho é 'Atualizar'. O Brasil muda todo dia. A lista é um guia inicial, mas o APM deve registrar a realidade atual.", 
+            tip: "Lista Prévia = Guia para atualizar." 
+        },
+        { 
+            topic: "Ambiente: Mata Ciliar", 
+            text: "O APM nota que o rio que corta o setor está assoreado (raso e com bancos de areia). A causa provável desse fenômeno é a remoção da:", 
+            options: ["Fauna aquática (peixes)", "Mata Ciliar (Vegetação nas margens)", "Ponte que cruzava o rio", "Iluminação pública", "Pavimentação das ruas próximas"], 
+            correct: 1, 
+            explanation: "Sem as árvores na beira (cílios), a terra das margens cai no rio e entope o fundo (assoreamento). ", 
+            tip: "Rio raso/sujo = Falta de Mata Ciliar." 
+        },
+        { 
+            topic: "Ambiente: Lixo", 
+            text: "Em um bairro periférico, o APM vê lixo acumulado em terrenos baldios e encostas. O principal risco geográfico associado a isso na época de chuvas é:", 
+            options: ["Seca extrema", "Obstrução da drenagem (enchentes) e deslizamentos induzidos.", "Atividade sísmica (terremotos)", "Queda brusca de temperatura", "Aumento do valor imobiliário"], 
+            correct: 1, 
+            explanation: "Lixo entope bueiro -> Enchente. Lixo em encosta retém água e pesa -> Deslizamento.", 
+            tip: "Lixo + Chuva = Enchente/Doença." 
+        },
+        { 
+            topic: "Física: Relevo", 
+            text: "Um setor censitário está localizado em uma 'Encosta' íngreme com ocupação irregular. O maior risco natural para os moradores dessa área é:", 
+            options: ["Tsunami", "Movimento de Massa (Deslizamento de terra)", "Furacão tropical", "Seca prolongada", "Geada severa"], 
+            correct: 1, 
+            explanation: "Morro íngreme + Chuva + Casas pesadas + Falta de vegetação = Receita para deslizamento. ", 
+            tip: "Encosta = Risco de Deslizamento." 
+        },
+        { 
+            topic: "Física: Clima Urbano", 
+            text: "Trabalhando no centro da cidade, o APM sente muito mais calor do que quando vai para um bairro arborizado próximo. Ele está sentindo o efeito da:", 
+            options: ["Inversão Térmica", "Ilha de Calor", "Chuva Ácida", "Maritimidade", "Frente Fria"], 
+            correct: 1, 
+            explanation: "Asfalto, concreto e prédios retêm calor e dificultam a circulação do vento. O centro vira uma ilha quente.", 
+            tip: "Centro quente = Ilha de Calor." 
+        },
+        { 
+            topic: "Física: Hidrografia", 
+            text: "O APM precisa atravessar um divisor de águas geográfico para chegar ao próximo setor. Isso significa que ele terá que:", 
+            options: ["Atravessar um rio a nado ou barco.", "Subir até o topo de um morro ou serra e descer do outro lado.", "Caminhar pela faixa de areia da praia.", "Atravessar uma área de pântano.", "Passar por baixo de uma ponte."], 
+            correct: 1, 
+            explanation: "Divisor de águas é a linha de cumeada (parte mais alta) que separa duas bacias hidrográficas. É o topo do morro.", 
+            tip: "Divisor = Topo." 
+        },
+        { 
+            topic: "Demografia: Fecundidade Baixa", 
+            text: "Ao entrevistar famílias em um bairro nobre, o APM nota que a maioria tem apenas 1 filho ou nenhum. Em bairros mais pobres, vê mais filhos. Isso ilustra que a Taxa de Fecundidade:", 
+            options: ["É estatisticamente igual em todas as classes sociais.", "Tende a cair conforme aumentam a renda e a escolaridade da mulher.", "Aumenta proporcionalmente à renda.", "Depende exclusivamente de fatores climáticos.", "Não possui correlação com fatores socioeconômicos."], 
+            correct: 1, 
+            explanation: "Renda e estudo maiores = Acesso a planejamento familiar e inserção no mercado de trabalho = Menos filhos.", 
+            tip: "Mais estudo = Menos filhos." 
+        },
+        { 
+            topic: "Demografia: Migração Pendular", 
+            text: "O APM visita um 'Bairro Dormitório' às 10h da manhã e não encontra ninguém em casa. Os poucos presentes dizem: 'Aqui todo mundo trabalha na capital e só volta à noite'. Esse fluxo diário é a:", 
+            options: ["Êxodo Rural", "Migração Pendular", "Transumância", "Turismo Sazonal", "Migração de Retorno"], 
+            correct: 1, 
+            explanation: "Bairro Dormitório é clássico da pendularidade. A pessoa dorme num município e trabalha/estuda no outro, indo e voltando todo dia.", 
+            tip: "Bairro vazio de dia = Pendular." 
+        },
+        { 
+            topic: "Demografia: Envelhecimento", 
+            text: "Se o APM encontrar muitos idosos morando sozinhos em um setor, isso indica uma demanda local específica para políticas públicas de:", 
+            options: ["Construção de creches e escolas primárias", "Assistência Social e Saúde Geriátrica (Postos de Saúde)", "Quadras poliesportivas e pistas de skate", "Incentivo ao primeiro emprego", "Expansão de zonas industriais"], 
+            correct: 1, 
+            explanation: "O Censo serve para planejar. Bairro com muitos idosos precisa de geriatra e acessibilidade, não de pediatra ou escola.", 
+            tip: "Muitos idosos = Saúde." 
+        },
+        { 
+            topic: "Demografia: Gênero", 
+            text: "Ao tabular os dados, nota-se que há mais mulheres que homens na faixa etária acima de 60 anos. O principal motivo demográfico para isso é:", 
+            options: ["Nascem muito mais mulheres que homens.", "A maior expectativa de vida das mulheres (homens têm maior mortalidade por violência e saúde).", "As mulheres migram mais para o exterior.", "Mudança biológica de sexo na terceira idade.", "Erro sistemático de contagem no Censo."], 
+            correct: 1, 
+            explanation: "Mulheres vivem, em média, 7 a 8 anos a mais que homens no Brasil. Por isso a 'viubvez' é feminina. ", 
+            tip: "Velhice é feminina." 
+        },
+        { 
+            topic: "Demografia: Etnia", 
+            text: "O APM pergunta a cor ou raça. O morador responde 'Moreno'. O procedimento correto do APM é:", 
+            options: ["Marcar 'Pardo' automaticamente, pois é sinônimo.", "Marcar 'Preto' baseando-se na sua própria observação.", "Ler as opções oficiais (Branca, Preta, Parda, Amarela, Indígena) e pedir para o morador se classificar em uma delas.", "Escrever 'Moreno' no campo de observação.", "Escolher a opção que achar mais adequada para agilizar."], 
+            correct: 2, 
+            explanation: "O quesito é de Autodeclaração. O recenseador não classifica. Se o termo do morador não existe na lista, o APM deve ler as opções oficiais para ele escolher.", 
+            tip: "Leia as opções, não adivinhe." 
+        },
+        { 
+            topic: "Regional: MATOPIBA", 
+            text: "Trabalhando no oeste da Bahia, Piauí ou sul do Maranhão, o APM vê imensas plantações de soja. Ele está na moderna fronteira agrícola conhecida como:", 
+            options: ["Polígono das Secas", "MATOPIBA (Maranhão, Tocantins, Piauí, Bahia)", "Zona da Mata", "Arco do Desmatamento Norte", "Vale do Paraíba"], 
+            correct: 1, 
+            explanation: "A nova fronteira do agro no Cerrado nordestino/nortista.", 
+            tip: "Soja no Nordeste = MATOPIBA." 
+        },
+        { 
+            topic: "Regional: Zona Franca", 
+            text: "Em Manaus, o APM entrevista operários de fábricas de eletrônicos e motocicletas. A existência desse polo industrial no meio da Amazônia deve-se principalmente:", 
+            options: ["À abundância de matéria-prima mineral local.", "Aos incentivos fiscais estatais da Zona Franca de Manaus (Suframa).", "Ao vasto mercado consumidor local da região Norte.", "À facilidade logística de transporte rodoviário.", "Ao clima favorável para eletrônicos."], 
+            correct: 1, 
+            explanation: "Sem a isenção de imposto (IPI, etc.), não seria economicamente viável ter fábrica longe dos grandes centros consumidores (SP/RJ).", 
+            tip: "Manaus = Incentivo Fiscal." 
+        },
+        { 
+            topic: "Regional: Centro-Sul", 
+            text: "O Complexo Regional Geoeconômico do Centro-Sul (SP, RJ, MG, Sul, MS, GO...) é caracterizado por:", 
+            options: ["Ser a região mais pobre e dependente do país.", "Concentrar a maior parte da população, da indústria, dos bancos e do PIB nacional.", "Ser focado exclusivamente em extrativismo vegetal.", "Ter clima predominantemente semiárido.", "Apresentar vazio demográfico absoluto."], 
+            correct: 1, 
+            explanation: "Centro-Sul é o coração econômico do Brasil, integrando a metrópole nacional e o agronegócio moderno.", 
+            tip: "Centro-Sul = Coração Econômico." 
+        },
+        { 
+            topic: "Geral: Globalização", 
+            text: "O uso de DMCs (Dispositivos Móveis de Coleta) com GPS e internet 4G para transmissão de dados em tempo real é um exemplo de como a _______ impacta o trabalho do IBGE.", 
+            options: ["Primeira Revolução Industrial", "Revolução Técnico-Científico-Informacional", "Guerra Fria", "Crise Econômica Global", "Revolução Verde"], 
+            correct: 1, 
+            explanation: "O fluxo instantâneo de dados é a marca do Meio Técnico-Científico-Informacional (conceito de Milton Santos).", 
+            tip: "Tecnologia + Informação = Revolução Atual." 
+        },
+        { 
+            topic: "Geral: Sustentabilidade", 
+            text: "O Censo também levanta dados sobre saneamento. Se um setor inteiro despeja esgoto in natura no rio, isso fere diretamente o princípio da:", 
+            options: ["Produtividade Industrial", "Sustentabilidade Ambiental", "Lucratividade Financeira", "Hierarquia Urbana", "Conurbação"], 
+            correct: 1, 
+            explanation: "Poluir recursos hídricos compromete a qualidade de vida das gerações futuras. É insustentável.", 
+            tip: "Esgoto no rio = Anti-sustentável." 
+        },
+        { 
+            topic: "Técnica: Sigilo", 
+            text: "Um vizinho curioso pergunta ao APM: 'O Sr. João ali da frente me deve dinheiro. Ele disse pra você que ganha quanto?'. O APM deve:", 
+            options: ["Informar o valor, pois dados públicos são abertos.", "Falar o valor apenas se o vizinho prometer segredo.", "Explicar que os dados são protegidos por Sigilo Estatístico e não podem ser revelados individualmente sob hipótese alguma.", "Inventar um valor baixo para despistar.", "Sugerir que ele pergunte diretamente ao João."], 
+            correct: 2, 
+            explanation: "Lei do Sigilo (Lei 5.534/68): O IBGE só divulga estatísticas agregadas (do bairro/cidade), nunca dados individuais (do CPF/Nome).", 
+            tip: "Sigilo é absoluto." 
+        },
+        { 
+            topic: "Técnica: Recusa", 
+            text: "Um morador diz: 'Não vou responder porque tenho medo de ser assaltado ou golpe'. O procedimento correto do APM é:", 
+            options: ["Ir embora imediatamente e marcar como recusa definitiva.", "Ameaçar o morador com multa.", "Apresentar o crachá, o colete, fornecer o 0800/Site do IBGE para checagem da identidade e explicar a segurança dos dados.", "Forçar a entrada no domicílio.", "Chamar a polícia para obrigar o morador a falar."], 
+            correct: 2, 
+            explanation: "O papel do APM é passar confiança. Identificação clara e canais de confirmação (QR Code no crachá) vencem o medo.", 
+            tip: "Identifique-se e acalme." 
+        },
+        { 
+            topic: "Técnica: Ausente", 
+            text: "O APM foi ao domicílio 3 vezes em dias e horários diferentes e não encontrou ninguém. O procedimento padrão é:", 
+            options: ["Desistir e marcar como Vago.", "Deixar uma Folha de Recado (papel) com contato para agendar a entrevista ou preencher pela internet.", "Perguntar os dados para o vizinho.", "Inventar dados baseados na casa ao lado.", "Realizar plantão na porta por 24 horas."], 
+            correct: 1, 
+            explanation: "A Folha de Recado é a última tentativa amigável para que o morador entre em contato antes de o supervisor encerrar o caso.", 
+            tip: "Deixe recado." 
+        },
+        { 
+            topic: "Técnica: Censo Experimental", 
+            text: "Antes do Censo real, o IBGE realiza um 'Censo Experimental' (Ensaio) em uma cidade pequena. O objetivo é:", 
+            options: ["Apenas gastar o orçamento excedente.", "Testar equipamentos, questionários e logística para detectar e corrigir falhas antes da operação nacional.", "Treinar a equipe física sem usar os aparelhos reais.", "Realizar uma pesquisa de opinião política.", "Promover o turismo na cidade escolhida."], 
+            correct: 1, 
+            explanation: "É o 'Simulado Geral'. Se der erro no Experimental, dá tempo de arrumar antes de fazer no Brasil todo.", 
+            tip: "Ensaio = Teste de erros." 
+        },
+        { 
+            topic: "Geografia: Densidade", 
+            text: "Se no mapa do DMC um setor censitário aparece muito pequeno (pouca área territorial) mas a lista prévia indica centenas de domicílios, isso significa que a área tem:", 
+            options: ["Baixa densidade demográfica.", "Alta densidade demográfica.", "Características puramente rurais.", "Risco iminente de inundação.", "Predominância de terrenos baldios."], 
+            correct: 1, 
+            explanation: "Muita gente (casas) em pouco espaço (mapa pequeno) = Alta densidade (ex: Copacabana ou Favelas densas).", 
+            tip: "Pequeno e cheio = Alta densidade." 
+        },
+        { 
+            topic: "Cartografia: Escala", 
+            text: "Para desenhar um croqui detalhado de apenas uma rua e suas casas, qual escala oferece o MAIOR nível de detalhe (Zoom)?", 
+            options: ["1:1.000.000", "1:500.000", "1:100.000", "1:50.000", "1:5.000"], 
+            correct: 4, 
+            explanation: "Regra da Escala: Menor denominador = Maior Escala = Mais Detalhe (Zoom in). 1:5.000 é muito maior que 1:1.000.000.", 
+            tip: "Menor número = Mais detalhe." 
+        },
+        { 
+            topic: "Física: Planície", 
+            text: "O Pantanal Mato-Grossense e a Ilha de Marajó são exemplos clássicos de qual forma de relevo?", 
+            options: ["Planaltos cristalinos", "Depressões relativas", "Planícies de Inundação (Sedimentares)", "Dobramentos Modernos", "Serras e Escarapas"], 
+            correct: 2, 
+            explanation: "Áreas planas, baixas e formadas por sedimentos recentes, que alagam periodicamente.", 
+            tip: "Pantanal = Planície que alaga." 
+        },
+        { 
+            topic: "Demografia: PEA", 
+            text: "A População Economicamente Ativa (PEA) engloba:", 
+            options: ["Crianças e estudantes exclusivos.", "Idosos aposentados que não exercem atividade remunerada.", "Pessoas que estão trabalhando (Ocupadas) ou procurando trabalho (Desocupadas).", "Donas de casa que cuidam apenas do próprio lar.", "Pessoas incapacitadas permanentemente para o trabalho."], 
+            correct: 2, 
+            explanation: "PEA é a força de trabalho disponível. Quem trabalha + Quem quer trabalhar (procura).", 
+            tip: "Procura = Ativo." 
+        },
+        { 
+            topic: "Regional: Sul", 
+            text: "A região Sul do Brasil destaca-se climaticamente por ser a única que:", 
+            options: ["Possui Clima Subtropical predominante, com estações do ano bem definidas.", "É classificada como semiárida.", "Possui clima Equatorial úmido.", "Não registra chuvas no inverno.", "Apresenta temperaturas médias acima de 30°C o ano todo."], 
+            correct: 0, 
+            explanation: "Por estar abaixo do Trópico de Capricórnio, é a zona temperada/subtropical. Tem inverno frio real.", 
+            tip: "Sul = Subtropical." 
+        },
+        { 
+            topic: "Urbana: Metrópole", 
+            text: "Na estrutura de uma Região Metropolitana, a cidade principal que polariza as demais e dá nome à região é chamada de:", 
+            options: ["Cidade Satélite", "Núcleo Dormitório", "Periferia Expandida", "Município Polo ou Sede", "Distrito Administrativo"], 
+            correct: 3, 
+            explanation: "É a cidade que comanda a região (ex: São Paulo, Curitiba, Belém).", 
+            tip: "Cidade Polo." 
+        },
+        { 
+            topic: "Cartografia: Norte", 
+            text: "Em um mapa oficial, caso não haja uma Rosa dos Ventos desenhada, a convenção cartográfica determina que o Norte está:", 
+            options: ["Na parte inferior da folha.", "Na parte superior da folha (Topo).", "Na margem esquerda.", "Na margem direita.", "No centro geométrico."], 
+            correct: 1, 
+            explanation: "Convenção internacional. Cima = Norte. Direita = Leste. Esquerda = Oeste. Baixo = Sul.", 
+            tip: "Sem seta? Norte é pra cima." 
+        },
+        { 
+            topic: "Geografia: Bioma", 
+            text: "Qual é o bioma brasileiro que, devido à colonização e urbanização litoral, já perdeu mais de 85% de sua cobertura original, restando poucos fragmentos?", 
+            options: ["Amazônia", "Cerrado", "Mata Atlântica", "Caatinga", "Pampa"], 
+            correct: 2, 
+            explanation: "Como o Brasil foi colonizado do mar para dentro, a Mata Atlântica foi a primeira a cair para dar lugar a cidades e cana.", 
+            tip: "Litoral povoado = Mata Atlântica destruída." 
+        },
+        { 
+            topic: "IBGE: Missão", 
+            text: "A missão institucional do IBGE resume-se a:", 
+            options: ["Fiscalizar o pagamento de impostos territoriais.", "Retratar o Brasil com informações necessárias ao conhecimento de sua realidade e ao exercício da cidadania.", "Elaborar leis de zoneamento urbano.", "Aplicar multas em quem não responde ao Censo.", "Vender mapas turísticos para angariar fundos."], 
+            correct: 1, 
+            explanation: "Frase clássica que define a existência do órgão.", 
+            tip: "Retratar o Brasil." 
+        },
+        { 
+            topic: "Técnica: Abordagem", 
+            text: "A postura correta do APM ao abordar um domicílio pela primeira vez é:", 
+            options: ["Entrar no quintal batendo palmas sem chamar no portão.", "Cumprimentar, identificar-se, mostrar o crachá e explicar brevemente o objetivo da visita.", "Perguntar imediatamente a renda da família para ganhar tempo.", "Pedir um copo de água para criar intimidade.", "Dizer que é uma fiscalização do governo para assustar o morador."], 
+            correct: 1, 
+            explanation: "Educação, identificação visual e transparência sobre o objetivo são os pilares da abordagem.", 
+            tip: "Bom dia + Crachá + Objetivo." 
+        },
+        { 
+            topic: "Final: Confiança", 
+            text: "Ao concluir o estudo desses 5 lotes de questões, cobrindo Geografia Física, Humana e Técnicas de Pesquisa, você se encontra:", 
+            options: ["Sem base teórica.", "Com conteúdo defasado.", "Muito bem preparado e com visão ampla do conteúdo da FGV.", "Desmotivado.", "Pronto para desistir."], 
+            correct: 2, 
+            explanation: "Você cobriu todo o edital: Cartografia, Física, Humana, Agrária, Urbana e Técnica de Coleta. Boa prova!", 
+            tip: "Confie no processo." 
+        }
+    ];
         // --- LÓGICA DE UNIFICAÇÃO INTELIGENTE ---
         // Aqui está a mágica: Juntamos tudo e o script "lê" o tópico para saber a categoria.
         
