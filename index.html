@@ -439,14 +439,13 @@
         // Se você quiser que Ética apareça no modo "Aleatório", descomente abaixo:
         // questoesEtica.forEach(q => { q.category = "Ética"; fullQuestionBank.push(q); });
 
-
-        // --- LÓGICA DO QUIZ ---
-
-        let currentQuizQuestions = [];
+// --- VARIÁVEIS DE CONTROLE (GLOBAIS) ---
+        let currentQuizQuestions = []; 
         let currentQIndex = 0;
         let score = 0;
         let answered = false;
 
+        // Referências aos elementos HTML
         const themeScreen = document.getElementById('theme-selection-screen');
         const quizInterface = document.getElementById('quiz-interface');
         const resultsCard = document.getElementById('results-card');
@@ -461,23 +460,57 @@
         const qCounter = document.getElementById('q-counter');
         const topicTag = document.getElementById('topic-tag');
 
+        // 1. Algoritmo de Embaralhamento Real (Fisher-Yates)
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // 2. Mistura as alternativas e descobre onde a resposta certa foi parar
+        function shuffleOptions(question) {
+            // Cria um array temporário guardando o texto da opção e se ela é a correta
+            let optsWithIndex = question.options.map((opt, i) => ({
+                txt: opt,
+                isCorrect: (i === question.correct) // Verdadeiro se for a resposta certa original
+            }));
+            
+            // Mistura as alternativas
+            shuffleArray(optsWithIndex);
+            
+            // Atualiza a questão com a nova ordem
+            question.options = optsWithIndex.map(o => o.txt);
+            // Atualiza o gabarito procurando onde o 'isCorrect: true' foi parar
+            question.correct = optsWithIndex.findIndex(o => o.isCorrect);
+        }
+
+        // 3. Iniciar Quiz
         function startQuiz(theme) {
             currentQuizQuestions = [];
+            
+            // IMPORTANTE: 'fullQuestionBank' deve ser a variável onde você unificou todas as questões
+            let tempBank = JSON.parse(JSON.stringify(fullQuestionBank));
 
+            // Filtra o tema
             if (theme === 'all') {
-                currentQuizQuestions = [...fullQuestionBank];
+                currentQuizQuestions = tempBank;
             } else {
-                currentQuizQuestions = fullQuestionBank.filter(q => q.category === theme);
+                currentQuizQuestions = tempBank.filter(q => q.category === theme);
             }
             
-            // Embaralhar
-            currentQuizQuestions.sort(() => Math.random() - 0.5);
-
             if (currentQuizQuestions.length === 0) {
-                alert("Nenhuma questão encontrada para este tema! Verifique o console.");
+                alert("Erro: Nenhuma questão encontrada para este tema.");
                 return;
             }
 
+            // PASSO A: Embaralha a ordem das PERGUNTAS
+            shuffleArray(currentQuizQuestions);
+
+            // PASSO B: Embaralha as ALTERNATIVAS de cada pergunta
+            currentQuizQuestions.forEach(q => shuffleOptions(q));
+
+            // Reseta visual
             currentQIndex = 0;
             score = 0;
             scoreDisplay.textContent = `0/${currentQuizQuestions.length}`;
@@ -489,6 +522,7 @@
             renderQuestion();
         }
 
+        // 4. Renderizar Questão
         function renderQuestion() {
             answered = false;
             const q = currentQuizQuestions[currentQIndex];
@@ -516,6 +550,7 @@
             });
         }
 
+        // 5. Checar Resposta
         function checkAnswer(selectedIndex, btn) {
             if (answered) return;
             answered = true;
@@ -562,6 +597,7 @@
             feedbackArea.classList.remove('hidden');
         }
 
+        // 6. Próxima Questão
         function nextQuestion() {
             if (currentQIndex < currentQuizQuestions.length - 1) {
                 currentQIndex++;
@@ -571,6 +607,7 @@
             }
         }
 
+        // 7. Mostrar Resultados
         function showResults() {
             quizInterface.classList.add('hidden');
             resultsCard.classList.remove('hidden');
@@ -580,9 +617,11 @@
             document.getElementById('final-errors').textContent = currentQuizQuestions.length - score;
             
             const msgDiv = document.getElementById('final-msg');
-            if (percentage >= 80) msgDiv.innerHTML = "<strong class='text-green-400 block text-lg mb-2'>Excelente!</strong> Você domina o conteúdo.";
-            else if (percentage >= 50) msgDiv.innerHTML = "<strong class='text-yellow-500 block text-lg mb-2'>Bom trabalho.</strong> Mas revise os erros.";
-            else msgDiv.innerHTML = "<strong class='text-red-400 block text-lg mb-2'>Atenção.</strong> Reforce os estudos.";
+            if (msgDiv) {
+                if (percentage >= 80) msgDiv.innerHTML = "<strong class='text-green-400 block text-lg mb-2'>Excelente!</strong> Você domina o conteúdo.";
+                else if (percentage >= 50) msgDiv.innerHTML = "<strong class='text-yellow-500 block text-lg mb-2'>Bom trabalho.</strong> Mas revise os erros.";
+                else msgDiv.innerHTML = "<strong class='text-red-400 block text-lg mb-2'>Atenção.</strong> Reforce os estudos.";
+            }
         }
     </script>
 </body>
